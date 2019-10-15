@@ -19,6 +19,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ClosetImageComponent } from './closet/closet-image/closet-image.component';
 import { ClosetSkinsComponent } from './closet/closet-skins/closet-skins.component';
 import { LoginComponent } from './login/login.component';
+import { GuildComponent } from './guild/guild.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { LoginComponent } from './login/login.component';
     ChangePasswordComponent,
     ClosetImageComponent,
     ClosetSkinsComponent,
-    LoginComponent
+    LoginComponent,
+    GuildComponent
   ],
   imports: [
     BrowserModule,
