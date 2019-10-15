@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
     <pd:name>Service/Video/VideoGet.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startX>247</pd:startX>
-    <pd:startY>89</pd:startY>
+    <pd:startType wsMsgRef="pfx:videoInputGet"/>
+    <pd:startX>194</pd:startX>
+    <pd:startY>79</pd:startY>
     <pd:returnBindings/>
     <pd:endName>End</pd:endName>
     <pd:endX>886</pd:endX>
@@ -14,13 +16,14 @@
     <pd:activity name="JDBC Query">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>410</pd:x>
-        <pd:y>95</pd:y>
+        <pd:x>425</pd:x>
+        <pd:y>77</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
         </config>
         <pd:inputBindings>
             <jdbcQueryActivityInput/>
