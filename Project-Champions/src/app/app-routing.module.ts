@@ -1,10 +1,16 @@
 import { WarriorComponent } from './warrior/warrior.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ClosetComponent } from './closet/closet.component';
+import { SetPasswordComponent } from './set-password/set-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
-    {path: 'warrior_profile', component: WarriorComponent}
+    {path: 'set_password', component: SetPasswordComponent},
+    {path: 'change_password', component: ChangePasswordComponent},
+    {path: 'warrior_profile', component: WarriorComponent},
+    {path: 'closet', component: ClosetComponent}
 ];
 
 @NgModule({
