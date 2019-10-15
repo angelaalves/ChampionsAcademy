@@ -11,7 +11,7 @@
         <part name="part1" element="ns:videoIn"/>
     </message>
     <message name="videoOutputGet">
-        <part name="part1" element="ns:videoOut"/>
+        <part name="part1" element="ns:DataOutput"/>
     </message>
     <portType name="UpdateVideoPort">
         <operation name="Update">
