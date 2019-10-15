@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571063877400" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571063877400" name="TheChampionsLeague">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" location="Video.xsd"/>
+    <message name="videoInputUpdate">
+        <part name="part1" element="ns:videoIn"/>
+    </message>
+    <message name="videoOutputUpdate">
+        <part name="part1" element="ns:videoOut"/>
+    </message>
+    <message name="videoInputGet">
+        <part name="part1" element="ns:videoIn"/>
+    </message>
+    <message name="videoOutputGet">
+        <part name="part1" element="ns:videoOut"/>
+    </message>
+    <portType name="UpdateVideoPort">
+        <operation name="Update">
+            <input message="tns:videoInputUpdate"/>
+            <output message="tns:videoOutputUpdate"/>
+        </operation>
+    </portType>
+    <portType name="GetVideoPort">
+        <operation name="Get">
+            <input message="tns:videoInputGet"/>
+            <output message="tns:videoOutputGet"/>
+        </operation>
+    </portType>
+</definitions>
