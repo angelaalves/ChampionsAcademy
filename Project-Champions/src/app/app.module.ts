@@ -18,6 +18,8 @@ import { SetPasswordComponent } from './set-password/set-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ClosetImageComponent } from './closet/closet-image/closet-image.component';
 import { ClosetSkinsComponent } from './closet/closet-skins/closet-skins.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ClosetSkinsComponent } from './closet/closet-skins/closet-skins.compone
     SetPasswordComponent,
     ChangePasswordComponent,
     ClosetImageComponent,
-    ClosetSkinsComponent
+    ClosetSkinsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
