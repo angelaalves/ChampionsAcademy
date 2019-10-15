@@ -4,63 +4,40 @@
     <pd:name>Service/Video/VideoGet.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="pfx:videoInputGet"/>
-    <pd:startX>118</pd:startX>
-    <pd:startY>271</pd:startY>
+    <pd:startX>114</pd:startX>
+    <pd:startY>277</pd:startY>
     <pd:returnBindings>
         <pfx:videoOutputGet>
-            <part1>
+            <GetOut>
                 <pfx2:DataOutput>
                     <xsl:choose>
                         <xsl:when test="exists($ID/resultSet/Record)">
-                            <pfx2:videoOut>
-                                <xsl:if test="$ID/resultSet/Record[1]/ID_Video">
+                            <xsl:for-each select="$ID/resultSet/Record">
+                                <pfx2:videoOut>
                                     <xsl:attribute name="ID_Video">
-                                        <xsl:value-of select="$ID/resultSet/Record[1]/ID_Video"/>
+                                        <xsl:value-of select="ID_Video"/>
                                     </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="$ID/resultSet/Record[1]/VideoName">
                                     <xsl:attribute name="VideoName">
-                                        <xsl:value-of select="$ID/resultSet/Record[1]/VideoName"/>
+                                        <xsl:value-of select="VideoName"/>
                                     </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="$ID/resultSet/Record[1]/Duration">
                                     <xsl:attribute name="Duration">
-                                        <xsl:value-of select="$ID/resultSet/Record[1]/Duration"/>
+                                        <xsl:value-of select="Duration"/>
                                     </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="$ID/resultSet/Record[1]/topic">
-                                    <xsl:attribute name="Topic">
-                                        <xsl:value-of select="$ID/resultSet/Record[1]/topic"/>
-                                    </xsl:attribute>
-                                </xsl:if>
-                            </pfx2:videoOut>
-                        </xsl:when>
-                        <xsl:when test="exists($VideoName/resultSet/Record)">
-                            <pfx2:videoOut>
-                                <xsl:if test="$VideoName/resultSet/Record[1]/ID_Video">
-                                    <xsl:attribute name="ID_Video">
-                                        <xsl:value-of select="$VideoName/resultSet/Record[1]/ID_Video"/>
-                                    </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="$VideoName/resultSet/Record[1]/VideoName">
-                                    <xsl:attribute name="VideoName">
-                                        <xsl:value-of select="$VideoName/resultSet/Record[1]/VideoName"/>
-                                    </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="$VideoName/resultSet/Record[1]/Duration">
-                                    <xsl:attribute name="Duration">
-                                        <xsl:value-of select="$VideoName/resultSet/Record[1]/Duration"/>
-                                    </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="$VideoName/resultSet/Record[1]/topic">
-                                    <xsl:attribute name="Topic">
-                                        <xsl:value-of select="$VideoName/resultSet/Record[1]/topic"/>
-                                    </xsl:attribute>
-                                </xsl:if>
-                            </pfx2:videoOut>
+                                    <xsl:if test="topic">
+                                        <xsl:attribute name="Topic">
+                                            <xsl:value-of select="topic"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                </pfx2:videoOut>
+                            </xsl:for-each>
                         </xsl:when>
                         <xsl:when test="exists($Topic/resultSet/Record)">
                             <xsl:for-each select="$Topic/resultSet/Record">
+                                <pfx2:videoOut/>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($VideoName/resultSet/Record)">
+                            <xsl:for-each select="$VideoName/resultSet/Record">
                                 <pfx2:videoOut>
                                     <xsl:attribute name="ID_Video">
                                         <xsl:value-of select="ID_Video"/>
@@ -85,33 +62,33 @@
                                     <xsl:value-of select="0"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot;null&quot;"/>
+                                    <xsl:value-of select="&quot;Null&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot;null&quot;"/>
+                                    <xsl:value-of select="&quot;Null&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot;null&quot;"/>
+                                    <xsl:value-of select="&quot;Null&quot;"/>
                                 </xsl:attribute>
                             </pfx2:videoOut>
                         </xsl:otherwise>
                     </xsl:choose>
                 </pfx2:DataOutput>
-            </part1>
+            </GetOut>
         </pfx:videoOutputGet>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx:videoOutputGet"/>
-    <pd:endX>944</pd:endX>
-    <pd:endY>322</pd:endY>
+    <pd:endX>1054</pd:endX>
+    <pd:endY>365</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571128269566</pd:targetNamespace>
     <pd:activity name="ID">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>397</pd:x>
-        <pd:y>104</pd:y>
+        <pd:x>376</pd:x>
+        <pd:y>125</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
@@ -148,8 +125,8 @@
             <jdbcQueryActivityInput>
                 <ID_Video>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputGet/part1/pfx2:videoIn/@ID_Video)">
-                            <xsl:value-of select="$Start/pfx:videoInputGet/part1/pfx2:videoIn/@ID_Video"/>
+                        <xsl:when test="exists($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video)">
+                            <xsl:value-of select="$Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -162,16 +139,16 @@
     <pd:activity name="Null (Doesn't Exists in DB)">
         <pd:type>com.tibco.plugin.timer.NullActivity</pd:type>
         <pd:resourceType>ae.activities.null</pd:resourceType>
-        <pd:x>553</pd:x>
-        <pd:y>59</pd:y>
+        <pd:x>523</pd:x>
+        <pd:y>72</pd:y>
         <config/>
         <pd:inputBindings/>
     </pd:activity>
     <pd:activity name="VideoName">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>388</pd:x>
-        <pd:y>266</pd:y>
+        <pd:x>370</pd:x>
+        <pd:y>287</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
@@ -208,8 +185,8 @@
             <jdbcQueryActivityInput>
                 <VideoName>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputGet/part1/pfx2:videoIn/@VideoName)">
-                            <xsl:value-of select="$Start/pfx:videoInputGet/part1/pfx2:videoIn/@VideoName"/>
+                        <xsl:when test="exists($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@VideoName)">
+                            <xsl:value-of select="$Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@VideoName"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -222,8 +199,8 @@
     <pd:activity name="Topic">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>395</pd:x>
-        <pd:y>434</pd:y>
+        <pd:x>372</pd:x>
+        <pd:y>462</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
@@ -260,8 +237,8 @@
             <jdbcQueryActivityInput>
                 <Topic>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputGet/part1/pfx2:videoIn/@Topic)">
-                            <xsl:value-of select="$Start/pfx:videoInputGet/part1/pfx2:videoIn/@Topic"/>
+                        <xsl:when test="exists($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@Topic)">
+                            <xsl:value-of select="$Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@Topic"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -282,17 +259,28 @@
     <pd:activity name="Null--Doesn-t-Exists-in-DB--1">
         <pd:type>com.tibco.plugin.timer.NullActivity</pd:type>
         <pd:resourceType>ae.activities.null</pd:resourceType>
-        <pd:x>513</pd:x>
-        <pd:y>193</pd:y>
+        <pd:x>482</pd:x>
+        <pd:y>218</pd:y>
         <config/>
         <pd:inputBindings/>
     </pd:activity>
     <pd:activity name="Null--Doesn-t-Exists-in-DB--2">
         <pd:type>com.tibco.plugin.timer.NullActivity</pd:type>
         <pd:resourceType>ae.activities.null</pd:resourceType>
-        <pd:x>508</pd:x>
-        <pd:y>331</pd:y>
+        <pd:x>495</pd:x>
+        <pd:y>349</pd:y>
         <config/>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>1048</pd:x>
+        <pd:y>242</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
         <pd:inputBindings/>
     </pd:activity>
     <pd:transition>
@@ -302,7 +290,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoInputGet/part1/pfx2:videoIn/@ID_Video) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn/@ID_Video) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID</pd:from>
@@ -335,7 +323,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoInputGet/part1/pfx2:videoIn/@VideoName) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn/@VideoName) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>VideoName</pd:from>
@@ -361,7 +349,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoInputGet/part1/pfx2:videoIn/@Topic) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn/@Topic) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Topic</pd:from>
@@ -403,6 +391,13 @@
     </pd:transition>
     <pd:transition>
         <pd:from>Null--Doesn-t-Exists-in-DB--2</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
