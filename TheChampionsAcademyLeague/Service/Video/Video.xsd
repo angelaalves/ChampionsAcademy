@@ -21,4 +21,18 @@
 			<xs:attribute name="Topic" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
+	<xs:element name="DataInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="videoIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="videoOut" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

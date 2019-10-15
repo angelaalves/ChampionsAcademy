@@ -14,7 +14,7 @@
             <NamingCredential/>
         </NamingEnvironment>
         <ConnectionAttributes>
-            <username/>
+            <username>admin</username>
             <password/>
             <clientID/>
             <autoGenClientID>true</autoGenClientID>
