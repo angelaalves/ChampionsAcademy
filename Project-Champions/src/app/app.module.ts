@@ -34,6 +34,7 @@ import { AncientDetailsComponent } from './Ancient/ancient-details/ancient-detai
 import { AncientDefinitionsComponent } from './Ancient/ancient-definitions/ancient-definitions.component';
 import { AddUserComponent } from './ancient/add-user/add-user.component';
 import { GuildListComponent } from './guild-list/guild-list.component';
+import { GuildListElemComponent } from './guild-list/guild-list-elem/guild-list-elem.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { GuildListComponent } from './guild-list/guild-list.component';
     AncientDetailsComponent,
     AncientDefinitionsComponent,
     AddUserComponent,
-    GuildListComponent
+    GuildListComponent,
+    GuildListElemComponent
   ],
   imports: [
     BrowserModule,
