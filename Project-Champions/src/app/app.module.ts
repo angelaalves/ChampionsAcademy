@@ -20,6 +20,14 @@ import { ClosetImageComponent } from './closet/closet-image/closet-image.compone
 import { ClosetSkinsComponent } from './closet/closet-skins/closet-skins.component';
 import { LoginComponent } from './login/login.component';
 import { GuildComponent } from './guild/guild.component';
+import { GuildMemberComponent } from './guild/guild-member/guild-member.component';
+import { GuildMasterComponent } from './guild-master/guild-master.component';
+import { GuildMasterImageComponent } from './guild-master/guild-master-image/guild-master-image.component';
+import { GuildMasterDefinitionsComponent } from './guild-master/guild-master-definitions/guild-master-definitions.component';
+import { GuildMasterDetailsComponent } from './guild-master/guild-master-details/guild-master-details.component';
+import { GuildMasterDetailsButtonsComponent } from './guild-master/guild-master-details/guild-master-details-buttons/guild-master-details-buttons.component';
+import { GuildMasterDetailsCoinsComponent } from './guild-master/guild-master-details/guild-master-details-coins/guild-master-details-coins.component';
+import { GuildMasterDetailsXpComponent } from './guild-master/guild-master-details/guild-master-details-xp/guild-master-details-xp.component';
 
 
 @NgModule({
@@ -40,7 +48,15 @@ import { GuildComponent } from './guild/guild.component';
     ClosetImageComponent,
     ClosetSkinsComponent,
     LoginComponent,
-    GuildComponent
+    GuildComponent,
+    GuildMemberComponent,
+    GuildMasterComponent,
+    GuildMasterImageComponent,
+    GuildMasterDefinitionsComponent,
+    GuildMasterDetailsComponent,
+    GuildMasterDetailsButtonsComponent,
+    GuildMasterDetailsCoinsComponent,
+    GuildMasterDetailsXpComponent
   ],
   imports: [
     BrowserModule,

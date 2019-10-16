@@ -1,11 +1,11 @@
 export class Player{
     public name: string;
-    public xp: number;
     public imagePath: string;
+    public xp: number;
 
     constructor(name:string, imagePath: string){
         this.name=name;
-        this.xp=0;
         this.imagePath=imagePath;
+        this.xp=0;
     }
 }

@@ -6,6 +6,7 @@ import { SetPasswordComponent } from './set-password/set-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { LoginComponent } from './login/login.component';
 import { GuildComponent } from './guild/guild.component';
+import { GuildMasterComponent } from './guild-master/guild-master.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -14,7 +15,8 @@ const appRoutes: Routes=[
     {path: 'change_password', component: ChangePasswordComponent},
     {path: 'warrior_profile', component: WarriorComponent},
     {path: 'closet', component: ClosetComponent},
-    {path: 'guild', component: GuildComponent}
+    {path: 'guild', component: GuildComponent},
+    {path: 'guild-master_profile', component: GuildMasterComponent}
 ];
 
 @NgModule({
