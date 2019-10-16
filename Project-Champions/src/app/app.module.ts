@@ -28,6 +28,12 @@ import { GuildMasterDetailsComponent } from './guild-master/guild-master-details
 import { GuildMasterDetailsButtonsComponent } from './guild-master/guild-master-details/guild-master-details-buttons/guild-master-details-buttons.component';
 import { GuildMasterDetailsCoinsComponent } from './guild-master/guild-master-details/guild-master-details-coins/guild-master-details-coins.component';
 import { GuildMasterDetailsXpComponent } from './guild-master/guild-master-details/guild-master-details-xp/guild-master-details-xp.component';
+import { AncientComponent } from './ancient/ancient.component';
+import { AncientImageComponent } from './Ancient/ancient-image/ancient-image.component';
+import { AncientDetailsComponent } from './Ancient/ancient-details/ancient-details.component';
+import { AncientDefinitionsComponent } from './Ancient/ancient-definitions/ancient-definitions.component';
+import { AddUserComponent } from './ancient/add-user/add-user.component';
+import { GuildListComponent } from './guild-list/guild-list.component';
 
 
 @NgModule({
@@ -56,7 +62,13 @@ import { GuildMasterDetailsXpComponent } from './guild-master/guild-master-detai
     GuildMasterDetailsComponent,
     GuildMasterDetailsButtonsComponent,
     GuildMasterDetailsCoinsComponent,
-    GuildMasterDetailsXpComponent
+    GuildMasterDetailsXpComponent,
+    AncientComponent,
+    AncientImageComponent,
+    AncientDetailsComponent,
+    AncientDefinitionsComponent,
+    AddUserComponent,
+    GuildListComponent
   ],
   imports: [
     BrowserModule,
