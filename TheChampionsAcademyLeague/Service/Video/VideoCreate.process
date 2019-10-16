@@ -5,9 +5,31 @@
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="pfx:videoInputCreate"/>
     <pd:startX>251</pd:startX>
-    <pd:startY>176</pd:startY>
-    <pd:returnBindings/>
+    <pd:startY>177</pd:startY>
+    <pd:returnBindings>
+        <pfx:videoOutputCreate>
+            <CreateOut>
+                <ns:DataOutput>
+                    <ns:videoOut>
+                        <xsl:attribute name="ID_Video">
+                            <xsl:value-of select="&quot;ID Created&quot;"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="VideoName">
+                            <xsl:value-of select="&quot;Video Name Created&quot;"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="Duration">
+                            <xsl:value-of select="&quot;Duration added&quot;"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="Topic">
+                            <xsl:value-of select="&quot;Topic added&quot;"/>
+                        </xsl:attribute>
+                    </ns:videoOut>
+                </ns:DataOutput>
+            </CreateOut>
+        </pfx:videoOutputCreate>
+    </pd:returnBindings>
     <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx:videoOutputCreate"/>
     <pd:endX>732</pd:endX>
     <pd:endY>175</pd:endY>
     <pd:errorSchemas/>
@@ -16,8 +38,8 @@
     <pd:activity name="Create">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>478</pd:x>
-        <pd:y>175</pd:y>
+        <pd:x>443</pd:x>
+        <pd:y>176</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>

@@ -6,8 +6,30 @@
     <pd:startType wsMsgRef="pfx:videoInputDelete"/>
     <pd:startX>315</pd:startX>
     <pd:startY>182</pd:startY>
-    <pd:returnBindings/>
+    <pd:returnBindings>
+        <pfx:videoOutputDelete>
+            <DeleteOut>
+                <ns:DataOutput>
+                    <ns:videoOut>
+                        <xsl:attribute name="ID_Video">
+                            <xsl:value-of select="&quot;ID deleted&quot;"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="VideoName">
+                            <xsl:value-of select="&quot;Video Name deleted&quot;"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="Duration">
+                            <xsl:value-of select="&quot;Duration deleted&quot;"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="Topic">
+                            <xsl:value-of select="&quot;Removed&quot;"/>
+                        </xsl:attribute>
+                    </ns:videoOut>
+                </ns:DataOutput>
+            </DeleteOut>
+        </pfx:videoOutputDelete>
+    </pd:returnBindings>
     <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx:videoOutputDelete"/>
     <pd:endX>854</pd:endX>
     <pd:endY>181</pd:endY>
     <pd:errorSchemas/>
