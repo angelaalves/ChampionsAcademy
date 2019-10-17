@@ -5,16 +5,18 @@ import { ClosetComponent } from './closet/closet.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { LoginComponent } from './login/login.component';
-import { GuildComponent } from './guild/guild.component';
+import { GuildComponent } from './guild-list/guild/guild.component';
 import { GuildMasterComponent } from './guild-master/guild-master.component';
 import { AncientComponent } from './ancient/ancient.component';
 import { AddUserComponent } from './ancient/add-user/add-user.component';
 import { GuildListComponent } from './guild-list/guild-list.component';
-import { EventsComponent } from './events/events.component';
-import { ListUsersComponent } from './list-users/list-users.component';
-import { NotificationsComponent } from './notifications/notifications.component';
+
 import { RewardsComponent } from './rewards/rewards.component';
+import { RewardsToApproveComponent } from './rewards/rewards-to-approve/rewards-to-approve.component';
+import { EventsComponent } from './events/events.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 import { VideosComponent } from './videos/videos.component';
+import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-list.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -22,17 +24,18 @@ const appRoutes: Routes=[
     {path: 'set_password', component: SetPasswordComponent},
     {path: 'change_password', component: ChangePasswordComponent},
     {path: 'warrior_profile', component: WarriorComponent},
-    {path: 'closet', component: ClosetComponent},
     {path: 'guild', component: GuildComponent},
     {path: 'guildmaster_profile', component: GuildMasterComponent},
     {path: 'ancient_profile', component: AncientComponent},
     {path: 'add_player', component: AddUserComponent},
     {path: 'guilds_list', component: GuildListComponent},
-    {path: 'events', component: EventsComponent},
-    {path: 'lists_users', component: ListUsersComponent},
-    {path: 'notifications', component: NotificationsComponent},
     {path: 'rewards', component: RewardsComponent},
-    {path: 'videos', component: VideosComponent}
+    {path: 'rewards_to_aprove', component: RewardsToApproveComponent},
+    {path: 'events', component: EventsComponent},
+    {path: 'notifications', component: NotificationsComponent},
+    {path: 'closet', component: ClosetComponent},
+    {path: 'videos', component: VideosComponent},
+    {path: 'add_guild', component: AddGuildListComponent}
 ];
 
 @NgModule({

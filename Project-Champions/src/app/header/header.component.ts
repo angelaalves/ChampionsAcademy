@@ -13,31 +13,28 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  redirectToProfile(){
-    this.router.navigate(['../warrior_profile'], {relativeTo: this.route});
+  onProfile(){
+    this.router.navigate(['warrior_profile'], {relativeTo: this.route});
   }
-
-  redirectToCloset(){
-    this.router.navigate(['../closet'], {relativeTo: this.route});
+  onCloset(){
+    this.router.navigate(['closet'], {relativeTo: this.route});
   }
-
-  redirectToRewards(){
-    this.router.navigate(['../rewards'], {relativeTo: this.route});
+  onReward(){
+    this.router.navigate(['rewards'], {relativeTo: this.route});
   }
-
-  redirectToVideos(){
-    this.router.navigate(['../videos'], {relativeTo: this.route});
+  onVideos(){
+    this.router.navigate(['videos'], {relativeTo: this.route});
   }
-
-  redirectToGuild(){
-    this.router.navigate(['../guild'], {relativeTo: this.route});
+  onGuild(){
+    this.router.navigate(['guild'], {relativeTo: this.route});
   }
-
-  redirectToEvents(){
-    this.router.navigate(['../events'], {relativeTo: this.route});
+  onEvents(){
+    this.router.navigate(['events'], {relativeTo: this.route});
   }
-
-  redirectToNotifications(){
-    this.router.navigate(['../notifications'], {relativeTo: this.route});
+  onNotifications(){
+    this.router.navigate(['notifications'], {relativeTo: this.route});
+  }
+  onSignout(){
+    this.router.navigate(['login'], {relativeTo: this.route});
   }
 }

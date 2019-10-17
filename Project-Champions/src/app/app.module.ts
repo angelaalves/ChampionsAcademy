@@ -19,8 +19,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ClosetImageComponent } from './closet/closet-image/closet-image.component';
 import { ClosetSkinsComponent } from './closet/closet-skins/closet-skins.component';
 import { LoginComponent } from './login/login.component';
-import { GuildComponent } from './guild/guild.component';
-import { GuildMemberComponent } from './guild/guild-member/guild-member.component';
+import { GuildComponent } from './guild-list/guild/guild.component';
+import { GuildMemberComponent } from './guild-list/guild/guild-member/guild-member.component';
 import { GuildMasterComponent } from './guild-master/guild-master.component';
 import { GuildMasterImageComponent } from './guild-master/guild-master-image/guild-master-image.component';
 import { GuildMasterDefinitionsComponent } from './guild-master/guild-master-definitions/guild-master-definitions.component';
@@ -39,8 +39,13 @@ import { EventsComponent } from './events/events.component';
 import { RewardsComponent } from './rewards/rewards.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { VideosComponent } from './videos/videos.component';
+
+import { RewardsToApproveComponent } from './rewards/rewards-to-approve/rewards-to-approve.component';
+import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-list.component';
+
 import { AddSkinComponent } from './closet/add-skin/add-skin.component';
 import { ListUsersComponent } from './list-users/list-users.component';
+
 
 
 @NgModule({
@@ -80,7 +85,13 @@ import { ListUsersComponent } from './list-users/list-users.component';
     EventsComponent,
     NotificationsComponent,
     RewardsComponent, 
+
+    VideosComponent,
+    RewardsComponent,
+    RewardsToApproveComponent,
+    AddGuildListComponent,
     VideosComponent, AddSkinComponent, ListUsersComponent
+
   ],
   imports: [
     BrowserModule,

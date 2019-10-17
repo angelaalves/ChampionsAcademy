@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Player } from '../shared/player.model';
+import { Player } from 'src/app/shared/player.model';
+
 
 @Component({
   selector: 'app-guild',
