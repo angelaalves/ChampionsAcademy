@@ -39,8 +39,13 @@ import { EventsComponent } from './events/events.component';
 import { RewardsComponent } from './rewards/rewards.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { VideosComponent } from './videos/videos.component';
+
 import { RewardsToApproveComponent } from './rewards/rewards-to-approve/rewards-to-approve.component';
 import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-list.component';
+
+import { AddSkinComponent } from './closet/add-skin/add-skin.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+
 
 
 @NgModule({
@@ -80,10 +85,13 @@ import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-lis
     EventsComponent,
     NotificationsComponent,
     RewardsComponent, 
+
     VideosComponent,
     RewardsComponent,
     RewardsToApproveComponent,
-    AddGuildListComponent
+    AddGuildListComponent,
+    VideosComponent, AddSkinComponent, ListUsersComponent
+
   ],
   imports: [
     BrowserModule,
