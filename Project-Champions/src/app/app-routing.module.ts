@@ -10,6 +10,11 @@ import { GuildMasterComponent } from './guild-master/guild-master.component';
 import { AncientComponent } from './ancient/ancient.component';
 import { AddUserComponent } from './ancient/add-user/add-user.component';
 import { GuildListComponent } from './guild-list/guild-list.component';
+import { EventsComponent } from './events/events.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { RewardsComponent } from './rewards/rewards.component';
+import { VideosComponent } from './videos/videos.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -22,7 +27,12 @@ const appRoutes: Routes=[
     {path: 'guildmaster_profile', component: GuildMasterComponent},
     {path: 'ancient_profile', component: AncientComponent},
     {path: 'add_player', component: AddUserComponent},
-    {path: 'guilds_list', component: GuildListComponent}
+    {path: 'guilds_list', component: GuildListComponent},
+    {path: 'events', component: EventsComponent},
+    {path: 'lists_users', component: ListUsersComponent},
+    {path: 'notifications', component: NotificationsComponent},
+    {path: 'rewards', component: RewardsComponent},
+    {path: 'videos', component: VideosComponent}
 ];
 
 @NgModule({
