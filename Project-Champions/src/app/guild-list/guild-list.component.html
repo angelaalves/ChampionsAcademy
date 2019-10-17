@@ -1,1 +1,19 @@
-<p>guild-list works!</p>
+<div class="row">
+    <div class="col-xs-12" style="text-align: center;">
+        <h1>Guilds</h1>
+    </div>
+</div>
+<div>
+    <div class="row" >
+        <div class="col-xs-3" *ngFor="let guildEl of guilds; let i=index">
+            <ul>
+                <app-guild-list-elem [guild]="guildEl" [index]="i"></app-guild-list-elem>
+            </ul>
+        </div>
+        <div class="col-xs-3 list-group-item clearfix" style="cursor: pointer;">
+            <span class="pull-up" style="text-align: center;">
+               <img src="something" alt="add" class="img-responsive" style="max-height: 50px;">
+            </span>
+        </div>
+    </div>
+</div>

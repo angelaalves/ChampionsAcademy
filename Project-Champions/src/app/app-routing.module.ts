@@ -9,6 +9,7 @@ import { GuildComponent } from './guild/guild.component';
 import { GuildMasterComponent } from './guild-master/guild-master.component';
 import { AncientComponent } from './ancient/ancient.component';
 import { AddUserComponent } from './ancient/add-user/add-user.component';
+import { GuildListComponent } from './guild-list/guild-list.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -18,9 +19,10 @@ const appRoutes: Routes=[
     {path: 'warrior_profile', component: WarriorComponent},
     {path: 'closet', component: ClosetComponent},
     {path: 'guild', component: GuildComponent},
-    {path: 'guild-master_profile', component: GuildMasterComponent},
-    {path: 'Ancient_profile', component: AncientComponent},
-    {path: 'AddPlayer', component: AddUserComponent}
+    {path: 'guildmaster_profile', component: GuildMasterComponent},
+    {path: 'ancient_profile', component: AncientComponent},
+    {path: 'add_player', component: AddUserComponent},
+    {path: 'guilds_list', component: GuildListComponent}
 ];
 
 @NgModule({
