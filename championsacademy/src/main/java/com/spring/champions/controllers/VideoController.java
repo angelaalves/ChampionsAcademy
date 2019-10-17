@@ -5,14 +5,14 @@ import com.spring.champions.schemas.VideoIn;
 import com.spring.champions.schemas.VideoOut;
 import com.spring.champions.services.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@
+
 @CrossOrigin
 @RestController
+@RequestMapping("videos")
 public class VideoController {
     @Autowired
     public VideoService videoService;
@@ -21,11 +21,16 @@ public class VideoController {
      * Connection with angular and the exterior
      * @return
      */
-    @GetMapping(/videos)
-    public List<VideoOut> getAllVideos() {
+
+    @RequestMapping("getAll")
+     public List<VideoOut> getAllVideos() {
+
         DataInput datain= new DataInput();
-        VideoIn videoin=VideoIn
-        return videoService.getAll();
+        VideoIn videoin= new VideoIn("1","","","");
+       List<VideoIn> videoInSchema=  datain.getVideoIn();
+       videoInSchema.add(videoin);
+        return videoService.getAll(datain);
+
     }
 
 }

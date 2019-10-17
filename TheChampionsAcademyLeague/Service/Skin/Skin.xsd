@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="skinIn">
+		<xs:complexType>
+			<xs:attribute name="ID_Skin" type="xs:string"/>
+			<xs:attribute name="SkinName" type="xs:string"/>
+			<xs:attribute name="ImagePath" type="xs:string"/>
+			<xs:attribute name="MinSP" type="xs:string"/>
+			<xs:attribute name="ChampiesCost" type="xs:string"/>
+			<xs:attribute name="SkinType" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="skinOut">
+		<xs:complexType>
+			<xs:attribute name="ID_Skin" type="xs:string"/>
+			<xs:attribute name="SkinName" type="xs:string"/>
+			<xs:attribute name="ImagePath" type="xs:string"/>
+			<xs:attribute name="MinSP" type="xs:string"/>
+			<xs:attribute name="ChampiesCost" type="xs:string"/>
+			<xs:attribute name="SkinType" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="skin">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="skinIn"/>
+				<xs:element ref="skinOut" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

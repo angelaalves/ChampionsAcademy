@@ -1,0 +1,17 @@
+generatedSchemas\DataInput.class
+generatedSchemas\VideoIn.class
+generatedSchemas\VideoOut.class
+com\spring\champions\services\VideoService.class
+generatedSchemas\ObjectFactory.class
+com\spring\champions\schemas\DataInput.class
+com\spring\champions\championsacademy\ChampionsacademyApplication.class
+com\spring\champions\schemas\Constants.class
+com\spring\champions\services\Config.class
+generatedSchemas\DataOutput.class
+com\spring\champions\controllers\VideoController.class
+com\spring\champions\schemas\DataOutput.class
+com\spring\champions\schemas\ObjectFactory.class
+com\spring\champions\schemas\VideoIn.class
+generatedSchemas\package-info.class
+com\spring\champions\schemas\package-info.class
+com\spring\champions\schemas\VideoOut.class
