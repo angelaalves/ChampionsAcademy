@@ -40,6 +40,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "videoIn")
 public class VideoIn {
 
+
+
     @XmlAttribute(name = "Duration")
     protected String duration;
     @XmlAttribute(name = "ID_Video")
@@ -48,6 +50,14 @@ public class VideoIn {
     protected String topic;
     @XmlAttribute(name = "VideoName")
     protected String videoName;
+
+
+    public VideoIn(String duration, String idVideo, String topic, String videoName) {
+        this.duration = duration;
+        this.idVideo = idVideo;
+        this.topic = topic;
+        this.videoName = videoName;
+    }
 
     /**
      * Gets the value of the duration property.

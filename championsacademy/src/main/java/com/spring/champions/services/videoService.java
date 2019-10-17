@@ -9,13 +9,14 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.SoapMessage;
-import org.springframework.ws.soap.client.core.SoapActionCallback;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
+ import org.springframework.ws.soap.client.core.SoapActionCallback;
 
 import hello.wsdl.GetCountryRequest;
 import hello.wsdl.GetCountryResponse;
@@ -24,8 +25,8 @@ import hello.wsdl.GetCountryResponse;
 import java.util.List;
 
 
-public class videoService extends WebServiceGatewaySupport {
-    private static final Logger log = LoggerFactory.getLogger(videoService.class);
+public class VideoService extends WebServiceGatewaySupport {
+    private static final Logger log = LoggerFactory.getLogger(VideoService.class);
 
     Constants cons= new Constants();
 
