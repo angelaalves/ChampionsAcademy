@@ -42,6 +42,7 @@ public class VideoIn {
 
 
 
+
     @XmlAttribute(name = "Duration")
     protected String duration;
     @XmlAttribute(name = "ID_Video")
@@ -52,11 +53,14 @@ public class VideoIn {
     protected String videoName;
 
 
-    public VideoIn(String duration, String idVideo, String topic, String videoName) {
+    public VideoIn( String idVideo,String videoName,String duration, String topic) {
         this.duration = duration;
         this.idVideo = idVideo;
         this.topic = topic;
         this.videoName = videoName;
+    }
+
+    public VideoIn() {
     }
 
     /**

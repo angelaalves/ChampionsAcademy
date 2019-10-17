@@ -44,6 +44,9 @@ public class DataInput {
 
     protected List<VideoIn> videoIn;
 
+    public DataInput() {
+    }
+
     /**
      * Gets the value of the videoIn property.
      * 

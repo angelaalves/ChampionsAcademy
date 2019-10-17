@@ -40,6 +40,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "videoOut")
 public class VideoOut {
 
+    public VideoOut() {
+    }
+
     @XmlAttribute(name = "Duration")
     protected String duration;
     @XmlAttribute(name = "ID_Video")

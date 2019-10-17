@@ -44,6 +44,10 @@ public class DataOutput {
 
     protected List<VideoOut> videoOut;
 
+    public DataOutput() {
+
+    }
+
     /**
      * Gets the value of the videoOut property.
      * 

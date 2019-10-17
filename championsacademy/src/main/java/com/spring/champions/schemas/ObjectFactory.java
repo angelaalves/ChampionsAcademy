@@ -49,7 +49,7 @@ public class ObjectFactory {
      * 
      */
     public VideoIn createVideoIn() {
-        return new VideoIn();
+        return new VideoIn("","","","");
     }
 
     /**

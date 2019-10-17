@@ -10,7 +10,7 @@
         </groups>
         <name>VideoService</name>
         <resourceType>service.definition</resourceType>
-        <serviceChange>Wed Oct 16 17:32:02 BST 2019</serviceChange>
+        <serviceChange>Thu Oct 17 16:36:23 BST 2019</serviceChange>
         <interfaceImpl>
             <tab>
                 <tabName>CreateVideoPort</tabName>
@@ -31,7 +31,50 @@
                             <tabName>service.definition.ep.tab.label</tabName>
                             <tabType>ep</tabType>
                             <config>
-                                <epBindings/>
+                                <epBindings>
+                                    <row epName="CreateVideoPortEndpoint1" epType="soap">
+                                        <config>
+                                            <epDetail>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.transport.tab.label</tabName>
+                                                    <tabType>transport</tabType>
+                                                    <config>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <transport>
+                                                            <config>
+                                                                <useBasicAuthentication>false</useBasicAuthentication>
+                                                                <httpURI>/Service/Video/VideoService.serviceagent/CreateVideoPortEndpoint1</httpURI>
+                                                            </config>
+                                                        </transport>
+                                                    </config>
+                                                </tab>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.details.tab.label</tabName>
+                                                    <tabType>details</tabType>
+                                                    <config>
+                                                        <operationStyle>document</operationStyle>
+                                                        <soapVersion>SOAP 1.2</soapVersion>
+                                                        <soap>
+                                                            <operation name="Create">
+                                                                <general>
+                                                                    <config>
+                                                                        <soapAction>/Service/Video/VideoService.serviceagent/CreateVideoPortEndpoint1/Create</soapAction>
+                                                                        <operationStyle/>
+                                                                        <soapUse>literal</soapUse>
+                                                                        <inputNamespace/>
+                                                                        <outputNamespace/>
+                                                                        <faultNamespace/>
+                                                                        <portAddressPrefix/>
+                                                                    </config>
+                                                                </general>
+                                                            </operation>
+                                                        </soap>
+                                                    </config>
+                                                </tab>
+                                            </epDetail>
+                                        </config>
+                                    </row>
+                                </epBindings>
                             </config>
                         </tab>
                     </detail>
@@ -56,7 +99,50 @@
                             <tabName>service.definition.ep.tab.label</tabName>
                             <tabType>ep</tabType>
                             <config>
-                                <epBindings/>
+                                <epBindings>
+                                    <row epName="DeleteVideoPortEndpoint1" epType="soap">
+                                        <config>
+                                            <epDetail>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.transport.tab.label</tabName>
+                                                    <tabType>transport</tabType>
+                                                    <config>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <transport>
+                                                            <config>
+                                                                <useBasicAuthentication>false</useBasicAuthentication>
+                                                                <httpURI>/Service/Video/VideoService.serviceagent/DeleteVideoPortEndpoint1</httpURI>
+                                                            </config>
+                                                        </transport>
+                                                    </config>
+                                                </tab>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.details.tab.label</tabName>
+                                                    <tabType>details</tabType>
+                                                    <config>
+                                                        <operationStyle>document</operationStyle>
+                                                        <soapVersion>SOAP 1.2</soapVersion>
+                                                        <soap>
+                                                            <operation name="Delete">
+                                                                <general>
+                                                                    <config>
+                                                                        <soapAction>/Service/Video/VideoService.serviceagent/DeleteVideoPortEndpoint1/Delete</soapAction>
+                                                                        <operationStyle/>
+                                                                        <soapUse>literal</soapUse>
+                                                                        <inputNamespace/>
+                                                                        <outputNamespace/>
+                                                                        <faultNamespace/>
+                                                                        <portAddressPrefix/>
+                                                                    </config>
+                                                                </general>
+                                                            </operation>
+                                                        </soap>
+                                                    </config>
+                                                </tab>
+                                            </epDetail>
+                                        </config>
+                                    </row>
+                                </epBindings>
                             </config>
                         </tab>
                     </detail>
@@ -149,7 +235,50 @@
                             <tabName>service.definition.ep.tab.label</tabName>
                             <tabType>ep</tabType>
                             <config>
-                                <epBindings/>
+                                <epBindings>
+                                    <row epName="GetVideoPortEndpoint1" epType="soap">
+                                        <config>
+                                            <epDetail>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.transport.tab.label</tabName>
+                                                    <tabType>transport</tabType>
+                                                    <config>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <transport>
+                                                            <config>
+                                                                <useBasicAuthentication>false</useBasicAuthentication>
+                                                                <httpURI>/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1</httpURI>
+                                                            </config>
+                                                        </transport>
+                                                    </config>
+                                                </tab>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.details.tab.label</tabName>
+                                                    <tabType>details</tabType>
+                                                    <config>
+                                                        <operationStyle>document</operationStyle>
+                                                        <soapVersion>SOAP 1.1</soapVersion>
+                                                        <soap>
+                                                            <operation name="Get">
+                                                                <general>
+                                                                    <config>
+                                                                        <soapAction>/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1/Get</soapAction>
+                                                                        <operationStyle/>
+                                                                        <soapUse>literal</soapUse>
+                                                                        <inputNamespace/>
+                                                                        <outputNamespace/>
+                                                                        <faultNamespace/>
+                                                                        <portAddressPrefix/>
+                                                                    </config>
+                                                                </general>
+                                                            </operation>
+                                                        </soap>
+                                                    </config>
+                                                </tab>
+                                            </epDetail>
+                                        </config>
+                                    </row>
+                                </epBindings>
                             </config>
                         </tab>
                     </detail>
@@ -174,7 +303,50 @@
                             <tabName>service.definition.ep.tab.label</tabName>
                             <tabType>ep</tabType>
                             <config>
-                                <epBindings/>
+                                <epBindings>
+                                    <row epName="UpdateVideoPortEndpoint1" epType="soap">
+                                        <config>
+                                            <epDetail>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.transport.tab.label</tabName>
+                                                    <tabType>transport</tabType>
+                                                    <config>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <transport>
+                                                            <config>
+                                                                <useBasicAuthentication>false</useBasicAuthentication>
+                                                                <httpURI>/Service/Video/VideoService.serviceagent/UpdateVideoPortEndpoint1</httpURI>
+                                                            </config>
+                                                        </transport>
+                                                    </config>
+                                                </tab>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.details.tab.label</tabName>
+                                                    <tabType>details</tabType>
+                                                    <config>
+                                                        <operationStyle>document</operationStyle>
+                                                        <soapVersion>SOAP 1.2</soapVersion>
+                                                        <soap>
+                                                            <operation name="Update">
+                                                                <general>
+                                                                    <config>
+                                                                        <soapAction>/Service/Video/VideoService.serviceagent/UpdateVideoPortEndpoint1/Update</soapAction>
+                                                                        <operationStyle/>
+                                                                        <soapUse>literal</soapUse>
+                                                                        <inputNamespace/>
+                                                                        <outputNamespace/>
+                                                                        <faultNamespace/>
+                                                                        <portAddressPrefix/>
+                                                                    </config>
+                                                                </general>
+                                                            </operation>
+                                                        </soap>
+                                                    </config>
+                                                </tab>
+                                            </epDetail>
+                                        </config>
+                                    </row>
+                                </epBindings>
                             </config>
                         </tab>
                     </detail>

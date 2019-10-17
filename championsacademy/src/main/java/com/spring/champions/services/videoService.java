@@ -6,6 +6,8 @@ import com.spring.champions.schemas.DataOutput;
 import com.spring.champions.schemas.VideoOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.SoapMessage;
@@ -24,7 +26,7 @@ import hello.wsdl.GetCountryResponse;
 
 import java.util.List;
 
-
+@Service
 public class VideoService extends WebServiceGatewaySupport {
     private static final Logger log = LoggerFactory.getLogger(VideoService.class);
 

@@ -40,7 +40,7 @@
             <soap1:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/CreateVideoPortEndpoint1"/>
         </wsdl:port>
         <wsdl:port name="GetVideoPortEndpoint1" binding="tns:GetVideoPortEndpoint1Binding">
-            <soap1:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1"/>
+            <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1"/>
         </wsdl:port>
         <wsdl:port name="UpdateVideoPortEndpoint1" binding="tns:UpdateVideoPortEndpoint1Binding">
             <soap1:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/UpdateVideoPortEndpoint1"/>
@@ -95,14 +95,14 @@
         </wsdl:operation>
     </wsdl:binding>
     <wsdl:binding name="GetVideoPortEndpoint1Binding" type="tns:GetVideoPort">
-        <soap1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="Get">
-            <soap1:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1/Get" soapActionRequired="true"/>
+            <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1/Get"/>
             <wsdl:input>
-                <soap1:body use="literal" parts="GetIn"/>
+                <soap:body use="literal" parts="GetIn"/>
             </wsdl:input>
             <wsdl:output>
-                <soap1:body use="literal" parts="GetOut"/>
+                <soap:body use="literal" parts="GetOut"/>
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
