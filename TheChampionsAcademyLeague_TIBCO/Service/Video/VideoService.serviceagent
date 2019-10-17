@@ -10,7 +10,7 @@
         </groups>
         <name>VideoService</name>
         <resourceType>service.definition</resourceType>
-        <serviceChange>Wed Oct 16 09:32:46 BST 2019</serviceChange>
+        <serviceChange>Wed Oct 16 17:32:02 BST 2019</serviceChange>
         <interfaceImpl>
             <tab>
                 <tabName>CreateVideoPort</tabName>
@@ -73,7 +73,7 @@
                             <tabType>impl</tabType>
                             <config>
                                 <operations>
-                                    <row opName="GetAll" opImpl=""/>
+                                    <row opName="GetAll" opImpl="/Service/Video/VideoGetAll.process"/>
                                 </operations>
                             </config>
                         </tab>
@@ -81,7 +81,50 @@
                             <tabName>service.definition.ep.tab.label</tabName>
                             <tabType>ep</tabType>
                             <config>
-                                <epBindings/>
+                                <epBindings>
+                                    <row epName="GetAllVideoPortEndpoint1" epType="soap">
+                                        <config>
+                                            <epDetail>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.transport.tab.label</tabName>
+                                                    <tabType>transport</tabType>
+                                                    <config>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <transport>
+                                                            <config>
+                                                                <useBasicAuthentication>false</useBasicAuthentication>
+                                                                <httpURI>/Service/Video/VideoService.serviceagent/GetAllVideoPortEndpoint1</httpURI>
+                                                            </config>
+                                                        </transport>
+                                                    </config>
+                                                </tab>
+                                                <tab>
+                                                    <tabName>soap.service.transport.ui.details.tab.label</tabName>
+                                                    <tabType>details</tabType>
+                                                    <config>
+                                                        <operationStyle>document</operationStyle>
+                                                        <soapVersion>SOAP 1.2</soapVersion>
+                                                        <soap>
+                                                            <operation name="GetAll">
+                                                                <general>
+                                                                    <config>
+                                                                        <soapAction>/Service/Video/VideoService.serviceagent/GetAllVideoPortEndpoint1/GetAll</soapAction>
+                                                                        <operationStyle/>
+                                                                        <soapUse>literal</soapUse>
+                                                                        <inputNamespace/>
+                                                                        <outputNamespace/>
+                                                                        <faultNamespace/>
+                                                                        <portAddressPrefix/>
+                                                                    </config>
+                                                                </general>
+                                                            </operation>
+                                                        </soap>
+                                                    </config>
+                                                </tab>
+                                            </epDetail>
+                                        </config>
+                                    </row>
+                                </epBindings>
                             </config>
                         </tab>
                     </detail>
