@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-warrior-details-buttons',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarriorDetailsButtonsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  onVideos(){
+    this.router.navigate(['../videos'], {relativeTo: this.route});
+  }
+
+  onReward(){
+    this.router.navigate(['../rewards'], {relativeTo: this.route});
+  }
+
+  onCloset(){
+    this.router.navigate(['../closet'], {relativeTo: this.route});
   }
 
 }
