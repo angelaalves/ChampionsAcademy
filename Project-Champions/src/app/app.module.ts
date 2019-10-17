@@ -39,6 +39,8 @@ import { EventsComponent } from './events/events.component';
 import { RewardsComponent } from './rewards/rewards.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { VideosComponent } from './videos/videos.component';
+import { AddSkinComponent } from './closet/add-skin/add-skin.component';
+import { ListUsersComponent } from './list-users/list-users.component';
 
 
 @NgModule({
@@ -78,7 +80,7 @@ import { VideosComponent } from './videos/videos.component';
     EventsComponent,
     NotificationsComponent,
     RewardsComponent, 
-    VideosComponent
+    VideosComponent, AddSkinComponent, ListUsersComponent
   ],
   imports: [
     BrowserModule,
