@@ -1,0 +1,11 @@
+.App-Container{
+    position: absolute;
+    min-height: 750px;
+    min-width: 1535px;
+    background-color: black;
+    color: white;
+    border: 10px solid transparent;
+    padding: 20px;
+    border-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8og5cXfVScRr9OS9iLJT02FfSsWHAyVazDYSLfqirpebfFYBjrg) 12% round;
+    border-image-width: auto;
+}
