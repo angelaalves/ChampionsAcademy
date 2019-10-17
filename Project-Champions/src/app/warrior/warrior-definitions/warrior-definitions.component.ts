@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-warrior-definitions',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarriorDefinitionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  onChangePassword(){
+    this.router.navigate(['../change_password'], {relativeTo: this.route})
   }
 
 }
