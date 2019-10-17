@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -35,6 +35,10 @@ import { AncientDefinitionsComponent } from './Ancient/ancient-definitions/ancie
 import { AddUserComponent } from './ancient/add-user/add-user.component';
 import { GuildListComponent } from './guild-list/guild-list.component';
 import { GuildListElemComponent } from './guild-list/guild-list-elem/guild-list-elem.component';
+import { EventsComponent } from './events/events.component';
+import { RewardsComponent } from './rewards/rewards.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { VideosComponent } from './videos/videos.component';
 
 
 @NgModule({
@@ -70,7 +74,11 @@ import { GuildListElemComponent } from './guild-list/guild-list-elem/guild-list-
     AncientDefinitionsComponent,
     AddUserComponent,
     GuildListComponent,
-    GuildListElemComponent
+    GuildListElemComponent, 
+    EventsComponent,
+    NotificationsComponent,
+    RewardsComponent, 
+    VideosComponent
   ],
   imports: [
     BrowserModule,
