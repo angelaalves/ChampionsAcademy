@@ -1,7 +1,7 @@
 .App-Container{
     position: absolute;
-    min-height: 750px;
-    min-width: 1535px;
+    min-height: 100%;
+    min-width: 100%;
     background-color: black;
     color: white;
     border: 10px solid transparent;
