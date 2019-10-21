@@ -16,4 +16,13 @@ export class AncientDetailsComponent implements OnInit {
   addSkin(){
     this.router.navigate(['./add_skin'], {relativeTo: this.route});
   }
+  onCloset(){
+    this.router.navigate(['../closet'], {relativeTo: this.route});
+  }
+  onGuilds(){
+    this.router.navigate(['../guilds_list'], {relativeTo: this.route});
+  }
+  onEvents(){
+    this.router.navigate(['../events'], {relativeTo: this.route});
+  }
 }
