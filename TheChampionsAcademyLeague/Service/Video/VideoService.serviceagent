@@ -10,7 +10,7 @@
         </groups>
         <name>VideoService</name>
         <resourceType>service.definition</resourceType>
-        <serviceChange>Thu Oct 17 16:36:23 BST 2019</serviceChange>
+        <serviceChange>Mon Oct 21 10:21:37 BST 2019</serviceChange>
         <interfaceImpl>
             <tab>
                 <tabName>CreateVideoPort</tabName>
@@ -53,7 +53,7 @@
                                                     <tabType>details</tabType>
                                                     <config>
                                                         <operationStyle>document</operationStyle>
-                                                        <soapVersion>SOAP 1.2</soapVersion>
+                                                        <soapVersion>SOAP 1.1</soapVersion>
                                                         <soap>
                                                             <operation name="Create">
                                                                 <general>
@@ -121,7 +121,7 @@
                                                     <tabType>details</tabType>
                                                     <config>
                                                         <operationStyle>document</operationStyle>
-                                                        <soapVersion>SOAP 1.2</soapVersion>
+                                                        <soapVersion>SOAP 1.1</soapVersion>
                                                         <soap>
                                                             <operation name="Delete">
                                                                 <general>
@@ -189,7 +189,7 @@
                                                     <tabType>details</tabType>
                                                     <config>
                                                         <operationStyle>document</operationStyle>
-                                                        <soapVersion>SOAP 1.2</soapVersion>
+                                                        <soapVersion>SOAP 1.1</soapVersion>
                                                         <soap>
                                                             <operation name="GetAll">
                                                                 <general>
@@ -236,44 +236,16 @@
                             <tabType>ep</tabType>
                             <config>
                                 <epBindings>
-                                    <row epName="GetVideoPortEndpoint1" epType="soap">
+                                    <row epName="GetVideoPortEndpoint1" epType="amx">
                                         <config>
                                             <epDetail>
                                                 <tab>
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
-                                                    <config>
-                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
-                                                        <transport>
-                                                            <config>
-                                                                <useBasicAuthentication>false</useBasicAuthentication>
-                                                                <httpURI>/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1</httpURI>
-                                                            </config>
-                                                        </transport>
-                                                    </config>
                                                 </tab>
                                                 <tab>
                                                     <tabName>soap.service.transport.ui.details.tab.label</tabName>
                                                     <tabType>details</tabType>
-                                                    <config>
-                                                        <operationStyle>document</operationStyle>
-                                                        <soapVersion>SOAP 1.1</soapVersion>
-                                                        <soap>
-                                                            <operation name="Get">
-                                                                <general>
-                                                                    <config>
-                                                                        <soapAction>/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1/Get</soapAction>
-                                                                        <operationStyle/>
-                                                                        <soapUse>literal</soapUse>
-                                                                        <inputNamespace/>
-                                                                        <outputNamespace/>
-                                                                        <faultNamespace/>
-                                                                        <portAddressPrefix/>
-                                                                    </config>
-                                                                </general>
-                                                            </operation>
-                                                        </soap>
-                                                    </config>
                                                 </tab>
                                             </epDetail>
                                         </config>
@@ -325,7 +297,7 @@
                                                     <tabType>details</tabType>
                                                     <config>
                                                         <operationStyle>document</operationStyle>
-                                                        <soapVersion>SOAP 1.2</soapVersion>
+                                                        <soapVersion>SOAP 1.1</soapVersion>
                                                         <soap>
                                                             <operation name="Update">
                                                                 <general>

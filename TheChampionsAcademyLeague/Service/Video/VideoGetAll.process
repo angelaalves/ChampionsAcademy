@@ -9,24 +9,46 @@
     <pd:returnBindings>
         <pfx:videoOutputGetAll>
             <GetAllOut>
-                <ns:DataOutput>
-                    <xsl:for-each select="$Video/resultSet/Record">
-                        <ns:videoOut>
-                            <xsl:attribute name="ID_Video">
-                                <xsl:value-of select="ID_Video"/>
-                            </xsl:attribute>
-                            <xsl:attribute name="VideoName">
-                                <xsl:value-of select="VideoName"/>
-                            </xsl:attribute>
-                            <xsl:attribute name="Duration">
-                                <xsl:value-of select="Duration"/>
-                            </xsl:attribute>
-                            <xsl:attribute name="Topic">
-                                <xsl:value-of select="topic"/>
-                            </xsl:attribute>
-                        </ns:videoOut>
-                    </xsl:for-each>
-                </ns:DataOutput>
+                <xsl:choose>
+                    <xsl:when test="$Video/resultSet/Record">
+                        <ns:DataOutput>
+                            <xsl:for-each select="$Video/resultSet/Record">
+                                <ns:videoOut>
+                                    <xsl:attribute name="ID_Video">
+                                        <xsl:value-of select="ID_Video"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="VideoName">
+                                        <xsl:value-of select="VideoName"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="Duration">
+                                        <xsl:value-of select="Duration"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="Topic">
+                                        <xsl:value-of select="topic"/>
+                                    </xsl:attribute>
+                                </ns:videoOut>
+                            </xsl:for-each>
+                        </ns:DataOutput>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <ns:DataOutput>
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </ns:DataOutput>
+                    </xsl:otherwise>
+                </xsl:choose>
             </GetAllOut>
         </pfx:videoOutputGetAll>
     </pd:returnBindings>
@@ -40,8 +62,8 @@
     <pd:activity name="Video">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>542</pd:x>
-        <pd:y>269</pd:y>
+        <pd:x>544</pd:x>
+        <pd:y>271</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>

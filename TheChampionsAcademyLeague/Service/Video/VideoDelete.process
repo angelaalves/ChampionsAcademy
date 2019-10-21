@@ -9,22 +9,44 @@
     <pd:returnBindings>
         <pfx:videoOutputDelete>
             <DeleteOut>
-                <ns:DataOutput>
-                    <ns:videoOut>
-                        <xsl:attribute name="ID_Video">
-                            <xsl:value-of select="&quot;ID deleted&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="VideoName">
-                            <xsl:value-of select="&quot;Video Name deleted&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="Duration">
-                            <xsl:value-of select="&quot;Duration deleted&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="Topic">
-                            <xsl:value-of select="&quot;Removed&quot;"/>
-                        </xsl:attribute>
-                    </ns:videoOut>
-                </ns:DataOutput>
+                <xsl:choose>
+                    <xsl:when test="not(exists($_error_Delete/ActivityErrors/*))">
+                        <ns:DataOutput>
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot;ID deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot;Video Name deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot;Duration deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot;Removed&quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </ns:DataOutput>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <ns:DataOutput>
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </ns:DataOutput>
+                    </xsl:otherwise>
+                </xsl:choose>
             </DeleteOut>
         </pfx:videoOutputDelete>
     </pd:returnBindings>
