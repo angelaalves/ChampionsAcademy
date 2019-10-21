@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Player/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Player/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="PlayerDataInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PlayerIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PlayerDataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PlayerOut" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PlayerIn">
+		<xs:complexType>
+			<xs:attribute name="ID_Player" type="xs:string"/>
+			<xs:attribute name="ID_Guild_FK" type="xs:string"/>
+			<xs:attribute name="ID_Closet_FK" type="xs:string"/>
+			<xs:attribute name="UserName" type="xs:string"/>
+			<xs:attribute name="status" type="xs:string"/>
+			<xs:attribute name="Email" type="xs:string"/>
+			<xs:attribute name="password" type="xs:string"/>
+			<xs:attribute name="Gender" type="xs:string"/>
+			<xs:attribute name="UserType" type="xs:string"/>
+			<xs:attribute name="XP" type="xs:string"/>
+			<xs:attribute name="ChampiesToGive" type="xs:string"/>
+			<xs:attribute name="MyChampies" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PlayerOut">
+		<xs:complexType>
+			<xs:attribute name="ID_Player" type="xs:string"/>
+			<xs:attribute name="ID_Guild_FK" type="xs:string"/>
+			<xs:attribute name="ID_Closet_FK" type="xs:string"/>
+			<xs:attribute name="UserName" type="xs:string"/>
+			<xs:attribute name="status" type="xs:string"/>
+			<xs:attribute name="Email" type="xs:string"/>
+			<xs:attribute name="password" type="xs:string"/>
+			<xs:attribute name="Gender" type="xs:string"/>
+			<xs:attribute name="UserType" type="xs:string"/>
+			<xs:attribute name="XP" type="xs:string"/>
+			<xs:attribute name="ChampiesToGive" type="xs:string"/>
+			<xs:attribute name="MyChampies" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

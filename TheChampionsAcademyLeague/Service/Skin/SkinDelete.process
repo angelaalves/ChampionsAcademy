@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571066611366" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571066611366" location="/Service/Skin/Skin.wsdl"/>
+    <pd:name>Service/Skin/SkinDelete.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx:skinDeleteInput"/>
+    <pd:startX>162</pd:startX>
+    <pd:startY>222</pd:startY>
+    <pd:returnBindings>
+        <pfx:skinDeleteOutput>
+            <xsl:choose>
+                <xsl:when test="not(exists($_error_Delete/ActivityErrors/*))">
+                    <DeleteOut>
+                        <ns:SkinDataOutput>
+                            <ns:skinOut>
+                                <xsl:attribute name="ID_Skin">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="SkinName">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ImagePath">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="MinXP">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesCost">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="SkinType">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                            </ns:skinOut>
+                        </ns:SkinDataOutput>
+                    </DeleteOut>
+                </xsl:when>
+                <xsl:otherwise>
+                    <DeleteOut>
+                        <ns:SkinDataOutput>
+                            <ns:skinOut>
+                                <xsl:attribute name="ID_Skin">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="SkinName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ImagePath">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="MinXP">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesCost">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="SkinType">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:skinOut>
+                        </ns:SkinDataOutput>
+                    </DeleteOut>
+                </xsl:otherwise>
+            </xsl:choose>
+        </pfx:skinDeleteOutput>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx:skinDeleteOutput"/>
+    <pd:endX>731</pd:endX>
+    <pd:endY>226</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571662655308</pd:targetNamespace>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>731</pd:x>
+        <pd:y>90</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Delete">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>421</pd:x>
+        <pd:y>225</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>DELETE FROM Skin WHERE ID_Skin=?;</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Skin</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput>
+                <ID_Skin>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:skinDeleteInput/DeleteIn/ns:SkinDataInput/ns:skinIn[1]/@ID_Skin)">
+                            <xsl:value-of select="$Start/pfx:skinDeleteInput/DeleteIn/ns:SkinDataInput/ns:skinIn[1]/@ID_Skin"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Skin>
+            </jdbcUpdateActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Delete</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Delete</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

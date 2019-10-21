@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
-    <pd:name>Service/Skin/SkinGet.process</pd:name>
+    <pd:name>Service/Player/PlayerGetAll.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startX>230</pd:startX>
-    <pd:startY>167</pd:startY>
+    <pd:startX>152</pd:startX>
+    <pd:startY>158</pd:startY>
     <pd:returnBindings/>
     <pd:endName>End</pd:endName>
-    <pd:endX>802</pd:endX>
-    <pd:endY>180</pd:endY>
+    <pd:endX>477</pd:endX>
+    <pd:endY>167</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
-    <pd:targetNamespace>http://xmlns.example.com/1571128864758</pd:targetNamespace>
+    <pd:targetNamespace>http://xmlns.example.com/1571655905985</pd:targetNamespace>
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>811</pd:x>
-        <pd:y>60</pd:y>
+        <pd:x>445</pd:x>
+        <pd:y>77</pd:y>
         <pd:handler>true</pd:handler>
         <config/>
         <pd:inputBindings/>
     </pd:activity>
-    <pd:activity name="JDBC Query">
+    <pd:activity name="GetAll">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>513</pd:x>
-        <pd:y>175</pd:y>
+        <pd:x>342</pd:x>
+        <pd:y>163</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM Videos;</statement>
         </config>
         <pd:inputBindings>
             <jdbcQueryActivityInput/>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="EventsDataInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EventsIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EventsDataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EventsOut" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EventsIn">
+		<xs:complexType>
+			<xs:attribute name="ID_Event" type="xs:string"/>
+			<xs:attribute name="EventName" type="xs:string"/>
+			<xs:attribute name="EventDate" type="xs:string"/>
+			<xs:attribute name="EventType" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EventsOut">
+		<xs:complexType>
+			<xs:attribute name="ID_Event" type="xs:string"/>
+			<xs:attribute name="EventName" type="xs:string"/>
+			<xs:attribute name="EventDate" type="xs:string"/>
+			<xs:attribute name="EventType" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

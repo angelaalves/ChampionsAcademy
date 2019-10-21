@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <pd:name>Service/Player/PlayerUpdate.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>172</pd:startX>
+    <pd:startY>180</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>774</pd:endX>
+    <pd:endY>184</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571655910167</pd:targetNamespace>
+    <pd:activity name="Update">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>480</pd:x>
+        <pd:y>183</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>UPDATE Skin SET  SkinName=?,ImagePath=?,MinXP=?,ChampiesCost=?,SkinType=? Where ID_Skin=?</statement>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput/>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>779</pd:x>
+        <pd:y>82</pd:y>
+        <pd:handler>true</pd:handler>
+        <config/>
+        <pd:inputBindings/>
+    </pd:activity>
+</pd:ProcessDefinition>

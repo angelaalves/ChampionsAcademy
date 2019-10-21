@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571662569058" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571662569058">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd" location="AttendedEvents.xsd"/>
+    <message name="attendedEventsGetInput">
+        <part name="GetIn" element="ns:attendedEventsDataInput"/>
+    </message>
+    <message name="attendedEventsGetOutput">
+        <part name="GetOut" element="ns:attendedEventsDataOutput"/>
+    </message>
+    <message name="attendedEventsDeleteInput">
+        <part name="DeleteIn" element="ns:attendedEventsDataInput"/>
+    </message>
+    <message name="attendedEventsDeleteOutput">
+        <part name="DeleteOut" element="ns:attendedEventsDataOutput"/>
+    </message>
+    <message name="attendedEventsCreateInput">
+        <part name="CreateIn" element="ns:attendedEventsDataInput"/>
+    </message>
+    <message name="attendedEventsCreateOutput">
+        <part name="CreateOut" element="ns:attendedEventsDataOutput"/>
+    </message>
+    <portType name="attendedEventsPortGet">
+        <operation name="Get">
+            <input message="tns:attendedEventsGetInput"/>
+            <output message="tns:attendedEventsGetOutput"/>
+        </operation>
+    </portType>
+    <portType name="attendedEventsPortDelete">
+        <operation name="Delete">
+            <input message="tns:attendedEventsDeleteInput"/>
+            <output message="tns:attendedEventsDeleteOutput"/>
+        </operation>
+    </portType>
+    <portType name="attendedEventsCreate">
+        <operation name="Create">
+            <input message="tns:attendedEventsCreateInput"/>
+            <output message="tns:attendedEventsCreateOutput"/>
+        </operation>
+    </portType>
+</definitions>

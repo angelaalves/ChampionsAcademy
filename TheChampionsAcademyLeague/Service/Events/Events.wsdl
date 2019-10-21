@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571662587180" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571662587180">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd" location="Events.xsd"/>
+    <message name="EventsGetInput">
+        <part name="GetIn" element="ns:EventsDataInput"/>
+    </message>
+    <message name="EventsGetOutput">
+        <part name="GetOut" element="ns:EventsDataOutput"/>
+    </message>
+    <message name="EventsGetAllInput">
+        <part name="GetAllIn" element="ns:EventsDataInput"/>
+    </message>
+    <message name="EventsGetAllOutput">
+        <part name="GetAllOut" element="ns:EventsDataOutput"/>
+    </message>
+    <message name="EventsUpdateInput">
+        <part name="UpdateIn" element="ns:EventsDataInput"/>
+    </message>
+    <message name="EventsUpdateOutput">
+        <part name="UpdateOut" element="ns:EventsDataOutput"/>
+    </message>
+    <message name="EventsDeleteInput">
+        <part name="DeleteIn" element="ns:EventsDataInput"/>
+    </message>
+    <message name="EventsDeleteOutput">
+        <part name="DeleteOut" element="ns:EventsDataOutput"/>
+    </message>
+    <message name="EventsCreateInput">
+        <part name="CreateIn" element="ns:EventsDataInput"/>
+    </message>
+    <message name="EventsCreateOutput">
+        <part name="CreateOut" element="ns:EventsDataOutput"/>
+    </message>
+    <portType name="EventsPortGet">
+        <operation name="Get">
+            <input message="tns:EventsGetInput"/>
+            <output message="tns:EventsGetOutput"/>
+        </operation>
+    </portType>
+    <portType name="EventsPortGetAll">
+        <operation name="GetAll">
+            <input message="tns:EventsGetAllInput"/>
+            <output message="tns:EventsGetAllOutput"/>
+        </operation>
+    </portType>
+    <portType name="EventsPortUpdate">
+        <operation name="Update">
+            <input message="tns:EventsUpdateInput"/>
+            <output message="tns:EventsUpdateOutput"/>
+        </operation>
+    </portType>
+    <portType name="EventsPortDelete">
+        <operation name="Delete">
+            <input message="tns:EventsDeleteInput"/>
+            <output message="tns:EventsDeleteOutput"/>
+        </operation>
+    </portType>
+    <portType name="EventsPortCreate">
+        <operation name="Create">
+            <input message="tns:EventsCreateInput"/>
+            <output message="tns:EventsCreateOutput"/>
+        </operation>
+    </portType>
+</definitions>

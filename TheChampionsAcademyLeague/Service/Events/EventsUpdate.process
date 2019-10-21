@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571662587180" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571662587180" location="/Service/Events/Events.wsdl"/>
+    <pd:name>Service/Events/EventsUpdate.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx:EventsUpdateInput"/>
+    <pd:startX>276</pd:startX>
+    <pd:startY>202</pd:startY>
+    <pd:returnBindings>
+        <pfx:EventsUpdateOutput>
+            <UpdateOut>
+                <ns:EventsDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists(  $_error_Update/ActivityErrors/*))">
+                            <ns:EventsOut>
+                                <xsl:attribute name="ID_Event">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventName">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventDate">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventType">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                            </ns:EventsOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns:EventsOut>
+                                <xsl:attribute name="ID_Event">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventDate">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventType">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:EventsOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns:EventsDataOutput>
+            </UpdateOut>
+        </pfx:EventsUpdateOutput>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx:EventsUpdateOutput"/>
+    <pd:endX>893</pd:endX>
+    <pd:endY>208</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571655822459</pd:targetNamespace>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>894</pd:x>
+        <pd:y>47</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Update">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>552</pd:x>
+        <pd:y>205</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>UPDATE Event SET EventName=?,EventDate=?,EventType=?  Where ID_Event=?</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>EventName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>EventDate</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>EventType</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>ID_Event</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput>
+                <EventName>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:EventsUpdateInput/UpdateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventName)">
+                            <xsl:value-of select="$Start/pfx:EventsUpdateInput/UpdateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </EventName>
+                <EventDate>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:EventsUpdateInput/UpdateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventDate)">
+                            <xsl:value-of select="$Start/pfx:EventsUpdateInput/UpdateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventDate"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </EventDate>
+                <EventType>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:EventsUpdateInput/UpdateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventType)">
+                            <xsl:value-of select="$Start/pfx:EventsUpdateInput/UpdateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventType"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </EventType>
+                <ID_Event>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:EventsUpdateInput/UpdateIn/ns:EventsDataInput/ns:EventsIn[1]/@ID_Event)">
+                            <xsl:value-of select="$Start/pfx:EventsUpdateInput/UpdateIn/ns:EventsDataInput/ns:EventsIn[1]/@ID_Event"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Event>
+            </jdbcUpdateActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Update</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Update</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

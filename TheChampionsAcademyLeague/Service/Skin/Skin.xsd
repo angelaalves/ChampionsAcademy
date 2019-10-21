@@ -10,7 +10,7 @@
 			<xs:attribute name="ID_Skin" type="xs:string"/>
 			<xs:attribute name="SkinName" type="xs:string"/>
 			<xs:attribute name="ImagePath" type="xs:string"/>
-			<xs:attribute name="MinSP" type="xs:string"/>
+			<xs:attribute name="MinXP" type="xs:string"/>
 			<xs:attribute name="ChampiesCost" type="xs:string"/>
 			<xs:attribute name="SkinType" type="xs:string"/>
 		</xs:complexType>
@@ -20,16 +20,22 @@
 			<xs:attribute name="ID_Skin" type="xs:string"/>
 			<xs:attribute name="SkinName" type="xs:string"/>
 			<xs:attribute name="ImagePath" type="xs:string"/>
-			<xs:attribute name="MinSP" type="xs:string"/>
+			<xs:attribute name="MinXP" type="xs:string"/>
 			<xs:attribute name="ChampiesCost" type="xs:string"/>
 			<xs:attribute name="SkinType" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="skin">
+	<xs:element name="SkinDataInput">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="skinIn"/>
-				<xs:element ref="skinOut" maxOccurs="unbounded"/>
+				<xs:element ref="skinIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SkinDataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="skinOut" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

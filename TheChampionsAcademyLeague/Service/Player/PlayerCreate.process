@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <pd:name>Service/Player/PlayerCreate.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>197</pd:startX>
+    <pd:startY>167</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>546</pd:endX>
+    <pd:endY>166</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571655908682</pd:targetNamespace>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>545</pd:x>
+        <pd:y>56</pd:y>
+        <pd:handler>true</pd:handler>
+        <config/>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Create">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>373</pd:x>
+        <pd:y>166</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <statement>INSERT INTO Videos(VideoName, Duration, Topic) VALUES (?,?,?);</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>VideoName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>Duration</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>Topic</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput>
+                <VideoName>
+                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName)">
+                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </VideoName>
+                <Duration>
+                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration)">
+                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </Duration>
+                <Topic>
+                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic)">
+                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </Topic>
+            </jdbcUpdateActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+</pd:ProcessDefinition>

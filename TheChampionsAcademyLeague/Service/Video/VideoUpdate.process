@@ -61,7 +61,7 @@
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
         <pd:x>659</pd:x>
-        <pd:y>247</pd:y>
+        <pd:y>249</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>

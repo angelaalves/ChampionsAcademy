@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="attendedEventsDataInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="attendedEventsIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="attendedEventsDataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="attendedEventsOut" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="attendedEventsIn">
+		<xs:complexType>
+			<xs:attribute name="ID_Event_FK" type="xs:string"/>
+			<xs:attribute name="ID_Player_FK" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="attendedEventsOut">
+		<xs:complexType>
+			<xs:attribute name="ID_Event_FK" type="xs:string"/>
+			<xs:attribute name="ID_Player_FK" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

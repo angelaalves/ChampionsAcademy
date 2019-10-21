@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571066611366" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571066611366" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <wsdl:import namespace="http://xmlns.example.com/1571066611366" location="/Service/Skin/Skin.wsdl"/>
-    <pd:name>Service/Skin/SkinUpdate.process</pd:name>
+    <pd:name>Service/Skin/SkinCreate.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx:skinUpdateInput"/>
-    <pd:startX>206</pd:startX>
-    <pd:startY>229</pd:startY>
+    <pd:startType wsMsgRef="pfx:skinCreateInput"/>
+    <pd:startX>169</pd:startX>
+    <pd:startY>177</pd:startY>
     <pd:returnBindings>
-        <pfx:skinUpdateOutput>
-            <UpdateOut>
+        <pfx:skinCreateOutput>
+            <CreateOut>
                 <xsl:choose>
-                    <xsl:when test="not(exists($_error_JDBC-Update/ActivityErrors/*))">
+                    <xsl:when test="not(exists(  $_error_Create/ActivityErrors/*))">
                         <ns:SkinDataOutput>
                             <ns:skinOut>
                                 <xsl:attribute name="ID_Skin">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="SkinName">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ImagePath">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="MinXP">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ChampiesCost">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="SkinType">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
                             </ns:skinOut>
                         </ns:SkinDataOutput>
@@ -59,26 +59,38 @@
                         </ns:SkinDataOutput>
                     </xsl:otherwise>
                 </xsl:choose>
-            </UpdateOut>
-        </pfx:skinUpdateOutput>
+            </CreateOut>
+        </pfx:skinCreateOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx:skinUpdateOutput"/>
-    <pd:endX>755</pd:endX>
-    <pd:endY>227</pd:endY>
+    <pd:endType wsMsgRef="pfx:skinCreateOutput"/>
+    <pd:endX>680</pd:endX>
+    <pd:endY>176</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
-    <pd:targetNamespace>http://xmlns.example.com/1571128865936</pd:targetNamespace>
-    <pd:activity name="Update">
+    <pd:targetNamespace>http://xmlns.example.com/1571662671609</pd:targetNamespace>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>681</pd:x>
+        <pd:y>48</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Create">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>486</pd:x>
-        <pd:y>227</pd:y>
+        <pd:x>411</pd:x>
+        <pd:y>174</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>UPDATE Skin SET  SkinName=?,ImagePath=?,MinXP=?,ChampiesCost=?,SkinType=? Where ID_Skin=?</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <statement>INSERT INTO Skin (SkinName, ImagePath,MinXP,ChampiesCost,SkinType) VALUES (?,?,?,?,?);</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>SkinName</parameterName>
@@ -100,19 +112,14 @@
                     <parameterName>SkinType</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
-                <parameter>
-                    <parameterName>ID_Skin</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
             </Prepared_Param_DataType>
-            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
         </config>
         <pd:inputBindings>
             <jdbcUpdateActivityInput>
                 <SkinName>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@SkinName)">
-                            <xsl:value-of select="$Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@SkinName"/>
+                        <xsl:when test="exists($Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@SkinName)">
+                            <xsl:value-of select="$Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@SkinName"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -121,8 +128,8 @@
                 </SkinName>
                 <ImagePath>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@ImagePath)">
-                            <xsl:value-of select="$Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@ImagePath"/>
+                        <xsl:when test="exists($Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@ImagePath)">
+                            <xsl:value-of select="$Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@ImagePath"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -131,8 +138,8 @@
                 </ImagePath>
                 <MinXP>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@MinXP)">
-                            <xsl:value-of select="$Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@MinXP"/>
+                        <xsl:when test="exists($Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@MinXP)">
+                            <xsl:value-of select="$Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@MinXP"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -141,8 +148,8 @@
                 </MinXP>
                 <ChampiesCost>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@ChampiesCost)">
-                            <xsl:value-of select="$Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@ChampiesCost"/>
+                        <xsl:when test="exists($Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@ChampiesCost)">
+                            <xsl:value-of select="$Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@ChampiesCost"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -151,47 +158,19 @@
                 </ChampiesCost>
                 <SkinType>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@SkinType)">
-                            <xsl:value-of select="$Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@SkinType"/>
+                        <xsl:when test="exists($Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@SkinType)">
+                            <xsl:value-of select="$Start/pfx:skinCreateInput/CreateIn/ns:SkinDataInput/ns:skinIn[1]/@SkinType"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
                 </SkinType>
-                <ID_Skin>
-                    <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@ID_Skin)">
-                            <xsl:value-of select="$Start/pfx:skinUpdateInput/UpdateIn/ns:SkinDataInput/ns:skinIn[1]/@ID_Skin"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </ID_Skin>
             </jdbcUpdateActivityInput>
         </pd:inputBindings>
     </pd:activity>
-    <pd:activity name="Catch">
-        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
-        <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>752</pd:x>
-        <pd:y>52</pd:y>
-        <pd:handler>true</pd:handler>
-        <config>
-            <catchAll>true</catchAll>
-        </config>
-        <pd:inputBindings/>
-    </pd:activity>
     <pd:transition>
-        <pd:from>Start</pd:from>
-        <pd:to>Update</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>always</pd:conditionType>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Update</pd:from>
+        <pd:from>Create</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
@@ -200,6 +179,13 @@
     <pd:transition>
         <pd:from>Catch</pd:from>
         <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Create</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>always</pd:conditionType>

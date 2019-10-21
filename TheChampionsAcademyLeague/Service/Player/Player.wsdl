@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Player/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571662597687" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571662597687">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Player/Schema.xsd" location="Player.xsd"/>
+    <message name="PlayerGetInput">
+        <part name="GetIn" element="ns:PlayerDataInput"/>
+    </message>
+    <message name="PlayerGetOutput">
+        <part name="GetOut" element="ns:PlayerDataOutput"/>
+    </message>
+    <message name="PlayerGetAllInput">
+        <part name="GetAllIn" element="ns:PlayerDataInput"/>
+    </message>
+    <message name="PlayerGetAllOutput">
+        <part name="GetAllOut" element="ns:PlayerDataOutput"/>
+    </message>
+    <message name="PlayerGetAllByGuildInput">
+        <part name="GetAllByGuildIn" element="ns:PlayerDataInput"/>
+    </message>
+    <message name="PlayerGetAllByGuildOutput">
+        <part name="GetAllByGuildOut" element="ns:PlayerDataOutput"/>
+    </message>
+    <message name="PlayerCreateInput">
+        <part name="CreateIn" element="ns:PlayerDataInput"/>
+    </message>
+    <message name="PlayerCreateOutput">
+        <part name="CreateOut" element="ns:PlayerDataOutput"/>
+    </message>
+    <message name="PlayerUpdateInput">
+        <part name="UpdateIn" element="ns:PlayerDataInput"/>
+    </message>
+    <message name="PlayerUpdateOutput">
+        <part name="CreateOut" element="ns:PlayerDataOutput"/>
+    </message>
+    <portType name="PlayerPortGet">
+        <operation name="Get">
+            <input message="tns:PlayerGetInput"/>
+            <output message="tns:PlayerGetOutput"/>
+        </operation>
+    </portType>
+    <portType name="PlayerPortGetAll">
+        <operation name="GetAll">
+            <input message="tns:PlayerGetAllInput"/>
+            <output message="tns:PlayerGetAllOutput"/>
+        </operation>
+    </portType>
+    <portType name="PlayerPortGetAllByGuild">
+        <operation name="GetAllByGuild">
+            <input message="tns:PlayerGetAllByGuildInput"/>
+            <output message="tns:PlayerGetAllByGuildOutput"/>
+        </operation>
+    </portType>
+    <portType name="PlayerPortCreate">
+        <operation name="Create">
+            <input message="tns:PlayerCreateInput"/>
+            <output message="tns:PlayerCreateOutput"/>
+        </operation>
+    </portType>
+    <portType name="PlayerPortUpdate">
+        <operation name="Update">
+            <input message="tns:PlayerUpdateInput"/>
+            <output message="tns:PlayerUpdateOutput"/>
+        </operation>
+    </portType>
+</definitions>

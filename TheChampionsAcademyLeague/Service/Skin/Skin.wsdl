@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571066611366" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571066611366">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd" location="Skin.xsd"/>
+    <message name="skinUpdateInput">
+        <part name="UpdateIn" element="ns:SkinDataInput"/>
+    </message>
+    <message name="skinUpdateOutput">
+        <part name="UpdateOut" element="ns:SkinDataOutput"/>
+    </message>
+    <message name="skinGetInput">
+        <part name="GetIn" element="ns:SkinDataInput"/>
+    </message>
+    <message name="skinGetOutput">
+        <part name="GetOut" element="ns:SkinDataOutput"/>
+    </message>
+    <message name="skinGetAllInput">
+        <part name="GetAllIn" element="ns:SkinDataInput"/>
+    </message>
+    <message name="skinGetAllOutput">
+        <part name="GetAllOut" element="ns:SkinDataOutput"/>
+    </message>
+    <message name="skinDeleteInput">
+        <part name="DeleteIn" element="ns:SkinDataInput"/>
+    </message>
+    <message name="skinDeleteOutput">
+        <part name="DeleteOut" element="ns:SkinDataOutput"/>
+    </message>
+    <message name="skinCreateInput">
+        <part name="CreateIn" element="ns:SkinDataInput"/>
+    </message>
+    <message name="skinCreateOutput">
+        <part name="CreateOut" element="ns:SkinDataOutput"/>
+    </message>
+    <portType name="SkinPortUpdate">
+        <operation name="Update">
+            <input message="tns:skinUpdateInput"/>
+            <output message="tns:skinUpdateOutput"/>
+        </operation>
+    </portType>
+    <portType name="SkinPortGet">
+        <operation name="Get">
+            <input message="tns:skinGetInput"/>
+            <output message="tns:skinGetOutput"/>
+        </operation>
+    </portType>
+    <portType name="SkinPortGetAll">
+        <operation name="GetAll">
+            <input message="tns:skinGetAllInput"/>
+            <output message="tns:skinGetAllOutput"/>
+        </operation>
+    </portType>
+    <portType name="SkinPortDelete">
+        <operation name="Delete">
+            <input message="tns:skinDeleteInput"/>
+            <output message="tns:skinDeleteOutput"/>
+        </operation>
+    </portType>
+    <portType name="SkinPortCreate">
+        <operation name="Create">
+            <input message="tns:skinCreateInput"/>
+            <output message="tns:skinCreateOutput"/>
+        </operation>
+    </portType>
+</definitions>
