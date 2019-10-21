@@ -14,6 +14,6 @@ export class AncientDetailsComponent implements OnInit {
   }
 
   addSkin(){
-    this.router.navigate(['add_skin'], {relativeTo: this.route});
+    this.router.navigate(['../add_skin'], {relativeTo: this.route});
   }
 }
