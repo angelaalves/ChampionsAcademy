@@ -3,9 +3,8 @@
     overflow: auto;
     width: 100%;
     height: 100%;
-    background-color: black;
-    color: white;
-    border: 30px solid transparent;
+    border: 10px solid transparent;
     padding: 20px;
     border-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8og5cXfVScRr9OS9iLJT02FfSsWHAyVazDYSLfqirpebfFYBjrg) 12% round;
+    border-image-width: auto;
 }

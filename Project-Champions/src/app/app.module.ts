@@ -45,6 +45,8 @@ import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-lis
 
 import { AddSkinComponent } from './closet/add-skin/add-skin.component';
 import { ListUsersComponent } from './list-users/list-users.component';
+import { EventsElemComponent } from './events/events-elem/events-elem.component';
+import { NavigationWindowComponent } from './navigation-window/navigation-window.component';
 
 
 
@@ -85,12 +87,15 @@ import { ListUsersComponent } from './list-users/list-users.component';
     EventsComponent,
     NotificationsComponent,
     RewardsComponent, 
-
     VideosComponent,
     RewardsComponent,
     RewardsToApproveComponent,
     AddGuildListComponent,
-    VideosComponent, AddSkinComponent, ListUsersComponent
+    VideosComponent, 
+    AddSkinComponent, 
+    ListUsersComponent, 
+    EventsElemComponent, 
+    NavigationWindowComponent
 
   ],
   imports: [
