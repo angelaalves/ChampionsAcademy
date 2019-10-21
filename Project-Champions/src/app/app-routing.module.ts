@@ -33,7 +33,8 @@ const appRoutes: Routes=[
         {path: '', component: AncientComponent},
         {path: 'add_guild', component: AddGuildListComponent},
         {path: 'add_events', component: AddEventsComponent}, 
-        {path: 'add_skin', component: AddSkinComponent}
+        {path: 'add_skin', component: AddSkinComponent},
+        {path: 'change_password', component: ChangePasswordComponent}
     ]},
     {path: 'add_user', component: AddUserComponent},
     {path: 'guilds_list', component: GuildListComponent},
