@@ -1,4 +1,4 @@
-import { WarriorComponent } from '../warrior/warrior.component';
+
 import { playerType } from './playerType.enum';
 
 export class Player{

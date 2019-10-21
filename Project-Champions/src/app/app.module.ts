@@ -47,6 +47,7 @@ import { AddSkinComponent } from './closet/add-skin/add-skin.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { EventsElemComponent } from './events/events-elem/events-elem.component';
 import { AuthenticationComponent } from './login/authentication/authentication.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -105,7 +106,8 @@ import { AuthenticationComponent } from './login/authentication/authentication.c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
