@@ -48,6 +48,7 @@ import { ListUsersComponent } from './list-users/list-users.component';
 import { EventsElemComponent } from './events/events-elem/events-elem.component';
 import { AuthenticationComponent } from './login/authentication/authentication.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddEventsComponent } from './events/add-events/add-events.component';
 
 
 
@@ -99,9 +100,8 @@ import { HttpClientModule } from '@angular/common/http';
     VideosComponent, 
     AddSkinComponent, 
     ListUsersComponent, 
-    AuthenticationComponent
-
-
+    AuthenticationComponent,
+    AddEventsComponent
   ],
   imports: [
     BrowserModule,

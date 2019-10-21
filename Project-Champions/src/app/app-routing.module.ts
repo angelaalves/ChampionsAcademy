@@ -17,6 +17,8 @@ import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { VideosComponent } from './videos/videos.component';
 import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-list.component';
+import { AddEventsComponent } from './events/add-events/add-events.component';
+import { AddSkinComponent } from './closet/add-skin/add-skin.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -27,7 +29,7 @@ const appRoutes: Routes=[
     {path: 'guild', component: GuildComponent},
     {path: 'guildmaster_profile', component: GuildMasterComponent},
     {path: 'ancient_profile', component: AncientComponent},
-    {path: 'add_player', component: AddUserComponent},
+    {path: 'add_user', component: AddUserComponent},
     {path: 'guilds_list', component: GuildListComponent},
     {path: 'rewards', component: RewardsComponent},
     {path: 'rewards_to_aprove', component: RewardsToApproveComponent},
@@ -35,7 +37,9 @@ const appRoutes: Routes=[
     {path: 'notifications', component: NotificationsComponent},
     {path: 'closet', component: ClosetComponent},
     {path: 'videos', component: VideosComponent},
-    {path: 'add_guild', component: AddGuildListComponent}
+    {path: 'add_guild', component: AddGuildListComponent}, 
+    {path: 'add_events', component: AddEventsComponent}, 
+    {path: 'add_skin', component: AddSkinComponent}
 ];
 
 @NgModule({
