@@ -9,28 +9,50 @@
     <pd:returnBindings>
         <pfx:videoOutputUpdate>
             <UpdateOut>
-                <ns:DataOutput>
-                    <ns:videoOut>
-                        <xsl:attribute name="ID_Video">
-                            <xsl:value-of select="&quot;updated&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="VideoName">
-                            <xsl:value-of select="&quot;updated&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="Duration">
-                            <xsl:value-of select="&quot;updated&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="Topic">
-                            <xsl:value-of select="&quot;updated&quot;"/>
-                        </xsl:attribute>
-                    </ns:videoOut>
-                </ns:DataOutput>
+                <xsl:choose>
+                    <xsl:when test="not(exists($_error_JDBC-Update/ActivityErrors/*  ))">
+                        <ns:DataOutput>
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot;updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot;updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot;updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot;updated&quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </ns:DataOutput>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <ns:DataOutput>
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </ns:DataOutput>
+                    </xsl:otherwise>
+                </xsl:choose>
             </UpdateOut>
         </pfx:videoOutputUpdate>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx:videoOutputUpdate"/>
-    <pd:endX>1003</pd:endX>
+    <pd:endX>1004</pd:endX>
     <pd:endY>247</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>

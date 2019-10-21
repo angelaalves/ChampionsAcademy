@@ -10,20 +10,40 @@
         <pfx:videoOutputCreate>
             <CreateOut>
                 <ns:DataOutput>
-                    <ns:videoOut>
-                        <xsl:attribute name="ID_Video">
-                            <xsl:value-of select="&quot;ID Created&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="VideoName">
-                            <xsl:value-of select="&quot;Video Name Created&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="Duration">
-                            <xsl:value-of select="&quot;Duration added&quot;"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="Topic">
-                            <xsl:value-of select="&quot;Topic added&quot;"/>
-                        </xsl:attribute>
-                    </ns:videoOut>
+                    <xsl:choose>
+                        <xsl:when test="not(exists($_error_Create/ActivityErrors/*))">
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot;ID Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot;Video Name Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot;Duration added&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot;Topic added&quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </ns:DataOutput>
             </CreateOut>
         </pfx:videoOutputCreate>
@@ -45,7 +65,7 @@
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>INSERT INTO Videos (VideoName, Duration, Topic) VALUES (?,?,?);</statement>
+            <statement>INSERT INTO Videos(VideoName, Duration, Topic) VALUES (?,?,?);</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>VideoName</parameterName>

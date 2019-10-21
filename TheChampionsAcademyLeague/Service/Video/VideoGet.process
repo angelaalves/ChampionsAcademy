@@ -79,8 +79,8 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx:videoOutputGet"/>
-    <pd:endX>1054</pd:endX>
-    <pd:endY>365</pd:endY>
+    <pd:endX>1050</pd:endX>
+    <pd:endY>367</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571128269566</pd:targetNamespace>
