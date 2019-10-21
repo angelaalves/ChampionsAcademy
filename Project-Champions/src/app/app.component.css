@@ -8,4 +8,5 @@
     border: 30px solid transparent;
     padding: 20px;
     border-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8og5cXfVScRr9OS9iLJT02FfSsWHAyVazDYSLfqirpebfFYBjrg) 12% round;
+    image-rendering: crisp-edges;
 }
