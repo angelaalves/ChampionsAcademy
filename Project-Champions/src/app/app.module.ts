@@ -49,6 +49,7 @@ import { EventsElemComponent } from './events/events-elem/events-elem.component'
 import { AuthenticationComponent } from './login/authentication/authentication.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddEventsComponent } from './events/add-events/add-events.component';
+import { AncientProfileComponent } from './ancient-profile/ancient-profile.component';
 
 
 
@@ -101,7 +102,8 @@ import { AddEventsComponent } from './events/add-events/add-events.component';
     AddSkinComponent, 
     ListUsersComponent, 
     AuthenticationComponent,
-    AddEventsComponent
+    AddEventsComponent,
+    AncientProfileComponent
   ],
   imports: [
     BrowserModule,
