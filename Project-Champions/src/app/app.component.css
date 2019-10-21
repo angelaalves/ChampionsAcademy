@@ -10,3 +10,15 @@
     border-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8og5cXfVScRr9OS9iLJT02FfSsWHAyVazDYSLfqirpebfFYBjrg) 12% round;
     image-rendering: crisp-edges;
 }
+::-webkit-scrollbar{
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track{
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: darkorange;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background: red;
+  }

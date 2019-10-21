@@ -5,7 +5,7 @@
     </h5>
   </div>
   <div class="card-body" id="card-body" style="margin: auto">
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" action="" class="container-fluid">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" action="" class="container-fluid">
       <div class="form-row">
         <div class="col-12">
           <div class="form-group">
@@ -19,7 +19,7 @@
           <div class="col-12">
             <div class="form-group">
               <label for="confirmPassword">Password</label>
-              <input type="password" id="confirmPassword" class="form-control" ngModel name="confirmPassword" required minlength="6">
+              <input type="password" id="Password" class="form-control" ngModel name="Password" required>
             </div>
           </div>
         </div>
