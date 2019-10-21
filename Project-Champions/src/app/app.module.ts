@@ -45,6 +45,11 @@ import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-lis
 
 import { AddSkinComponent } from './closet/add-skin/add-skin.component';
 import { ListUsersComponent } from './list-users/list-users.component';
+<<<<<<< Updated upstream
+import { EventsElemComponent } from './events/events-elem/events-elem.component';
+=======
+import { AuthenticationComponent } from './login/authentication/authentication.component';
+>>>>>>> Stashed changes
 
 
 
@@ -85,12 +90,18 @@ import { ListUsersComponent } from './list-users/list-users.component';
     EventsComponent,
     NotificationsComponent,
     RewardsComponent, 
-
     VideosComponent,
     RewardsComponent,
     RewardsToApproveComponent,
     AddGuildListComponent,
-    VideosComponent, AddSkinComponent, ListUsersComponent
+<<<<<<< Updated upstream
+    VideosComponent, 
+    AddSkinComponent, 
+    ListUsersComponent, 
+    EventsElemComponent
+=======
+    VideosComponent, AddSkinComponent, ListUsersComponent, AuthenticationComponent
+>>>>>>> Stashed changes
 
   ],
   imports: [
