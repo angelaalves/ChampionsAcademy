@@ -50,6 +50,7 @@ import { AuthenticationComponent } from './login/authentication/authentication.c
 import { HttpClientModule } from '@angular/common/http';
 import { AddEventsComponent } from './events/add-events/add-events.component';
 import { AncientProfileComponent } from './ancient-profile/ancient-profile.component';
+import { GuildListStartComponent } from './guild-list-start/guild-list-start.component';
 
 
 
@@ -102,7 +103,8 @@ import { AncientProfileComponent } from './ancient-profile/ancient-profile.compo
     AddSkinComponent,
     AuthenticationComponent,
     AddEventsComponent,
-    AncientProfileComponent
+    AncientProfileComponent,
+    GuildListStartComponent
   ],
   imports: [
     BrowserModule,

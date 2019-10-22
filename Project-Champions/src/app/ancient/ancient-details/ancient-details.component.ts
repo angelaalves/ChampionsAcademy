@@ -37,27 +37,14 @@ export class AncientDetailsComponent implements OnInit {
   }
 
   addEvent(){
-    this.router.navigate(['../add_event'], {relativeTo: this.route});
+    this.router.navigate(['./add_events'], {relativeTo: this.route});
   }
 
   addUser(){
-    this.router.navigate(['../add_user'], {relativeTo: this.route});
+    this.router.navigate(['./add_user'], {relativeTo: this.route});
   }
 
   addSkin(){
     this.router.navigate(['./add_skin'], {relativeTo: this.route});
-  }
-  onCloset(){
-    this.router.navigate(['../closet'], {relativeTo: this.route});
-  }
-  onGuilds(){
-    this.router.navigate(['../guilds_list'], {relativeTo: this.route});
-  }
-  onEvents(){
-    this.router.navigate(['../events'], {relativeTo: this.route});
-  }
-
-  addGuild(){
-    this.router.navigate(['../add_guild'], {relativeTo: this.route});
   }
 }
