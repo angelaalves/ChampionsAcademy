@@ -1,5 +1,5 @@
-import { Player } from './player.model';
-import { playerType } from './playerType.enum';
+import { Player } from '../shared/player.model';
+import { playerType } from '../shared/playerType.enum';
 import { Injectable } from '@angular/core';
 
 @Injectable()

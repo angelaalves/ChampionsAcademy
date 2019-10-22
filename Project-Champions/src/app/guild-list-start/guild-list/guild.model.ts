@@ -1,4 +1,5 @@
-import { Player } from '../shared/player.model';
+import { Player } from 'src/app/shared/player.model';
+
 
 export class Guild{
     public name: string;

@@ -1,16 +1,10 @@
 import { LoginComponent } from './login/login.component';
-import { GuildComponent } from './guild-list/guild/guild.component';
 import { GuildMasterComponent } from './guild-master/guild-master.component';
-import { AncientComponent } from './ancient/ancient.component';
-import { AddUserComponent } from './ancient/add-user/add-user.component';
-import { GuildListComponent } from './guild-list/guild-list.component';
-
 import { RewardsComponent } from './rewards/rewards.component';
 import { RewardsToApproveComponent } from './rewards/rewards-to-approve/rewards-to-approve.component';
 import { EventsComponent } from './events/events.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { VideosComponent } from './videos/videos.component';
-import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-list.component';
 import { AddEventsComponent } from './events/add-events/add-events.component';
 import { AddSkinComponent } from './closet/add-skin/add-skin.component';
 import { AncientProfileComponent } from './ancient-profile/ancient-profile.component';
@@ -22,6 +16,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { WarriorComponent } from './warrior/warrior.component';
+import { GuildComponent } from './guild-list-start/guild-list/guild/guild.component';
+import { AncientComponent } from './ancient-profile/ancient/ancient.component';
+import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-list/add-guild-list.component';
+import { AddUserComponent } from './ancient-profile/ancient/add-user/add-user.component';
+import { GuildListComponent } from './guild-list-start/guild-list/guild-list.component';
 
 
 const appRoutes: Routes=[

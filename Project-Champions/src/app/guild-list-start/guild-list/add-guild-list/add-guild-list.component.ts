@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GuildListService } from 'src/app/shared/guild-list.service';
+import { GuildListService } from 'src/app/services/guild-list.service';
 
 @Component({
   selector: 'app-add-guild-list',
