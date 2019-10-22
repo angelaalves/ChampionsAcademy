@@ -51,6 +51,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddEventsComponent } from './events/add-events/add-events.component';
 import { AncientProfileComponent } from './ancient-profile/ancient-profile.component';
 import { GuildListStartComponent } from './guild-list-start/guild-list-start.component';
+import { PlayerService } from './shared/player.service';
 
 
 
@@ -112,7 +113,7 @@ import { GuildListStartComponent } from './guild-list-start/guild-list-start.com
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
