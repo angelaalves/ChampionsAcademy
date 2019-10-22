@@ -14,9 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(postData: {email: string; password: string}){
-    this.http.post('url', postData) .subscribe(responseData=>{
-      console.log(responseData);
-    });
+  login(form: NgForm){
+    console.log(form)
   }
 }
