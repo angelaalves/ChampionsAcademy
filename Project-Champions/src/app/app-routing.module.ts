@@ -20,6 +20,8 @@ import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-lis
 import { AddEventsComponent } from './events/add-events/add-events.component';
 import { AddSkinComponent } from './closet/add-skin/add-skin.component';
 import { AncientProfileComponent } from './ancient-profile/ancient-profile.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -30,24 +32,20 @@ const appRoutes: Routes=[
     {path: 'guild', component: GuildComponent},
     {path: 'guildmaster_profile', component: GuildMasterComponent},
     {path: 'ancient_profile', component: AncientProfileComponent, children:[
-        {path: '', component: AncientComponent},
-        {path: 'add_guild', component: AddGuildListComponent},
-        {path: 'add_events', component: AddEventsComponent}, 
-        {path: 'add_skin', component: AddSkinComponent},
-        {path: 'change_password', component: ChangePasswordComponent}
-    ]},
+    {path: 'add_guild', component: AddGuildListComponent},
+    {path: 'add_events', component: AddEventsComponent}, 
+    {path: 'add_skin', component: AddSkinComponent},
     {path: 'add_user', component: AddUserComponent},
+    {path: 'ancient_profile', component: AncientComponent},
     {path: 'guilds_list', component: GuildListComponent},
+    {path: 'list_users', component: ListUsersComponent},
     {path: 'rewards', component: RewardsComponent},
     {path: 'rewards_to_aprove', component: RewardsToApproveComponent},
     {path: 'events', component: EventsComponent},
     {path: 'notifications', component: NotificationsComponent},
     {path: 'closet', component: ClosetComponent},
-    {path: 'videos', component: VideosComponent},
-     
-    
-    
-];
+    {path: 'videos', component: VideosComponent}
+ ],
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],

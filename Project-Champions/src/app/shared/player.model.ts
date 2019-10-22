@@ -1,16 +1,15 @@
-
 import { playerType } from './playerType.enum';
 
 export class Player{
     public name: string;
     public imagePath: string;
     public xp: number;
-    public player: playerType;
+    public playerType: playerType;
 
-    constructor(name:string, imagePath: string, player: playerType){
+    constructor(name:string, imagePath: string, playerType: playerType){
         this.name=name;
         this.imagePath=imagePath;
-        this.player=player;
+        this.playerType=playerType;
         this.xp=0;
     }
 }

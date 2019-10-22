@@ -12,6 +12,4 @@ export class AddSkinComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
 }

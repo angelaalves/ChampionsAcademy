@@ -99,8 +99,7 @@ import { AncientProfileComponent } from './ancient-profile/ancient-profile.compo
     ListUsersComponent, 
     EventsElemComponent,
     VideosComponent, 
-    AddSkinComponent, 
-    ListUsersComponent, 
+    AddSkinComponent,
     AuthenticationComponent,
     AddEventsComponent,
     AncientProfileComponent

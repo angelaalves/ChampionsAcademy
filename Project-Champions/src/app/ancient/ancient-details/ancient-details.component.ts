@@ -13,6 +13,37 @@ export class AncientDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  redirectCloset(){
+    this.router.navigate(['../closet'], {relativeTo: this.route});
+  }
+
+  redirectGuilds(){
+    this.router.navigate(['../guilds_list'], {relativeTo: this.route});
+  }
+  redirectEvents(){
+    this.router.navigate(['../events'], {relativeTo: this.route});
+  }
+
+  redirectWarriors(){
+    this.router.navigate(['../list_users'], {relativeTo: this.route});
+  }
+
+  redirectAncients(){
+    this.router.navigate(['../list_users'], {relativeTo: this.route});
+  }
+
+  redirectGuildMasters(){
+    this.router.navigate(['../list_users'], {relativeTo: this.route});
+  }
+
+  addEvent(){
+    this.router.navigate(['../add_event'], {relativeTo: this.route});
+  }
+
+  addUser(){
+    this.router.navigate(['../add_user'], {relativeTo: this.route});
+  }
+
   addSkin(){
     this.router.navigate(['./add_skin'], {relativeTo: this.route});
   }
@@ -24,5 +55,9 @@ export class AncientDetailsComponent implements OnInit {
   }
   onEvents(){
     this.router.navigate(['../events'], {relativeTo: this.route});
+  }
+
+  addGuild(){
+    this.router.navigate(['../add_guild'], {relativeTo: this.route});
   }
 }
