@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Rewards/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Rewards/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="RewardsDataInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RewardsIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RewardsDataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RewardsOut" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RewardsIn">
+		<xs:complexType>
+			<xs:attribute name="ID_Reward" type="xs:string"/>
+			<xs:attribute name="ID_PlayerGiver_FK" type="xs:string"/>
+			<xs:attribute name="ID_PlayerReceiver_FK" type="xs:string"/>
+			<xs:attribute name="ChampiesGiven" type="xs:string"/>
+			<xs:attribute name="DateOfReward" type="xs:string"/>
+			<xs:attribute name="Approved" type="xs:string"/>
+			<xs:attribute name="TimeSpent" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RewardsOut">
+		<xs:complexType>
+			<xs:attribute name="ID_Reward" type="xs:string"/>
+			<xs:attribute name="ID_PlayerGiver_FK" type="xs:string"/>
+			<xs:attribute name="ID_PlayerReceiver_FK" type="xs:string"/>
+			<xs:attribute name="ChampiesGiven" type="xs:string"/>
+			<xs:attribute name="DateOfReward" type="xs:string"/>
+			<xs:attribute name="Approved" type="xs:string"/>
+			<xs:attribute name="TimeSpent" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

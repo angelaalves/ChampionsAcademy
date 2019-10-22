@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748255318" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:pfx3="http://xmlns.example.com/1571748259086" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Closet/Schema.xsd" xmlns:ns1="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748255318" location="/Service/Guild/Guild.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748259086" location="/Service/Closet/Closet.wsdl"/>
+    <pd:name>Service/Guild/GuildCreate.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx2:GuildCreateInput"/>
+    <pd:startX>251</pd:startX>
+    <pd:startY>176</pd:startY>
+    <pd:returnBindings>
+        <pfx3:ClosetCreateOutput>
+            <CreateOut>
+                <ns2:ClosetDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists(  $_error_Create/ActivityErrors/*))">
+                            <ns2:ClosetOut>
+                                <xsl:attribute name="ID_Closet">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Skin_FK">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                            </ns2:ClosetOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns2:ClosetOut>
+                                <xsl:attribute name="ID_Closet">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Skin_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns2:ClosetOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns2:ClosetDataOutput>
+            </CreateOut>
+        </pfx3:ClosetCreateOutput>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx3:ClosetCreateOutput"/>
+    <pd:endX>733</pd:endX>
+    <pd:endY>175</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571147055482</pd:targetNamespace>
+    <pd:activity name="Create">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>443</pd:x>
+        <pd:y>176</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <statement>INSERT INTO Guild (GuildName, StartDate,EndDate,GuildFlag,status) VALUES (?,?,?,?,?);</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>GuildName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>StartDate</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>EndDate</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>GuildFlag</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>status</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput>
+                <GuildName>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@GuildName)">
+                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@GuildName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </GuildName>
+                <StartDate>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@StartDate)">
+                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@StartDate"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </StartDate>
+                <EndDate>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@EndDate)">
+                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@EndDate"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </EndDate>
+                <GuildFlag>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@GuildFlag)">
+                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@GuildFlag"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </GuildFlag>
+                <status>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@status)">
+                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@status"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </status>
+            </jdbcUpdateActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>732</pd:x>
+        <pd:y>46</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Create</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Create</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

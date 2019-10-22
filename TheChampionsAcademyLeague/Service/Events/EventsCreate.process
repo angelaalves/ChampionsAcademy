@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571662587180" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571662587180" location="/Service/Events/Events.wsdl"/>
     <pd:name>Service/Events/EventsCreate.process</pd:name>
     <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx:EventsCreateInput"/>
     <pd:startX>178</pd:startX>
     <pd:startY>175</pd:startY>
-    <pd:returnBindings/>
+    <pd:returnBindings>
+        <pfx:EventsCreateOutput>
+            <CreateOut>
+                <ns:EventsDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists( $_error_Create/ActivityErrors/*))">
+                            <ns:EventsOut>
+                                <xsl:attribute name="ID_Event">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventName">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventDate">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventType">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                            </ns:EventsOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns:EventsOut>
+                                <xsl:attribute name="ID_Event">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventDate">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="EventType">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:EventsOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns:EventsDataOutput>
+            </CreateOut>
+        </pfx:EventsCreateOutput>
+    </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endX>516</pd:endX>
+    <pd:endType wsMsgRef="pfx:EventsCreateOutput"/>
+    <pd:endX>518</pd:endX>
     <pd:endY>177</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
@@ -17,7 +61,9 @@
         <pd:x>513</pd:x>
         <pd:y>67</pd:y>
         <pd:handler>true</pd:handler>
-        <config/>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
         <pd:inputBindings/>
     </pd:activity>
     <pd:activity name="Create">
@@ -30,55 +76,76 @@
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>INSERT INTO Videos(VideoName, Duration, Topic) VALUES (?,?,?);</statement>
+            <statement>INSERT INTO Create(EventName,EventDate, EventType) VALUES (?,?,?);</statement>
             <Prepared_Param_DataType>
                 <parameter>
-                    <parameterName>VideoName</parameterName>
+                    <parameterName>EventName</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>Duration</parameterName>
+                    <parameterName>EventDate</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>Topic</parameterName>
+                    <parameterName>EventType</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
             </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcUpdateActivityInput>
-                <VideoName>
-                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName"/>
+                <EventName>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:EventsCreateInput/CreateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventName)">
+                            <xsl:value-of select="$Start/pfx:EventsCreateInput/CreateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventName"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </VideoName>
-                <Duration>
-                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration"/>
+                </EventName>
+                <EventDate>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:EventsCreateInput/CreateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventDate)">
+                            <xsl:value-of select="$Start/pfx:EventsCreateInput/CreateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventDate"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </Duration>
-                <Topic>
-                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic"/>
+                </EventDate>
+                <EventType>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:EventsCreateInput/CreateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventType)">
+                            <xsl:value-of select="$Start/pfx:EventsCreateInput/CreateIn/ns:EventsDataInput/ns:EventsIn[1]/@EventType"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </Topic>
+                </EventType>
             </jdbcUpdateActivityInput>
         </pd:inputBindings>
     </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Create</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Create</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
 </pd:ProcessDefinition>

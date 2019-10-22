@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/GuildEvents/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571749508135" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571749508135">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/GuildEvents/Schema.xsd" location="GuildEvents.xsd"/>
+    <message name="GuildEventsUpdateInput">
+        <part name="UpdateIn" element="ns:GuildEventsDataInput"/>
+    </message>
+    <message name="GuildEventsUpdateOutput">
+        <part name="UpdateOut" element="ns:GuildEventsDataOutput"/>
+    </message>
+    <message name="GuildEventsGetInput">
+        <part name="GetIn" element="ns:GuildEventsDataInput"/>
+    </message>
+    <message name="GuildEventsGetOutput">
+        <part name="GetOut" element="ns:GuildEventsDataOutput"/>
+    </message>
+    <message name="GuildEventsGetAllInput">
+        <part name="GetAllIn" element="ns:GuildEventsDataInput"/>
+    </message>
+    <message name="GuildEventsGetAllOutput">
+        <part name="GetAllOut" element="ns:GuildEventsDataOutput"/>
+    </message>
+    <message name="GuildEventsCreateInput">
+        <part name="CreateIn" element="ns:GuildEventsDataInput"/>
+    </message>
+    <message name="GuildEventsCreateOutput">
+        <part name="CreateOut" element="ns:GuildEventsDataOutput"/>
+    </message>
+    <message name="GuildEventsDeleteInput">
+        <part name="DeleteIn" element="ns:GuildEventsDataInput"/>
+    </message>
+    <message name="GuildEventsDeleteOutput">
+        <part name="DeleteOut" element="ns:GuildEventsDataOutput"/>
+    </message>
+    <portType name="GuildEventsPortUpdate">
+        <operation name="Update">
+            <input message="tns:GuildEventsUpdateInput"/>
+            <output message="tns:GuildEventsUpdateOutput"/>
+        </operation>
+    </portType>
+    <portType name="GuildEventsPortGet">
+        <operation name="Get">
+            <input message="tns:GuildEventsGetInput"/>
+            <output message="tns:GuildEventsGetOutput"/>
+        </operation>
+    </portType>
+    <portType name="GuildEventsPortGetAll">
+        <operation name="GetAll">
+            <input message="tns:GuildEventsGetAllInput"/>
+            <output message="tns:GuildEventsGetAllOutput"/>
+        </operation>
+    </portType>
+    <portType name="GuildEventsPortCreate">
+        <operation name="Create">
+            <input message="tns:GuildEventsCreateInput"/>
+            <output message="tns:GuildEventsCreateOutput"/>
+        </operation>
+    </portType>
+    <portType name="GuildEventsPortDelete">
+        <operation name="Delete">
+            <input message="tns:GuildEventsDeleteInput"/>
+            <output message="tns:GuildEventsDeleteOutput"/>
+        </operation>
+    </portType>
+</definitions>

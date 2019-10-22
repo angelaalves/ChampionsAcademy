@@ -13,12 +13,6 @@
     <message name="PlayerGetAllOutput">
         <part name="GetAllOut" element="ns:PlayerDataOutput"/>
     </message>
-    <message name="PlayerGetAllByGuildInput">
-        <part name="GetAllByGuildIn" element="ns:PlayerDataInput"/>
-    </message>
-    <message name="PlayerGetAllByGuildOutput">
-        <part name="GetAllByGuildOut" element="ns:PlayerDataOutput"/>
-    </message>
     <message name="PlayerCreateInput">
         <part name="CreateIn" element="ns:PlayerDataInput"/>
     </message>
@@ -41,12 +35,6 @@
         <operation name="GetAll">
             <input message="tns:PlayerGetAllInput"/>
             <output message="tns:PlayerGetAllOutput"/>
-        </operation>
-    </portType>
-    <portType name="PlayerPortGetAllByGuild">
-        <operation name="GetAllByGuild">
-            <input message="tns:PlayerGetAllByGuildInput"/>
-            <output message="tns:PlayerGetAllByGuildOutput"/>
         </operation>
     </portType>
     <portType name="PlayerPortCreate">

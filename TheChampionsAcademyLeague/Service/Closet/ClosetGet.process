@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:pfx3="http://xmlns.example.com/1571748259086" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Closet/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748259086" location="/Service/Closet/Closet.wsdl"/>
+    <pd:name>Service/Closet/ClosetGet.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx3:ClosetGetInput"/>
+    <pd:startX>226</pd:startX>
+    <pd:startY>306</pd:startY>
+    <pd:returnBindings>
+        <pfx3:ClosetGetOutput>
+            <GetOut>
+                <ns:ClosetDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="exists(  $ID_Closet/resultSet/Record)">
+                            <xsl:for-each select="$ID_Closet/resultSet/Record">
+                                <ns:ClosetOut>
+                                    <xsl:attribute name="ID_Closet">
+                                        <xsl:value-of select="ID_Closet"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_Skin_FK">
+                                        <xsl:value-of select="ID_Skin_FK"/>
+                                    </xsl:attribute>
+                                </ns:ClosetOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists( $ID_Skin_FK/resultSet/Record)">
+                            <xsl:for-each select="$ID_Skin_FK/resultSet/Record">
+                                <ns:ClosetOut>
+                                    <xsl:attribute name="ID_Closet">
+                                        <xsl:value-of select="ID_Closet"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_Skin_FK">
+                                        <xsl:value-of select="ID_Skin_FK"/>
+                                    </xsl:attribute>
+                                </ns:ClosetOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns:ClosetOut>
+                                <xsl:attribute name="ID_Closet">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Skin_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:ClosetOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns:ClosetDataOutput>
+            </GetOut>
+        </pfx3:ClosetGetOutput>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx3:ClosetGetOutput"/>
+    <pd:endX>982</pd:endX>
+    <pd:endY>294</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571128269566</pd:targetNamespace>
+    <pd:activity name="ID_Closet">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>495</pd:x>
+        <pd:y>157</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <statement>SELECT * FROM Closet  WHERE ID_Closet=(?);</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Closet</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Closet</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_Skin_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <ID_Closet>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:ClosetGetInput/GetIn/ns:ClosetDataInput/ns:ClosetIn[1]/@ID_Closet)">
+                            <xsl:value-of select="$Start/pfx3:ClosetGetInput/GetIn/ns:ClosetDataInput/ns:ClosetIn[1]/@ID_Closet"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Closet>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="ID_Skin_FK">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>496</pd:x>
+        <pd:y>298</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM Closet WHERE ID_Skin_FK=(?);</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Skin_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Closet</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_Skin_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <ID_Skin_FK>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:ClosetGetInput/GetIn/ns:ClosetDataInput/ns:ClosetIn[1]/@ID_Skin_FK)">
+                            <xsl:value-of select="$Start/pfx3:ClosetGetInput/GetIn/ns:ClosetDataInput/ns:ClosetIn[1]/@ID_Skin_FK"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Skin_FK>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>978</pd:x>
+        <pd:y>164</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>ID_Closet</pd:to>
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:ClosetGetInput/GetIn/ns:ClosetDataInput/ns:ClosetIn/@ID_Closet) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ID_Closet</pd:from>
+        <pd:to>End</pd:to>
+        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($ID_Closet/resultSet/Record)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>ID_Skin_FK</pd:to>
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:ClosetGetInput/GetIn/ns:ClosetDataInput/ns:ClosetIn) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ID_Skin_FK</pd:from>
+        <pd:to>End</pd:to>
+        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($ID_Skin_FK/resultSet/Record)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

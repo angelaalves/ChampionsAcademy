@@ -1,84 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571662597687" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Player/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571662597687" location="/Service/Player/Player.wsdl"/>
     <pd:name>Service/Player/PlayerCreate.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startX>197</pd:startX>
-    <pd:startY>167</pd:startY>
-    <pd:returnBindings/>
+    <pd:startType wsMsgRef="pfx:PlayerCreateInput"/>
+    <pd:startX>189</pd:startX>
+    <pd:startY>240</pd:startY>
+    <pd:returnBindings>
+        <pfx:PlayerCreateOutput>
+            <CreateOut>
+                <xsl:choose>
+                    <xsl:when test="not(exists( $_error_Create/ActivityErrors/*))">
+                        <ns:PlayerDataOutput>
+                            <ns:PlayerOut>
+                                <xsl:attribute name="ID_Player">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Guild_FK">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Closet_FK">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="UserName">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="status">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Email">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="password">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Gender">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="UserType">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="XP">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesToGive">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="MyChampies">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                            </ns:PlayerOut>
+                        </ns:PlayerDataOutput>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <ns:PlayerDataOutput>
+                            <ns:PlayerOut>
+                                <xsl:attribute name="ID_Player">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Guild_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Closet_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="UserName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="status">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Email">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="password">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Gender">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="UserType">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="XP">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesToGive">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="MyChampies">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:PlayerOut>
+                        </ns:PlayerDataOutput>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </CreateOut>
+        </pfx:PlayerCreateOutput>
+    </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endX>546</pd:endX>
-    <pd:endY>166</pd:endY>
+    <pd:endType wsMsgRef="pfx:PlayerCreateOutput"/>
+    <pd:endX>728</pd:endX>
+    <pd:endY>242</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571655908682</pd:targetNamespace>
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>545</pd:x>
-        <pd:y>56</pd:y>
+        <pd:x>725</pd:x>
+        <pd:y>80</pd:y>
         <pd:handler>true</pd:handler>
-        <config/>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
         <pd:inputBindings/>
     </pd:activity>
     <pd:activity name="Create">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>373</pd:x>
-        <pd:y>166</pd:y>
+        <pd:x>434</pd:x>
+        <pd:y>240</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>INSERT INTO Videos(VideoName, Duration, Topic) VALUES (?,?,?);</statement>
+            <statement>INSERT INTO Player (ID_Guild_FK, ID_Closet_FK,UserName, Email, password,Gender,UserType,XP, ChampiesToGive, MyChampies,status) VALUES (?,?,?,?,?,?,?,?,?,?,?);</statement>
             <Prepared_Param_DataType>
                 <parameter>
-                    <parameterName>VideoName</parameterName>
+                    <parameterName>ID_Guild_FK</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>Duration</parameterName>
+                    <parameterName>ID_Closet_FK</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>Topic</parameterName>
+                    <parameterName>UserName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>Email</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>password</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>Gender</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>UserType</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>XP</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>ChampiesToGive</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>MyChampies</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>status</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
             </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcUpdateActivityInput>
-                <VideoName>
-                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName"/>
+                <ID_Guild_FK>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@ID_Guild_FK)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@ID_Guild_FK"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </VideoName>
-                <Duration>
-                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration"/>
+                </ID_Guild_FK>
+                <ID_Closet_FK>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@ID_Closet_FK)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@ID_Closet_FK"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </Duration>
-                <Topic>
-                    <xsl:choose xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic"/>
+                </ID_Closet_FK>
+                <UserName>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@UserName)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@UserName"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </Topic>
+                </UserName>
+                <Email>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@Email)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@Email"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </Email>
+                <password>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@password)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@password"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </password>
+                <Gender>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@Gender)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@Gender"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </Gender>
+                <UserType>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@UserType)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@UserType"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </UserType>
+                <XP>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@XP)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@XP"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </XP>
+                <ChampiesToGive>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@ChampiesToGive)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@ChampiesToGive"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ChampiesToGive>
+                <MyChampies>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@MyChampies)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@MyChampies"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </MyChampies>
+                <status>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@status)">
+                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@status"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </status>
             </jdbcUpdateActivityInput>
         </pd:inputBindings>
     </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Create</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Create</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
 </pd:ProcessDefinition>
