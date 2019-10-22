@@ -1,9 +1,3 @@
-import { WarriorComponent } from './warrior/warrior.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ClosetComponent } from './closet/closet.component';
-import { SetPasswordComponent } from './set-password/set-password.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
 import { LoginComponent } from './login/login.component';
 import { GuildComponent } from './guild-list/guild/guild.component';
 import { GuildMasterComponent } from './guild-master/guild-master.component';
@@ -22,6 +16,12 @@ import { AddSkinComponent } from './closet/add-skin/add-skin.component';
 import { AncientProfileComponent } from './ancient-profile/ancient-profile.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { GuildListStartComponent } from './guild-list-start/guild-list-start.component';
+import { ClosetComponent } from './closet/closet.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SetPasswordComponent } from './set-password/set-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { WarriorComponent } from './warrior/warrior.component';
 
 
 const appRoutes: Routes=[
@@ -54,9 +54,9 @@ const appRoutes: Routes=[
     {path: 'videos', component: VideosComponent}
  ]
 
+
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
 })
-
-export class AppRoutingModule{}
+export class AppRoutingModule { }
