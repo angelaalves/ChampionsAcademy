@@ -1,6 +1,6 @@
 import { Player } from '../shared/player.model';
 
-export class  Guild{
+export class Guild{
     public name: string;
     public flag: string;
     public guildmaster: Player;

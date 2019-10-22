@@ -26,7 +26,10 @@ export class GuildListComponent implements OnInit {
   }
 
   onResponse(){
-    
+    this.router.navigate(['./add_guild'], {relativeTo: this.route})
   }
 
+  addGuild(){
+    this.router.navigate(['/add_guild'], {relativeTo: this.route});
+  }
 }

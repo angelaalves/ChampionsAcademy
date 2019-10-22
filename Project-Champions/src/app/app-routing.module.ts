@@ -1,9 +1,3 @@
-import { WarriorComponent } from './warrior/warrior.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ClosetComponent } from './closet/closet.component';
-import { SetPasswordComponent } from './set-password/set-password.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
 import { LoginComponent } from './login/login.component';
 import { GuildComponent } from './guild-list/guild/guild.component';
 import { GuildMasterComponent } from './guild-master/guild-master.component';
@@ -19,6 +13,16 @@ import { VideosComponent } from './videos/videos.component';
 import { AddGuildListComponent } from './guild-list/add-guild-list/add-guild-list.component';
 import { AddEventsComponent } from './events/add-events/add-events.component';
 import { AddSkinComponent } from './closet/add-skin/add-skin.component';
+import { AncientProfileComponent } from './ancient-profile/ancient-profile.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { GuildListStartComponent } from './guild-list-start/guild-list-start.component';
+import { ClosetComponent } from './closet/closet.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SetPasswordComponent } from './set-password/set-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { WarriorComponent } from './warrior/warrior.component';
+
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -28,23 +32,31 @@ const appRoutes: Routes=[
     {path: 'warrior_profile', component: WarriorComponent},
     {path: 'guild', component: GuildComponent},
     {path: 'guildmaster_profile', component: GuildMasterComponent},
+    {path: 'ancient_profile', component: AncientProfileComponent, children:[
+        {path: '', component: AncientComponent},
+        {path: 'add_guild', component: AddGuildListComponent},
+        {path: 'add_events', component: AddEventsComponent}, 
+        {path: 'add_skin', component: AddSkinComponent},
+        {path: 'add_user', component: AddUserComponent},
+        {path: 'add_guild', component: AddGuildListComponent}
+    ]},
     {path: 'ancient_profile', component: AncientComponent},
-    {path: 'add_user', component: AddUserComponent},
-    {path: 'guilds_list', component: GuildListComponent},
+    {path: 'guilds_list', component: GuildListStartComponent, children:[
+        {path:'', component: GuildListComponent},
+        {path:'add_guild', component: AddGuildListComponent}
+    ]},
+    {path: 'list_users', component: ListUsersComponent},
     {path: 'rewards', component: RewardsComponent},
     {path: 'rewards_to_aprove', component: RewardsToApproveComponent},
     {path: 'events', component: EventsComponent},
     {path: 'notifications', component: NotificationsComponent},
     {path: 'closet', component: ClosetComponent},
-    {path: 'videos', component: VideosComponent},
-    {path: 'add_guild', component: AddGuildListComponent}, 
-    {path: 'add_events', component: AddEventsComponent}, 
-    {path: 'add_skin', component: AddSkinComponent}
-];
+    {path: 'videos', component: VideosComponent}
+ ]
+
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
 })
-
-export class AppRoutingModule{}
+export class AppRoutingModule { }

@@ -49,6 +49,8 @@ import { EventsElemComponent } from './events/events-elem/events-elem.component'
 import { AuthenticationComponent } from './login/authentication/authentication.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddEventsComponent } from './events/add-events/add-events.component';
+import { AncientProfileComponent } from './ancient-profile/ancient-profile.component';
+import { GuildListStartComponent } from './guild-list-start/guild-list-start.component';
 
 
 
@@ -98,10 +100,11 @@ import { AddEventsComponent } from './events/add-events/add-events.component';
     ListUsersComponent, 
     EventsElemComponent,
     VideosComponent, 
-    AddSkinComponent, 
-    ListUsersComponent, 
+    AddSkinComponent,
     AuthenticationComponent,
-    AddEventsComponent
+    AddEventsComponent,
+    AncientProfileComponent,
+    GuildListStartComponent
   ],
   imports: [
     BrowserModule,

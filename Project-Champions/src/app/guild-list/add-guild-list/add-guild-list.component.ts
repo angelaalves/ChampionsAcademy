@@ -12,4 +12,12 @@ export class AddGuildListComponent implements OnInit {
   ngOnInit() {
   }
 
+  addGuildMaster(){
+    
+  }
+
+  addPlayer(){
+
+  }
+
 }
