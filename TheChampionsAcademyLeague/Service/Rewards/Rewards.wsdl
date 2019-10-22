@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Rewards/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571748236987" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571748236987">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Rewards/Schema.xsd" location="Rewards.xsd"/>
+    <message name="RewardsUpdateInput">
+        <part name="UpdateIn" element="ns:RewardsDataInput"/>
+    </message>
+    <message name="RewardsUpdateOutput">
+        <part name="UpdateOut" element="ns:RewardsDataOutput"/>
+    </message>
+    <message name="RewardsGetInput">
+        <part name="GetIn" element="ns:RewardsDataInput"/>
+    </message>
+    <message name="RewardsGetOutput">
+        <part name="GetOut" element="ns:RewardsDataOutput"/>
+    </message>
+    <message name="RewardsGetAllInput">
+        <part name="GetAllIn" element="ns:RewardsDataInput"/>
+    </message>
+    <message name="RewardsGetAllOutput">
+        <part name="GetAllOut" element="ns:RewardsDataOutput"/>
+    </message>
+    <message name="RewardsCreateInput">
+        <part name="CreateIn" element="ns:RewardsDataInput"/>
+    </message>
+    <message name="RewardsCreateOutput">
+        <part name="CreateOut" element="ns:RewardsDataOutput"/>
+    </message>
+    <message name="RewardsDeleteInput">
+        <part name="DeleteIn" element="ns:RewardsDataInput"/>
+    </message>
+    <message name="RewardsDeleteOutput">
+        <part name="DeleteOut" element="ns:RewardsDataOutput"/>
+    </message>
+    <portType name="RewardsPortUpdate">
+        <operation name="Update">
+            <input message="tns:RewardsUpdateInput"/>
+            <output message="tns:RewardsUpdateOutput"/>
+        </operation>
+    </portType>
+    <portType name="RewardsPortGet">
+        <operation name="Get">
+            <input message="tns:RewardsGetInput"/>
+            <output message="tns:RewardsGetOutput"/>
+        </operation>
+    </portType>
+    <portType name="RewardsPortGetAll">
+        <operation name="GetAll">
+            <input message="tns:RewardsGetAllInput"/>
+            <output message="tns:RewardsGetAllOutput"/>
+        </operation>
+    </portType>
+    <portType name="RewardsPortCreate">
+        <operation name="Create">
+            <input message="tns:RewardsCreateInput"/>
+            <output message="tns:RewardsCreateOutput"/>
+        </operation>
+    </portType>
+    <portType name="RewardsPortDelete">
+        <operation name="Delete">
+            <input message="tns:RewardsDeleteInput"/>
+            <output message="tns:RewardsDeleteOutput"/>
+        </operation>
+    </portType>
+</definitions>

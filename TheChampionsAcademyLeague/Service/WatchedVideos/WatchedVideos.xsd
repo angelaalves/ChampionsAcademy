@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/WatchedVideos/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/WatchedVideos/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="WatchedVideosDataInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="WatchedVideosIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WatchedVideosDataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="WatchedVideosOut" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WatchedVideosIn">
+		<xs:complexType>
+			<xs:attribute name="ID_Video_FK" type="xs:string"/>
+			<xs:attribute name="ID_Player_FK" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WatchedVideosOut">
+		<xs:complexType>
+			<xs:attribute name="ID_Video_FK" type="xs:string"/>
+			<xs:attribute name="ID_Player_FK" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

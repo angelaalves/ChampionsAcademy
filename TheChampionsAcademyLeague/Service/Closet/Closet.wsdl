@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Closet/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571748259086" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571748259086">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Closet/Schema.xsd" location="Closet.xsd"/>
+    <message name="ClosetUpdateInput">
+        <part name="UpdateIn" element="ns:ClosetDataInput"/>
+    </message>
+    <message name="ClosetUpdateOutput">
+        <part name="UpdateOut" element="ns:ClosetDataOutput"/>
+    </message>
+    <message name="ClosetGetInput">
+        <part name="GetIn" element="ns:ClosetDataInput"/>
+    </message>
+    <message name="ClosetGetOutput">
+        <part name="GetOut" element="ns:ClosetDataOutput"/>
+    </message>
+    <message name="ClosetGetAllInput">
+        <part name="GetAllIn" element="ns:ClosetDataInput"/>
+    </message>
+    <message name="ClosetGetAllOutput">
+        <part name="GetAllOut" element="ns:ClosetDataOutput"/>
+    </message>
+    <message name="ClosetCreateInput">
+        <part name="CreateIn" element="ns:ClosetDataInput"/>
+    </message>
+    <message name="ClosetCreateOutput">
+        <part name="CreateOut" element="ns:ClosetDataOutput"/>
+    </message>
+    <message name="ClosetDeleteInput">
+        <part name="DeleteIn" element="ns:ClosetDataInput"/>
+    </message>
+    <message name="ClosetDeleteOutput">
+        <part name="DeleteOut" element="ns:ClosetDataOutput"/>
+    </message>
+    <portType name="ClosetPortUpdate">
+        <operation name="Update">
+            <input message="tns:ClosetUpdateInput"/>
+            <output message="tns:ClosetUpdateOutput"/>
+        </operation>
+    </portType>
+    <portType name="ClosetPortGet">
+        <operation name="Get">
+            <input message="tns:ClosetGetInput"/>
+            <output message="tns:ClosetGetOutput"/>
+        </operation>
+    </portType>
+    <portType name="ClosetPortGetAll">
+        <operation name="GetAll">
+            <input message="tns:ClosetGetAllInput"/>
+            <output message="tns:ClosetGetAllOutput"/>
+        </operation>
+    </portType>
+    <portType name="ClosetPortCreate">
+        <operation name="Create">
+            <input message="tns:ClosetCreateInput"/>
+            <output message="tns:ClosetCreateOutput"/>
+        </operation>
+    </portType>
+    <portType name="ClosetPortDelete">
+        <operation name="Delete">
+            <input message="tns:ClosetDeleteInput"/>
+            <output message="tns:ClosetDeleteOutput"/>
+        </operation>
+    </portType>
+</definitions>

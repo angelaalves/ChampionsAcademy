@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Closet/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Closet/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="ClosetDataInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ClosetIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ClosetDataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ClosetOut" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ClosetIn">
+		<xs:complexType>
+			<xs:attribute name="ID_Closet" type="xs:string"/>
+			<xs:attribute name="ID_Skin_FK" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ClosetOut">
+		<xs:complexType>
+			<xs:attribute name="ID_Closet" type="xs:string"/>
+			<xs:attribute name="ID_Skin_FK" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

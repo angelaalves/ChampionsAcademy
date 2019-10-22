@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571748255318" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571748255318">
+    <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd" location="Guild.xsd"/>
+    <message name="GuildUpdateInput">
+        <part name="UpdateIn" element="ns:GuildDataInput"/>
+    </message>
+    <message name="GuildUpdateOutput">
+        <part name="UpdateOut" element="ns:GuildDataOutput"/>
+    </message>
+    <message name="GuildGetInput">
+        <part name="GetIn" element="ns:GuildDataInput"/>
+    </message>
+    <message name="GuildGetOutput">
+        <part name="GetOut" element="ns:GuildDataOutput"/>
+    </message>
+    <message name="GuildGetAllInput">
+        <part name="GetAllIn" element="ns:GuildDataInput"/>
+    </message>
+    <message name="GuildGetAllOutput">
+        <part name="GetAllOut" element="ns:GuildDataOutput"/>
+    </message>
+    <message name="GuildCreateInput">
+        <part name="CreateIn" element="ns:GuildDataInput"/>
+    </message>
+    <message name="GuildCreateOutput">
+        <part name="CreateOut" element="ns:GuildDataOutput"/>
+    </message>
+    <message name="GuildDeleteInput">
+        <part name="DeleteIn" element="ns:GuildDataInput"/>
+    </message>
+    <message name="GuildDeleteOutput">
+        <part name="DeleteOut" element="ns:GuildDataOutput"/>
+    </message>
+    <portType name="GuildPortUpdate">
+        <operation name="Update">
+            <input message="tns:GuildUpdateInput"/>
+            <output message="tns:GuildUpdateOutput"/>
+        </operation>
+    </portType>
+    <portType name="GuildPortGet">
+        <operation name="Get">
+            <input message="tns:GuildGetInput"/>
+            <output message="tns:GuildGetOutput"/>
+        </operation>
+    </portType>
+    <portType name="GuildPortGetAll">
+        <operation name="GetAll">
+            <input message="tns:GuildGetAllInput"/>
+            <output message="tns:GuildGetAllOutput"/>
+        </operation>
+    </portType>
+    <portType name="GuildPortCreate">
+        <operation name="Create">
+            <input message="tns:GuildCreateInput"/>
+            <output message="tns:GuildCreateOutput"/>
+        </operation>
+    </portType>
+    <portType name="GuildPortDelete">
+        <operation name="Delete">
+            <input message="tns:GuildDeleteInput"/>
+            <output message="tns:GuildDeleteOutput"/>
+        </operation>
+    </portType>
+</definitions>

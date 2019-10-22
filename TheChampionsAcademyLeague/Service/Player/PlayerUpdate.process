@@ -1,11 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571662597687" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Player/Schema.xsd">
+    <wsdl:import namespace="http://xmlns.example.com/1571662597687" location="/Service/Player/Player.wsdl"/>
     <pd:name>Service/Player/PlayerUpdate.process</pd:name>
     <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx:PlayerUpdateInput"/>
     <pd:startX>172</pd:startX>
     <pd:startY>180</pd:startY>
-    <pd:returnBindings/>
+    <pd:returnBindings>
+        <pfx:PlayerUpdateOutput>
+            <CreateOut>
+                <ns:PlayerDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="no(exists($_error_Update/ActivityErrors/*))">
+                            <ns:PlayerOut>
+                                <xsl:attribute name="ID_Player">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Guild_FK">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Closet_FK">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="UserName">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="status">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Email">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="password">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Gender">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="UserType">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="XP">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesToGive">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="MyChampies">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                            </ns:PlayerOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns:PlayerOut>
+                                <xsl:attribute name="ID_Player">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Guild_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_Closet_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="UserName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="status">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Email">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="password">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Gender">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="UserType">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="XP">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesToGive">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="MyChampies">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:PlayerOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns:PlayerDataOutput>
+            </CreateOut>
+        </pfx:PlayerUpdateOutput>
+    </pd:returnBindings>
     <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx:PlayerUpdateOutput"/>
     <pd:endX>774</pd:endX>
     <pd:endY>184</pd:endY>
     <pd:errorSchemas/>
@@ -15,12 +107,62 @@
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
         <pd:x>480</pd:x>
-        <pd:y>183</pd:y>
+        <pd:y>184</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>UPDATE Skin SET  SkinName=?,ImagePath=?,MinXP=?,ChampiesCost=?,SkinType=? Where ID_Skin=?</statement>
+            <statement>UPDATE Player SET  ID_Guild_FK=?, ID_Closet_FK=?,UserName=?, Email=?, password=?,Gender=?,UserType=?,XP=?, ChampiesToGive=?, MyChampies=?,status=?) Where ID_Player=?;</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Guild_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>ID_Closet_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>UserName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>Email</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>password</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>Gender</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>UserType</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>XP</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>ChampiesToGive</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>MyChampies</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>status</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>ID_Player</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcUpdateActivityInput/>
@@ -29,10 +171,33 @@
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>779</pd:x>
-        <pd:y>82</pd:y>
+        <pd:x>775</pd:x>
+        <pd:y>80</pd:y>
         <pd:handler>true</pd:handler>
-        <config/>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
         <pd:inputBindings/>
     </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Update</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Update</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
 </pd:ProcessDefinition>

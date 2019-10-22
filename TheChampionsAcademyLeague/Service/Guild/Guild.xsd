@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="GuildDataInput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GuildIn" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GuildDataOutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GuildOut" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GuildIn">
+		<xs:complexType>
+			<xs:attribute name="ID_Guild" type="xs:string"/>
+			<xs:attribute name="GuildName" type="xs:string"/>
+			<xs:attribute name="StartDate" type="xs:string"/>
+			<xs:attribute name="EndDate" type="xs:string"/>
+			<xs:attribute name="GuildFlag" type="xs:string"/>
+			<xs:attribute name="status" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GuildOut">
+		<xs:complexType>
+			<xs:attribute name="ID_Guild" type="xs:string"/>
+			<xs:attribute name="GuildName" type="xs:string"/>
+			<xs:attribute name="StartDate" type="xs:string"/>
+			<xs:attribute name="EndDate" type="xs:string"/>
+			<xs:attribute name="GuildFlag" type="xs:string"/>
+			<xs:attribute name="status" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
