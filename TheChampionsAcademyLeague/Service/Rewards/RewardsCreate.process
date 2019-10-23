@@ -1,70 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748255318" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:pfx3="http://xmlns.example.com/1571748259086" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Closet/Schema.xsd" xmlns:ns1="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748236987" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Rewards/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
-    <wsdl:import namespace="http://xmlns.example.com/1571748259086" location="/Service/Closet/Closet.wsdl"/>
-    <wsdl:import namespace="http://xmlns.example.com/1571748255318" location="/Service/Guild/Guild.wsdl"/>
-    <pd:name>Service/Guild/GuildCreate.process</pd:name>
+    <wsdl:import namespace="http://xmlns.example.com/1571748236987" location="/Service/Rewards/Rewards.wsdl"/>
+    <pd:name>Service/Rewards/RewardsCreate.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx2:GuildCreateInput"/>
+    <pd:startType wsMsgRef="pfx2:RewardsCreateInput"/>
     <pd:startX>251</pd:startX>
-    <pd:startY>174</pd:startY>
+    <pd:startY>177</pd:startY>
     <pd:returnBindings>
-        <pfx2:GuildCreateOutput>
+        <pfx2:RewardsCreateOutput>
             <CreateOut>
-                <ns1:GuildDataOutput>
+                <ns1:RewardsDataOutput>
                     <xsl:choose>
                         <xsl:when test="not(exists($_error_Create/ActivityErrors/*))">
-                            <ns1:GuildOut>
-                                <xsl:attribute name="ID_Guild">
+                            <ns1:RewardsOut>
+                                <xsl:attribute name="ID_Reward">
                                     <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="GuildName">
+                                <xsl:attribute name="ID_PlayerGiver_FK">
                                     <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="StartDate">
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
                                     <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="EndDate">
+                                <xsl:attribute name="ChampiesGiven">
                                     <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="GuildFlag">
+                                <xsl:attribute name="DateOfReward">
                                     <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="status">
+                                <xsl:attribute name="Approved">
                                     <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
-                            </ns1:GuildOut>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot;Created&quot;"/>
+                                </xsl:attribute>
+                            </ns1:RewardsOut>
                         </xsl:when>
                         <xsl:otherwise>
-                            <ns1:GuildOut>
-                                <xsl:attribute name="ID_Guild">
+                            <ns1:RewardsOut>
+                                <xsl:attribute name="ID_Reward">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="GuildName">
+                                <xsl:attribute name="ID_PlayerGiver_FK">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="StartDate">
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="EndDate">
+                                <xsl:attribute name="ChampiesGiven">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="GuildFlag">
+                                <xsl:attribute name="DateOfReward">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="status">
+                                <xsl:attribute name="Approved">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                            </ns1:GuildOut>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns1:RewardsOut>
                         </xsl:otherwise>
                     </xsl:choose>
-                </ns1:GuildDataOutput>
+                </ns1:RewardsDataOutput>
             </CreateOut>
-        </pfx2:GuildCreateOutput>
+        </pfx2:RewardsCreateOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx2:GuildCreateOutput"/>
-    <pd:endX>733</pd:endX>
+    <pd:endType wsMsgRef="pfx2:RewardsCreateOutput"/>
+    <pd:endX>732</pd:endX>
     <pd:endY>175</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
@@ -79,89 +84,103 @@
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>INSERT INTO Guild (GuildName, StartDate,EndDate,GuildFlag,status) VALUES (?,?,?,?,?);</statement>
+            <statement>INSERT INTO Rewards(ID_PlayerGiver_FK, ID_PlayerReceiver_FK,ChampiesGiven, DateOfReward, Approved, TimeSpent) VALUES (?,?,?,?,?,?);</statement>
             <Prepared_Param_DataType>
                 <parameter>
-                    <parameterName>GuildName</parameterName>
+                    <parameterName>ID_PlayerGiver_FK</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>StartDate</parameterName>
+                    <parameterName>ID_PlayerReceiver_FK</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>EndDate</parameterName>
+                    <parameterName>ChampiesGiven</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>GuildFlag</parameterName>
+                    <parameterName>DateOfReward</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>status</parameterName>
+                    <parameterName>Approved</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>TimeSpent</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
             </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcUpdateActivityInput>
-                <GuildName>
+                <ID_PlayerGiver_FK>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@GuildName)">
-                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@GuildName"/>
+                        <xsl:when test="exists($Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@ID_PlayerGiver_FK)">
+                            <xsl:value-of select="$Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@ID_PlayerGiver_FK"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </GuildName>
-                <StartDate>
+                </ID_PlayerGiver_FK>
+                <ID_PlayerReceiver_FK>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@StartDate)">
-                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@StartDate"/>
+                        <xsl:when test="exists($Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@ID_PlayerReceiver_FK)">
+                            <xsl:value-of select="$Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@ID_PlayerReceiver_FK"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </StartDate>
-                <EndDate>
+                </ID_PlayerReceiver_FK>
+                <ChampiesGiven>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@EndDate)">
-                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@EndDate"/>
+                        <xsl:when test="exists($Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@ChampiesGiven)">
+                            <xsl:value-of select="$Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@ChampiesGiven"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </EndDate>
-                <GuildFlag>
+                </ChampiesGiven>
+                <DateOfReward>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@GuildFlag)">
-                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@GuildFlag"/>
+                        <xsl:when test="exists($Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@DateOfReward)">
+                            <xsl:value-of select="$Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@DateOfReward"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </GuildFlag>
-                <status>
+                </DateOfReward>
+                <Approved>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@status)">
-                            <xsl:value-of select="$Start/pfx2:GuildCreateInput/CreateIn/ns1:GuildDataInput/ns1:GuildIn[1]/@status"/>
+                        <xsl:when test="exists($Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@Approved)">
+                            <xsl:value-of select="$Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@Approved"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </status>
+                </Approved>
+                <TimeSpent>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@TimeSpent)">
+                            <xsl:value-of select="$Start/pfx2:RewardsCreateInput/CreateIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@TimeSpent"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </TimeSpent>
             </jdbcUpdateActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>732</pd:x>
+        <pd:x>731</pd:x>
         <pd:y>46</pd:y>
         <pd:handler>true</pd:handler>
         <config>

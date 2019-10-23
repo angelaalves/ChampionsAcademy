@@ -8,11 +8,11 @@
     <pd:startX>330</pd:startX>
     <pd:startY>245</pd:startY>
     <pd:returnBindings>
-        <pfx2:ClosetDeleteOutput>
-            <DeleteOut>
+        <pfx2:ClosetUpdateOutput>
+            <UpdateOut>
                 <ns1:ClosetDataOutput>
                     <xsl:choose>
-                        <xsl:when test="not(exists( $_error_JDBC-Update/ActivityErrors/*))">
+                        <xsl:when test="not(exists($_error_JDBC-Update/ActivityErrors/*))">
                             <ns1:ClosetOut>
                                 <xsl:attribute name="ID_Closet">
                                     <xsl:value-of select="&quot;Updated&quot;"/>
@@ -34,13 +34,13 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </ns1:ClosetDataOutput>
-            </DeleteOut>
-        </pfx2:ClosetDeleteOutput>
+            </UpdateOut>
+        </pfx2:ClosetUpdateOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx2:ClosetDeleteOutput"/>
+    <pd:endType wsMsgRef="pfx2:ClosetUpdateOutput"/>
     <pd:endX>1004</pd:endX>
-    <pd:endY>247</pd:endY>
+    <pd:endY>248</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571128270884</pd:targetNamespace>
