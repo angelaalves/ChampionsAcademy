@@ -9,7 +9,7 @@
             <row isDefault="true" groupName="Default"/>
         </groups>
         <name>Guild</name>
-        <serviceChange>Wed Oct 23 13:58:33 BST 2019</serviceChange>
+        <serviceChange>Wed Oct 23 14:45:52 BST 2019</serviceChange>
         <resourceType>service.definition</resourceType>
         <interfaceImpl>
             <tab>
@@ -39,7 +39,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -107,7 +107,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -175,7 +175,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -243,7 +243,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -311,7 +311,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
