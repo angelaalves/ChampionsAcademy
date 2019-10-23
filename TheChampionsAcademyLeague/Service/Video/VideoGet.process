@@ -3,11 +3,11 @@
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
     <pd:name>Service/Video/VideoGet.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx:videoInputGet"/>
+    <pd:startType wsMsgRef="pfx:videoGetInput"/>
     <pd:startX>226</pd:startX>
     <pd:startY>305</pd:startY>
     <pd:returnBindings>
-        <pfx:videoOutputGet>
+        <pfx:videoGetOutput>
             <GetOut>
                 <pfx2:DataOutput>
                     <xsl:choose>
@@ -33,11 +33,6 @@
                         </xsl:when>
                         <xsl:when test="exists($Topic/resultSet/Record)">
                             <xsl:for-each select="$Topic/resultSet/Record">
-                                <pfx2:videoOut/>
-                            </xsl:for-each>
-                        </xsl:when>
-                        <xsl:when test="exists($VideoName/resultSet/Record)">
-                            <xsl:for-each select="$VideoName/resultSet/Record">
                                 <pfx2:videoOut>
                                     <xsl:attribute name="ID_Video">
                                         <xsl:value-of select="ID_Video"/>
@@ -56,29 +51,34 @@
                                 </pfx2:videoOut>
                             </xsl:for-each>
                         </xsl:when>
+                        <xsl:when test="exists($VideoName/resultSet/Record)">
+                            <xsl:for-each select="$_error_VideoName">
+                                <pfx2:videoOut/>
+                            </xsl:for-each>
+                        </xsl:when>
                         <xsl:otherwise>
                             <pfx2:videoOut>
                                 <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="0"/>
+                                    <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot;Null&quot;"/>
+                                    <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot;Null&quot;"/>
+                                    <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot;Null&quot;"/>
+                                    <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
                             </pfx2:videoOut>
                         </xsl:otherwise>
                     </xsl:choose>
                 </pfx2:DataOutput>
             </GetOut>
-        </pfx:videoOutputGet>
+        </pfx:videoGetOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx:videoOutputGet"/>
+    <pd:endType wsMsgRef="pfx:videoGetOutput"/>
     <pd:endX>980</pd:endX>
     <pd:endY>292</pd:endY>
     <pd:errorSchemas/>
@@ -125,8 +125,8 @@
             <jdbcQueryActivityInput>
                 <ID_Video>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video)">
-                            <xsl:value-of select="$Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video"/>
+                        <xsl:when test="exists($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video)">
+                            <xsl:value-of select="$Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -177,8 +177,8 @@
             <jdbcQueryActivityInput>
                 <VideoName>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@VideoName)">
-                            <xsl:value-of select="$Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@VideoName"/>
+                        <xsl:when test="exists($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@VideoName)">
+                            <xsl:value-of select="$Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@VideoName"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -229,8 +229,8 @@
             <jdbcQueryActivityInput>
                 <Topic>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@Topic)">
-                            <xsl:value-of select="$Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@Topic"/>
+                        <xsl:when test="exists($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@Topic)">
+                            <xsl:value-of select="$Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@Topic"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -258,7 +258,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn/@ID_Video) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID</pd:from>
@@ -276,7 +276,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn/@VideoName) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@VideoName) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>VideoName</pd:from>
@@ -294,7 +294,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn/@Topic) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@Topic) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Topic</pd:from>

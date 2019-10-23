@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748232229" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
-    <wsdl:import namespace="http://xmlns.example.com/1571748232229" location="/Service/WatchedVideos/WatchedVideos.wsdl"/>
-    <pd:name>Service/WatchedVideos/VideoCreate.process</pd:name>
+    <pd:name>Service/Video/VideoCreate.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx2:WatchedVideosCreateInput"/>
+    <pd:startType wsMsgRef="pfx:videoCreateInput"/>
     <pd:startX>251</pd:startX>
     <pd:startY>177</pd:startY>
     <pd:returnBindings>
-        <pfx:videoOutputCreate>
+        <pfx:videoCreateOutput>
             <CreateOut>
                 <ns:DataOutput>
                     <xsl:choose>
                         <xsl:when test="not(exists($_error_Create/ActivityErrors/*))">
                             <ns:videoOut>
                                 <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot;ID Created&quot;"/>
+                                    <xsl:value-of select="&quot;Video ID Created&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="VideoName">
                                     <xsl:value-of select="&quot;Video Name Created&quot;"/>
@@ -24,7 +23,7 @@
                                     <xsl:value-of select="&quot;Duration added&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot;Topic added&quot;"/>
+                                    <xsl:value-of select="&quot;Topic Given&quot;"/>
                                 </xsl:attribute>
                             </ns:videoOut>
                         </xsl:when>
@@ -47,10 +46,10 @@
                     </xsl:choose>
                 </ns:DataOutput>
             </CreateOut>
-        </pfx:videoOutputCreate>
+        </pfx:videoCreateOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx2:WatchedVideosCreateOutput"/>
+    <pd:endType wsMsgRef="pfx:videoCreateOutput"/>
     <pd:endX>732</pd:endX>
     <pd:endY>175</pd:endY>
     <pd:errorSchemas/>
@@ -86,8 +85,8 @@
             <jdbcUpdateActivityInput>
                 <VideoName>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName"/>
+                        <xsl:when test="exists($Start/pfx:videoCreateInput/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName)">
+                            <xsl:value-of select="$Start/pfx:videoCreateInput/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -96,8 +95,8 @@
                 </VideoName>
                 <Duration>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration"/>
+                        <xsl:when test="exists($Start/pfx:videoCreateInput/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration)">
+                            <xsl:value-of select="$Start/pfx:videoCreateInput/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -106,8 +105,8 @@
                 </Duration>
                 <Topic>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic)">
-                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic"/>
+                        <xsl:when test="exists($Start/pfx:videoCreateInput/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic)">
+                            <xsl:value-of select="$Start/pfx:videoCreateInput/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>

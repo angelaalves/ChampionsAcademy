@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <pd:name>Service/Video/VideoDelete.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx:videoDeleteInput"/>
+    <pd:startX>315</pd:startX>
+    <pd:startY>182</pd:startY>
+    <pd:returnBindings>
+        <pfx:videoDeleteOutput>
+            <DeleteOut>
+                <ns:DataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists($_error_Delete/ActivityErrors/*))">
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns:DataOutput>
+            </DeleteOut>
+        </pfx:videoDeleteOutput>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx:videoDeleteOutput"/>
+    <pd:endX>854</pd:endX>
+    <pd:endY>181</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571147021415</pd:targetNamespace>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>851</pd:x>
+        <pd:y>63</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Delete">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>563</pd:x>
+        <pd:y>185</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>DELETE FROM Videos WHERE ID_Video=?;</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Video</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput>
+                <ID_Video>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:videoDeleteInput/DeleteIn/ns:DataInput/ns:videoIn[1]/@ID_Video)">
+                            <xsl:value-of select="$Start/pfx:videoDeleteInput/DeleteIn/ns:DataInput/ns:videoIn[1]/@ID_Video"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Video>
+            </jdbcUpdateActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Delete</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Delete</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

@@ -36,124 +36,112 @@
         </xs:schema>
     </wsdl:types>
     <wsdl:service name="VideoService">
-        <wsdl:port name="CreateVideoPortEndpoint1" binding="tns:CreateVideoPortEndpoint1Binding">
-            <soap1:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/CreateVideoPortEndpoint1"/>
+        <wsdl:port name="VideoPortUpdateEndpoint1" binding="tns:VideoPortUpdateEndpoint1Binding">
+            <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortUpdateEndpoint1"/>
         </wsdl:port>
-        <wsdl:port name="GetVideoPortEndpoint1" binding="tns:GetVideoPortEndpoint1Binding">
-            <soap1:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1"/>
+        <wsdl:port name="VideoPortGetAllEndpoint1" binding="tns:VideoPortGetAllEndpoint1Binding">
+            <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortGetAllEndpoint1"/>
         </wsdl:port>
-        <wsdl:port name="UpdateVideoPortEndpoint1" binding="tns:UpdateVideoPortEndpoint1Binding">
-            <soap1:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/UpdateVideoPortEndpoint1"/>
+        <wsdl:port name="VideoPortCreateEndpoint1" binding="tns:VideoPortCreateEndpoint1Binding">
+            <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortCreateEndpoint1"/>
         </wsdl:port>
-        <wsdl:port name="GetAllVideoPortEndpoint1" binding="tns:GetAllVideoPortEndpoint1Binding">
-            <soap1:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/GetAllVideoPortEndpoint1"/>
+        <wsdl:port name="VideoPortGetEndpoint1" binding="tns:VideoPortGetEndpoint1Binding">
+            <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortGetEndpoint1"/>
         </wsdl:port>
-        <wsdl:port name="DeleteVideoPortEndpoint1" binding="tns:DeleteVideoPortEndpoint1Binding">
-            <soap1:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/DeleteVideoPortEndpoint1"/>
+        <wsdl:port name="VideoPortDeleteEndpoint1" binding="tns:VideoPortDeleteEndpoint1Binding">
+            <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortDeleteEndpoint1"/>
         </wsdl:port>
     </wsdl:service>
-    <wsdl:portType name="CreateVideoPort">
-        <wsdl:operation name="Create">
-            <wsdl:input message="tns:videoInputCreate"/>
-            <wsdl:output message="tns:videoOutputCreate"/>
-        </wsdl:operation>
-    </wsdl:portType>
-    <wsdl:portType name="GetVideoPort">
-        <wsdl:operation name="Get">
-            <wsdl:input message="tns:videoInputGet"/>
-            <wsdl:output message="tns:videoOutputGet"/>
-        </wsdl:operation>
-    </wsdl:portType>
-    <wsdl:portType name="UpdateVideoPort">
+    <wsdl:portType name="VideoPortUpdate">
         <wsdl:operation name="Update">
             <wsdl:input message="tns:videoInputUpdate"/>
             <wsdl:output message="tns:videoOutputUpdate"/>
         </wsdl:operation>
     </wsdl:portType>
-    <wsdl:portType name="GetAllVideoPort">
+    <wsdl:portType name="VideoPortGetAll">
         <wsdl:operation name="GetAll">
             <wsdl:input message="tns:videoInputGetAll"/>
             <wsdl:output message="tns:videoOutputGetAll"/>
         </wsdl:operation>
     </wsdl:portType>
-    <wsdl:portType name="DeleteVideoPort">
+    <wsdl:portType name="VideoPortCreate">
+        <wsdl:operation name="Create">
+            <wsdl:input message="tns:videoInputCreate"/>
+            <wsdl:output message="tns:videoOutputCreate"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="VideoPortGet">
+        <wsdl:operation name="Get">
+            <wsdl:input message="tns:videoInputGet"/>
+            <wsdl:output message="tns:videoOutputGet"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="VideoPortDelete">
         <wsdl:operation name="Delete">
             <wsdl:input message="tns:videoInputDelete"/>
             <wsdl:output message="tns:videoOutputDelete"/>
         </wsdl:operation>
     </wsdl:portType>
-    <wsdl:binding name="CreateVideoPortEndpoint1Binding" type="tns:CreateVideoPort">
-        <soap1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="Create">
-            <soap1:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/CreateVideoPortEndpoint1/Create" soapActionRequired="true"/>
-            <wsdl:input>
-                <soap1:body use="literal" parts="CreateIn"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap1:body use="literal" parts="CreateOut"/>
-            </wsdl:output>
-        </wsdl:operation>
-    </wsdl:binding>
-    <wsdl:binding name="GetVideoPortEndpoint1Binding" type="tns:GetVideoPort">
-        <soap1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="Get">
-            <soap1:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/GetVideoPortEndpoint1/Get" soapActionRequired="true"/>
-            <wsdl:input>
-                <soap1:body use="literal" parts="GetIn"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap1:body use="literal" parts="GetOut"/>
-            </wsdl:output>
-        </wsdl:operation>
-    </wsdl:binding>
-    <wsdl:binding name="UpdateVideoPortEndpoint1Binding" type="tns:UpdateVideoPort">
-        <soap1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:binding name="VideoPortUpdateEndpoint1Binding" type="tns:VideoPortUpdate">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="Update">
-            <soap1:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/UpdateVideoPortEndpoint1/Update" soapActionRequired="true"/>
+            <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortUpdateEndpoint1/Update"/>
             <wsdl:input>
-                <soap1:body use="literal" parts="UpdateIn"/>
+                <soap:body use="literal" parts="UpdateIn"/>
             </wsdl:input>
             <wsdl:output>
-                <soap1:body use="literal" parts="UpdateOut"/>
+                <soap:body use="literal" parts="UpdateOut"/>
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
-    <wsdl:binding name="GetAllVideoPortEndpoint1Binding" type="tns:GetAllVideoPort">
-        <soap1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:binding name="VideoPortGetAllEndpoint1Binding" type="tns:VideoPortGetAll">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="GetAll">
-            <soap1:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/GetAllVideoPortEndpoint1/GetAll" soapActionRequired="true"/>
+            <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortGetAllEndpoint1/GetAll"/>
             <wsdl:input>
-                <soap1:body use="literal" parts="GetAllIn"/>
+                <soap:body use="literal" parts="GetAllIn"/>
             </wsdl:input>
             <wsdl:output>
-                <soap1:body use="literal" parts="GetAllOut"/>
+                <soap:body use="literal" parts="GetAllOut"/>
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
-    <wsdl:binding name="DeleteVideoPortEndpoint1Binding" type="tns:DeleteVideoPort">
-        <soap1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:binding name="VideoPortCreateEndpoint1Binding" type="tns:VideoPortCreate">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Create">
+            <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortCreateEndpoint1/Create"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="CreateIn"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="CreateOut"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="VideoPortGetEndpoint1Binding" type="tns:VideoPortGet">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Get">
+            <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortGetEndpoint1/Get"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetIn"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetOut"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="VideoPortDeleteEndpoint1Binding" type="tns:VideoPortDelete">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="Delete">
-            <soap1:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/DeleteVideoPortEndpoint1/Delete" soapActionRequired="true"/>
+            <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortDeleteEndpoint1/Delete"/>
             <wsdl:input>
-                <soap1:body use="literal" parts="DeleteIn"/>
+                <soap:body use="literal" parts="DeleteIn"/>
             </wsdl:input>
             <wsdl:output>
-                <soap1:body use="literal" parts="DeleteOut"/>
+                <soap:body use="literal" parts="DeleteOut"/>
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
-    <wsdl:message name="videoInputCreate">
-        <wsdl:part name="CreateIn" element="ns0:DataInput"/>
-    </wsdl:message>
-    <wsdl:message name="videoOutputCreate">
-        <wsdl:part name="CreateOut" element="ns0:DataOutput"/>
-    </wsdl:message>
-    <wsdl:message name="videoInputGet">
-        <wsdl:part name="GetIn" element="ns0:DataInput"/>
-    </wsdl:message>
-    <wsdl:message name="videoOutputGet">
-        <wsdl:part name="GetOut" element="ns0:DataOutput"/>
-    </wsdl:message>
     <wsdl:message name="videoInputUpdate">
         <wsdl:part name="UpdateIn" element="ns0:DataInput"/>
     </wsdl:message>
@@ -165,6 +153,18 @@
     </wsdl:message>
     <wsdl:message name="videoOutputGetAll">
         <wsdl:part name="GetAllOut" element="ns0:DataOutput"/>
+    </wsdl:message>
+    <wsdl:message name="videoInputCreate">
+        <wsdl:part name="CreateIn" element="ns0:DataInput"/>
+    </wsdl:message>
+    <wsdl:message name="videoOutputCreate">
+        <wsdl:part name="CreateOut" element="ns0:DataOutput"/>
+    </wsdl:message>
+    <wsdl:message name="videoInputGet">
+        <wsdl:part name="GetIn" element="ns0:DataInput"/>
+    </wsdl:message>
+    <wsdl:message name="videoOutputGet">
+        <wsdl:part name="GetOut" element="ns0:DataOutput"/>
     </wsdl:message>
     <wsdl:message name="videoInputDelete">
         <wsdl:part name="DeleteIn" element="ns0:DataInput"/>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748232229" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748232229" location="/Service/WatchedVideos/WatchedVideos.wsdl"/>
+    <pd:name>Service/WatchedVideos/WatchedVideosCreate.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx2:WatchedVideosCreateInput"/>
+    <pd:startX>251</pd:startX>
+    <pd:startY>177</pd:startY>
+    <pd:returnBindings>
+        <pfx:videoOutputCreate>
+            <CreateOut>
+                <ns:DataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists($_error_Create/ActivityErrors/*))">
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot;ID Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot;Video Name Created&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot;Duration added&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot;Topic added&quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns:videoOut>
+                                <xsl:attribute name="ID_Video">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="VideoName">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Duration">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Topic">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns:videoOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns:DataOutput>
+            </CreateOut>
+        </pfx:videoOutputCreate>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx2:WatchedVideosCreateOutput"/>
+    <pd:endX>732</pd:endX>
+    <pd:endY>175</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571147055482</pd:targetNamespace>
+    <pd:activity name="Create">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>437</pd:x>
+        <pd:y>178</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <statement>INSERT INTO Videos(VideoName, Duration, Topic) VALUES (?,?,?);</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>VideoName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>Duration</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>Topic</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput>
+                <VideoName>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName)">
+                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@VideoName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </VideoName>
+                <Duration>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration)">
+                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Duration"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </Duration>
+                <Topic>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic)">
+                            <xsl:value-of select="$Start/pfx:videoInputCreate/CreateIn/ns:DataInput/ns:videoIn[1]/@Topic"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </Topic>
+            </jdbcUpdateActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>731</pd:x>
+        <pd:y>46</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Create</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Create</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

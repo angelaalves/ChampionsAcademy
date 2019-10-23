@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748232229" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748232229" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/WatchedVideos/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
     <wsdl:import namespace="http://xmlns.example.com/1571748232229" location="/Service/WatchedVideos/WatchedVideos.wsdl"/>
-    <pd:name>Service/WatchedVideos/VideoDelete.process</pd:name>
+    <pd:name>Service/WatchedVideos/WatchedVideosDelete.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="pfx2:WatchedVideosDeleteInput"/>
     <pd:startX>315</pd:startX>
@@ -91,8 +91,8 @@
             <jdbcUpdateActivityInput>
                 <ID_Video>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputDelete/DeleteIn/ns:DataInput/ns:videoIn[1]/@ID_Video)">
-                            <xsl:value-of select="$Start/pfx:videoInputDelete/DeleteIn/ns:DataInput/ns:videoIn[1]/@ID_Video"/>
+                        <xsl:when test="exists($Start/pfx2:WatchedVideosDeleteInput/DeleteIn/ns1:WatchedVideosDataInput/ns1:WatchedVideosIn[1]/@ID_Video_FK)">
+                            <xsl:value-of select="$Start/pfx2:WatchedVideosDeleteInput/DeleteIn/ns1:WatchedVideosDataInput/ns1:WatchedVideosIn[1]/@ID_Video_FK"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
