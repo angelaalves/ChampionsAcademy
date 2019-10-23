@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { eventType } from '../event-type.enum';
 
+
 @Component({
   selector: 'app-add-events',
   templateUrl: './add-events.component.html',
@@ -35,6 +36,7 @@ export class AddEventsComponent implements OnInit {
       'type': new FormControl(type, Validators.required),
     });
   }
+
 
   addEvent(addEventForm: FormGroup) {
     (<FormArray>this.addEventForm.get('event')).push(

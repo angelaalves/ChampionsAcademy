@@ -16,15 +16,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { WarriorComponent } from './warrior/warrior.component';
-<<<<<<< Updated upstream
 import { GuildComponent } from './guild-list-start/guild-list/guild/guild.component';
 import { AncientComponent } from './ancient-profile/ancient/ancient.component';
 import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-list/add-guild-list.component';
 import { AddUserComponent } from './ancient-profile/ancient/add-user/add-user.component';
 import { GuildListComponent } from './guild-list-start/guild-list/guild-list.component';
-=======
 import { ReactiveFormsModule } from '@angular/forms';
->>>>>>> Stashed changes
 
 
 const appRoutes: Routes=[
