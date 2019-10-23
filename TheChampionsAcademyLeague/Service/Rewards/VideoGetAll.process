@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748236987" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd">
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748236987" location="/Service/Rewards/Rewards.wsdl"/>
     <pd:name>Service/Rewards/VideoGetAll.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx:videoInputGetAll"/>
+    <pd:startType wsMsgRef="pfx2:RewardsGetAllInput"/>
     <pd:startX>223</pd:startX>
     <pd:startY>265</pd:startY>
     <pd:returnBindings>
@@ -53,7 +54,7 @@
         </pfx:videoOutputGetAll>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx:videoOutputGetAll"/>
+    <pd:endType wsMsgRef="pfx2:RewardsGetAllOutput"/>
     <pd:endX>927</pd:endX>
     <pd:endY>269</pd:endY>
     <pd:errorSchemas/>

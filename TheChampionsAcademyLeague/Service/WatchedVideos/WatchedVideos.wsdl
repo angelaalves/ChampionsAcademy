@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/WatchedVideos/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571748232229" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571748232229">
     <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/WatchedVideos/Schema.xsd" location="WatchedVideos.xsd"/>
-    <message name="WatchedVideosUpdateInput">
-        <part name="UpdateIn" element="ns:WatchedVideosDataInput"/>
-    </message>
-    <message name="WatchedVideosUpdateOutput">
-        <part name="UpdateOut" element="ns:WatchedVideosDataOutput"/>
-    </message>
     <message name="WatchedVideosGetInput">
         <part name="GetIn" element="ns:WatchedVideosDataInput"/>
     </message>
@@ -31,12 +25,6 @@
     <message name="WatchedVideosDeleteOutput">
         <part name="DeleteOut" element="ns:WatchedVideosDataOutput"/>
     </message>
-    <portType name="WatchedVideosPortUpdate">
-        <operation name="Update">
-            <input message="tns:WatchedVideosUpdateInput"/>
-            <output message="tns:WatchedVideosUpdateOutput"/>
-        </operation>
-    </portType>
     <portType name="WatchedVideosPortGet">
         <operation name="Get">
             <input message="tns:WatchedVideosGetInput"/>

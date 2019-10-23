@@ -1065,7 +1065,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($Status/resultSet/Record)</pd:xpath>
+        <pd:xpath>$Status/resultSet/Record/status='Inactive'</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Null-1</pd:from>

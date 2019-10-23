@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/GuildEvents/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571749508135" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571749508135">
     <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/GuildEvents/Schema.xsd" location="GuildEvents.xsd"/>
-    <message name="GuildEventsUpdateInput">
-        <part name="UpdateIn" element="ns:GuildEventsDataInput"/>
-    </message>
-    <message name="GuildEventsUpdateOutput">
-        <part name="UpdateOut" element="ns:GuildEventsDataOutput"/>
-    </message>
     <message name="GuildEventsGetInput">
         <part name="GetIn" element="ns:GuildEventsDataInput"/>
     </message>
@@ -31,12 +25,6 @@
     <message name="GuildEventsDeleteOutput">
         <part name="DeleteOut" element="ns:GuildEventsDataOutput"/>
     </message>
-    <portType name="GuildEventsPortUpdate">
-        <operation name="Update">
-            <input message="tns:GuildEventsUpdateInput"/>
-            <output message="tns:GuildEventsUpdateOutput"/>
-        </operation>
-    </portType>
     <portType name="GuildEventsPortGet">
         <operation name="Get">
             <input message="tns:GuildEventsGetInput"/>
