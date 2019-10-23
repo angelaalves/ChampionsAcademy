@@ -7,9 +7,17 @@ export class Guild{
     public guildmaster: Player;
     public members: Player[];
 
-    constructor(name: string, flag: string, guildmaster: Player){
+    constructor(name: string, flag: string, guildmaster: Player, members: Player[]){
         this.name=name;
         this.flag=flag;
         this.guildmaster=guildmaster;
+        this.members=members;
+    }
+
+    getPlayers(){
+        return this.members;
+    }
+    getGuildMaster(){
+        return this.guildmaster;
     }
 }

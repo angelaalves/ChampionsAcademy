@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-warrior-details-coins',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./warrior-details-coins.component.css']
 })
 export class WarriorDetailsCoinsComponent implements OnInit {
-
+  @Input() coinsGive: number;
+  @Input() coinsReceive: number;
   constructor() { }
 
   ngOnInit() {

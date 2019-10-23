@@ -30,7 +30,6 @@ const appRoutes: Routes=[
     {path: 'set_password', component: SetPasswordComponent},
     {path: 'change_password', component: ChangePasswordComponent},
     {path: 'warrior_profile', component: WarriorComponent},
-    {path: 'guild', component: GuildComponent},
     {path: 'guildmaster_profile', component: GuildMasterComponent},
     {path: 'ancient_profile', component: AncientProfileComponent, children:[
         {path: '', component: AncientComponent},
@@ -43,6 +42,10 @@ const appRoutes: Routes=[
     {path: 'ancient_profile', component: AncientComponent},
     {path: 'guilds_list', component: GuildListStartComponent, children:[
         {path:'', component: GuildListComponent},
+        {path: ':id', component: GuildComponent, children:[
+            {path:'', component: GuildComponent},
+            {path: ':id', component: WarriorComponent}
+        ]},
         {path:'add_guild', component: AddGuildListComponent}
     ]},
     {path: 'list_users', component: ListUsersComponent},

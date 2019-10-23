@@ -5,11 +5,15 @@ export class Player{
     public imagePath: string;
     public xp: number;
     public playerType: playerType;
+    public coinsGive: number;
+    public coinsReceived: number;
 
     constructor(name:string, imagePath: string, playerType: playerType){
         this.name=name;
         this.imagePath=imagePath;
         this.playerType=playerType;
-        this.xp=0;
+        this.xp=80;
+        this.coinsGive=20;
+        this.coinsReceived=20;
     }
 }
