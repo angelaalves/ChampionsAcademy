@@ -22,7 +22,10 @@ import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-l
 import { AddUserComponent } from './ancient-profile/ancient/add-user/add-user.component';
 import { GuildListComponent } from './guild-list-start/guild-list/guild-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 
 const appRoutes: Routes=[
