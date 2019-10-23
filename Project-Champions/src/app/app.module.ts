@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -50,8 +50,6 @@ import { AddUserComponent } from './ancient-profile/ancient/add-user/add-user.co
 import { GuildListComponent } from './guild-list-start/guild-list/guild-list.component';
 import { GuildListElemComponent } from './guild-list-start/guild-list/guild-list-elem/guild-list-elem.component';
 import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-list/add-guild-list.component';
-
-
 
 
 @NgModule({
@@ -110,7 +108,8 @@ import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-l
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [PlayerService],
   bootstrap: [AppComponent]
