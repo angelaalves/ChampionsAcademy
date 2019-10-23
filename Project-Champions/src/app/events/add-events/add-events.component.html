@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="centered">
     <div class="col-xs-4" style="text-align: center;">
         <button class="btn btn-link" type="button" ><img src="https://image.flaticon.com/icons/svg/2097/2097137.svg" alt="text" class="img-responsive" style="max-height: 50px;"></button>
@@ -36,3 +37,54 @@
                     </div>
                 </div>
             </div>
+=======
+<body>
+    <section>
+        <nav>
+            <div class="centered">
+                <div class="col-xs-4" style="text-align: center;">
+                    <button class="btn btn-link" type="button"><img
+                        src="https://image.flaticon.com/icons/svg/2097/2097137.svg" alt="text"
+                        class="img-responsive" style="max-height: 50px;">
+                    </button>
+                    <h4>Add Events</h4>
+                </div>
+            </div>
+        </nav>
+        <form [formGroup]="addEventForm" (ngSubmit)="onSubmit(addEventForm.value); addEvent.reset()" class="container-fluid">
+            <div class="col-12">
+                <div class="form-group">
+                    <label style="margin-right: 10px;">Event Date</label>
+                    <input class="form-group" name="date" type="date" formControlName="date" required>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label style="margin-right: 10px;">Name</label>
+                    <input class="form-group" name="name" formControlName="name" required>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label style="margin-right: 10px;">Type</label>
+                    <div style="display: inline-block;">
+                        <select id="inputSubject" data="type" class="form-control" formControlName="type">
+                            <option selected>Select a type of event</option>
+                            <option>Kick-off</option>
+                            <option>Checkpoint</option>
+                            <option>Christmas Dinner</option>
+                            <option>Family Day</option>
+                            <option>Happy-hour</option>
+                            <option>Boarding Games</option>
+                            <option>Annual Trip</option>
+                            <option>Talking Session</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div> 
+            <button type="submit" class="btn btn-primary" [disabled]="!addEventForm.valid" (click)="submit();">Submit</button>
+            </div>
+        </form>
+    </section>
+</body>
+>>>>>>> Stashed changes
