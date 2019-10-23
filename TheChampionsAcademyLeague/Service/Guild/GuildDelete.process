@@ -1,59 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748255318" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748255318" location="/Service/Guild/Guild.wsdl"/>
     <pd:name>Service/Guild/GuildDelete.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx:videoInputDelete"/>
+    <pd:startType wsMsgRef="pfx2:GuildDeleteInput"/>
     <pd:startX>315</pd:startX>
     <pd:startY>182</pd:startY>
     <pd:returnBindings>
-        <pfx:videoOutputDelete>
+        <pfx2:GuildDeleteOutput>
             <DeleteOut>
-                <xsl:choose>
-                    <xsl:when test="not(exists($_error_Delete/ActivityErrors/*))">
-                        <ns:DataOutput>
-                            <ns:videoOut>
-                                <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot;ID deleted&quot;"/>
+                <ns1:GuildDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists(  $_error_Delete/ActivityErrors/*))">
+                            <ns1:GuildOut>
+                                <xsl:attribute name="ID_Guild">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot;Video Name deleted&quot;"/>
+                                <xsl:attribute name="GuildName">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot;Duration deleted&quot;"/>
+                                <xsl:attribute name="StartDate">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot;Removed&quot;"/>
+                                <xsl:attribute name="EndDate">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOut>
-                        </ns:DataOutput>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <ns:DataOutput>
-                            <ns:videoOut>
-                                <xsl:attribute name="ID_Video">
+                                <xsl:attribute name="GuildFlag">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="status">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                            </ns1:GuildOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns1:GuildOut>
+                                <xsl:attribute name="ID_Guild">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="VideoName">
+                                <xsl:attribute name="GuildName">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Duration">
+                                <xsl:attribute name="StartDate">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Topic">
+                                <xsl:attribute name="EndDate">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOut>
-                        </ns:DataOutput>
-                    </xsl:otherwise>
-                </xsl:choose>
+                                <xsl:attribute name="GuildFlag">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="status">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </ns1:GuildOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns1:GuildDataOutput>
             </DeleteOut>
-        </pfx:videoOutputDelete>
+        </pfx2:GuildDeleteOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx:videoOutputDelete"/>
+    <pd:endType wsMsgRef="pfx2:GuildDeleteOutput"/>
     <pd:endX>854</pd:endX>
-    <pd:endY>181</pd:endY>
+    <pd:endY>183</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571147021415</pd:targetNamespace>
@@ -71,33 +82,33 @@
     <pd:activity name="Delete">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>563</pd:x>
+        <pd:x>564</pd:x>
         <pd:y>185</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>DELETE FROM Videos WHERE ID_Video=?;</statement>
+            <statement>DELETE FROM Guild WHERE ID_Guild=?;</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
-                    <parameterName>ID_Video</parameterName>
+                    <parameterName>ID_Guild</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
             </Prepared_Param_DataType>
-            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
         </config>
         <pd:inputBindings>
             <jdbcUpdateActivityInput>
-                <ID_Video>
+                <ID_Guild>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputDelete/DeleteIn/ns:DataInput/ns:videoIn[1]/@ID_Video)">
-                            <xsl:value-of select="$Start/pfx:videoInputDelete/DeleteIn/ns:DataInput/ns:videoIn[1]/@ID_Video"/>
+                        <xsl:when test="exists($Start/pfx2:GuildDeleteInput/DeleteIn/ns1:GuildDataInput/ns1:GuildIn[1]/@ID_Guild)">
+                            <xsl:value-of select="$Start/pfx2:GuildDeleteInput/DeleteIn/ns1:GuildDataInput/ns1:GuildIn[1]/@ID_Guild"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </ID_Video>
+                </ID_Guild>
             </jdbcUpdateActivityInput>
         </pd:inputBindings>
     </pd:activity>
