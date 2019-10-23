@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Guild } from './guild.model';
-import { Player } from '../shared/player.model';
+
 import { Router, ActivatedRoute } from '@angular/router';
-import { playerType } from '../shared/playerType.enum';
+import { playerType } from 'src/app/shared/playerType.enum';
+import { Player } from 'src/app/shared/player.model';
+
 
 @Component({
   selector: 'app-guild-list',
@@ -30,6 +32,6 @@ export class GuildListComponent implements OnInit {
   }
 
   addGuild(){
-    this.router.navigate(['/add_guild'], {relativeTo: this.route});
+    this.router.navigate(['./add_guild'], {relativeTo: this.route});
   }
 }
