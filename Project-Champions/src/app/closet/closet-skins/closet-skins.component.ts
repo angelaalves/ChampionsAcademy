@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./closet-skins.component.css']
 })
 export class ClosetSkinsComponent implements OnInit {
-
+  slideIndex=1;
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -16,4 +16,13 @@ export class ClosetSkinsComponent implements OnInit {
   addSkin(){
     this.router.navigate(['/add_skin'], {relativeTo: this.route});
   }
+
+  /*slide(indexDirection: number): void {
+    this.slides[this.slideIndex].selected = false;
+    this.slideIndex += indexDirection;
+    if(this.slideIndex < 0)
+      this.slideIndex = this.slides.length - 1;
+    this.slideIndex = this.slideIndex % this.slides.length;
+    this.slides[this.slideIndex].selected = true;
+  }*/
 }

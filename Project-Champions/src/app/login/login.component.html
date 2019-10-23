@@ -5,7 +5,7 @@
     </h5>
   </div>
   <div class="card-body" id="card-body" style="margin: auto">
-    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" action="" class="container-fluid">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" action="" class="container-fluid">
       <div class="form-row">
         <div class="col-12">
           <div class="form-group">
@@ -26,7 +26,7 @@
       <div  class="form-row">
         <div class="col-12">
           <div class="form-group">
-            <button type='submit' class="btn btn-primary" [disabled]="!loginForm.valid" (click)="login()">Login</button>
+            <button type='submit' class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
           </div>
         </div>
       </div>
