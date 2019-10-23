@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="835aa663-7d5a-43c7-87e8-85dce1504502" activeEnvironment="Default" name="AttendedEvents" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1f03aa09-2207-4312-9717-968c9182bee8" wsaVersion="NONE" name="attendedEventsCreateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571662486767}attendedEventsCreateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/AttendedEventsSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsCreateEndpoint1</con:endpoint></con:endpoints><con:operation id="f50be201-ba50-4013-b877-68a9ebd40291" isOneWay="false" action="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsCreateEndpoint1/Create" name="Create" bindingOperationName="Create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2a35ac26-fe07-4366-b53c-475f650d2ad0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsCreateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:attendedEventsDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:attendedEventsIn ID_Event_FK="?" ID_Player_FK="?"/>\r
+      </sch:attendedEventsDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsCreateEndpoint1/Create"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="055e7d24-9c7e-4a0a-95c8-55d68ed064fa" wsaVersion="NONE" name="attendedEventsPortDeleteEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571662486767}attendedEventsPortDeleteEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/AttendedEventsSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortDeleteEndpoint1</con:endpoint></con:endpoints><con:operation id="31396963-ca4f-4edf-881f-72992fe16bbb" isOneWay="false" action="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortDeleteEndpoint1/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3945911f-4868-4103-be44-c8b905bb42ce" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortDeleteEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:attendedEventsDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:attendedEventsIn ID_Event_FK="?" ID_Player_FK="?"/>\r
+      </sch:attendedEventsDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortDeleteEndpoint1/Delete"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1646c6a8-98af-4cf2-8425-94923b394193" wsaVersion="NONE" name="attendedEventsPortGetEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571662486767}attendedEventsPortGetEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/AttendedEventsSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/AttendedEventsSoap.wsdl"><con:part><con:url>file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/AttendedEventsSoap.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://xmlns.example.com/1571662486767" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1571662486767" xmlns:ns0="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="attendedEventsDataInput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:attendedEventsIn" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="attendedEventsDataOutput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:attendedEventsOut" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="attendedEventsIn">
+        <xs:complexType>
+          <xs:attribute name="ID_Event_FK" type="xs:string"/>
+          <xs:attribute name="ID_Player_FK" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="attendedEventsOut">
+        <xs:complexType>
+          <xs:attribute name="ID_Event_FK" type="xs:string"/>
+          <xs:attribute name="ID_Player_FK" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="AttendedEventsService">
+    <wsdl:port name="attendedEventsCreateEndpoint1" binding="tns:attendedEventsCreateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsCreateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="attendedEventsPortDeleteEndpoint1" binding="tns:attendedEventsPortDeleteEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortDeleteEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="attendedEventsPortGetEndpoint1" binding="tns:attendedEventsPortGetEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortGetEndpoint1"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="attendedEventsCreate">
+    <wsdl:operation name="Create">
+      <wsdl:input message="tns:attendedEventsCreateInput"/>
+      <wsdl:output message="tns:attendedEventsCreateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="attendedEventsPortDelete">
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:attendedEventsDeleteInput"/>
+      <wsdl:output message="tns:attendedEventsDeleteOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="attendedEventsPortGet">
+    <wsdl:operation name="Get">
+      <wsdl:input message="tns:attendedEventsGetInput"/>
+      <wsdl:output message="tns:attendedEventsGetOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="attendedEventsCreateEndpoint1Binding" type="tns:attendedEventsCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Create">
+      <soap:operation style="document" soapAction="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsCreateEndpoint1/Create"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="CreateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="CreateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="attendedEventsPortDeleteEndpoint1Binding" type="tns:attendedEventsPortDelete">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Delete">
+      <soap:operation style="document" soapAction="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortDeleteEndpoint1/Delete"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="DeleteIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="DeleteOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="attendedEventsPortGetEndpoint1Binding" type="tns:attendedEventsPortGet">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Get">
+      <soap:operation style="document" soapAction="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortGetEndpoint1/Get"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="attendedEventsCreateInput">
+    <wsdl:part name="CreateIn" element="ns0:attendedEventsDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="attendedEventsCreateOutput">
+    <wsdl:part name="CreateOut" element="ns0:attendedEventsDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="attendedEventsDeleteInput">
+    <wsdl:part name="DeleteIn" element="ns0:attendedEventsDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="attendedEventsDeleteOutput">
+    <wsdl:part name="DeleteOut" element="ns0:attendedEventsDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="attendedEventsGetInput">
+    <wsdl:part name="GetIn" element="ns0:attendedEventsDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="attendedEventsGetOutput">
+    <wsdl:part name="GetOut" element="ns0:attendedEventsDataOutput"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortGetEndpoint1</con:endpoint></con:endpoints><con:operation id="6db9d1e3-0fd2-4a33-a54d-d6831020cdea" isOneWay="false" action="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortGetEndpoint1/Get" name="Get" bindingOperationName="Get" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="85fbe0fb-4ccb-475f-bf2d-aa7faf38ea42" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortGetEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/AttendedEvents/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:attendedEventsDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:attendedEventsIn ID_Event_FK="?" ID_Player_FK="?"/>\r
+      </sch:attendedEventsDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/AttendedEvents/AttendedEventsService.serviceagent/attendedEventsPortGetEndpoint1/Get"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

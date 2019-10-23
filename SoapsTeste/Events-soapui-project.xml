@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="12ff9d78-813c-4a69-8773-ef72f1ac2242" activeEnvironment="Default" name="Events" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="160f8912-7da2-4a89-9956-3ed2195a8e67" wsaVersion="NONE" name="EventsPortUpdateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571662504657}EventsPortUpdateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/EventsSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortUpdateEndpoint1</con:endpoint></con:endpoints><con:operation id="ce9eb1f6-fb3d-4ee6-bbec-affe007cae7d" isOneWay="false" action="/Service/Events/EventsService.serviceagent/EventsPortUpdateEndpoint1/Update" name="Update" bindingOperationName="Update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4fad85e1-6c00-442d-81da-53ea19216c4f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortUpdateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:EventsDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:EventsIn EventDate="?" EventName="?" EventType="?" ID_Event="?"/>\r
+      </sch:EventsDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Events/EventsService.serviceagent/EventsPortUpdateEndpoint1/Update"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="dd14df94-fabe-4971-967d-a25e7f0b9333" wsaVersion="NONE" name="EventsPortDeleteEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571662504657}EventsPortDeleteEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/EventsSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortDeleteEndpoint1</con:endpoint></con:endpoints><con:operation id="34c242e4-2aed-419e-b272-3c963dcafc51" isOneWay="false" action="/Service/Events/EventsService.serviceagent/EventsPortDeleteEndpoint1/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9e371c1c-ac3e-4f50-b9ad-8b6a37de771d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortDeleteEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:EventsDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:EventsIn EventDate="?" EventName="?" EventType="?" ID_Event="?"/>\r
+      </sch:EventsDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Events/EventsService.serviceagent/EventsPortDeleteEndpoint1/Delete"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="d55b4644-f7ba-417f-bcdb-554d3d601dba" wsaVersion="NONE" name="EventsPortGetEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571662504657}EventsPortGetEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/EventsSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortGetEndpoint1</con:endpoint></con:endpoints><con:operation id="fc07e868-d4cf-4c24-a275-1dab417e14b5" isOneWay="false" action="/Service/Events/EventsService.serviceagent/EventsPortGetEndpoint1/Get" name="Get" bindingOperationName="Get" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="27b0b918-babd-4f43-abe3-683d7a4c17c5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortGetEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:EventsDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:EventsIn EventDate="?" EventName="?" EventType="?" ID_Event="?"/>\r
+      </sch:EventsDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Events/EventsService.serviceagent/EventsPortGetEndpoint1/Get"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="efea4ffa-3b3e-424e-84ad-eb06cae3d4b1" wsaVersion="NONE" name="EventsPortCreateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571662504657}EventsPortCreateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/EventsSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortCreateEndpoint1</con:endpoint></con:endpoints><con:operation id="08dfa4ed-b22d-4087-9eac-07191075db03" isOneWay="false" action="/Service/Events/EventsService.serviceagent/EventsPortCreateEndpoint1/Create" name="Create" bindingOperationName="Create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="270462e0-8014-451d-9705-2506d5624313" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortCreateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:EventsDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:EventsIn EventDate="?" EventName="?" EventType="?" ID_Event="?"/>\r
+      </sch:EventsDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Events/EventsService.serviceagent/EventsPortCreateEndpoint1/Create"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="53e1358d-5c60-4afa-8a1d-a94844406cb3" wsaVersion="NONE" name="EventsPortGetAllEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571662504657}EventsPortGetAllEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/EventsSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/EventsSoap.wsdl"><con:part><con:url>file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/EventsSoap.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://xmlns.example.com/1571662504657" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1571662504657" xmlns:ns0="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="EventsDataInput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:EventsIn" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EventsDataOutput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:EventsOut" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EventsIn">
+        <xs:complexType>
+          <xs:attribute name="EventDate" type="xs:string"/>
+          <xs:attribute name="EventName" type="xs:string"/>
+          <xs:attribute name="EventType" type="xs:string"/>
+          <xs:attribute name="ID_Event" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EventsOut">
+        <xs:complexType>
+          <xs:attribute name="EventDate" type="xs:string"/>
+          <xs:attribute name="EventName" type="xs:string"/>
+          <xs:attribute name="EventType" type="xs:string"/>
+          <xs:attribute name="ID_Event" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="EventsService">
+    <wsdl:port name="EventsPortUpdateEndpoint1" binding="tns:EventsPortUpdateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortUpdateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="EventsPortDeleteEndpoint1" binding="tns:EventsPortDeleteEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortDeleteEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="EventsPortGetEndpoint1" binding="tns:EventsPortGetEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortGetEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="EventsPortCreateEndpoint1" binding="tns:EventsPortCreateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortCreateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="EventsPortGetAllEndpoint1" binding="tns:EventsPortGetAllEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortGetAllEndpoint1"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="EventsPortUpdate">
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:EventsUpdateInput"/>
+      <wsdl:output message="tns:EventsUpdateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EventsPortDelete">
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:EventsDeleteInput"/>
+      <wsdl:output message="tns:EventsDeleteOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EventsPortGet">
+    <wsdl:operation name="Get">
+      <wsdl:input message="tns:EventsGetInput"/>
+      <wsdl:output message="tns:EventsGetOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EventsPortCreate">
+    <wsdl:operation name="Create">
+      <wsdl:input message="tns:EventsCreateInput"/>
+      <wsdl:output message="tns:EventsCreateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EventsPortGetAll">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:EventsGetAllInput"/>
+      <wsdl:output message="tns:EventsGetAllOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EventsPortUpdateEndpoint1Binding" type="tns:EventsPortUpdate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Update">
+      <soap:operation style="document" soapAction="/Service/Events/EventsService.serviceagent/EventsPortUpdateEndpoint1/Update"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="UpdateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="UpdateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EventsPortDeleteEndpoint1Binding" type="tns:EventsPortDelete">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Delete">
+      <soap:operation style="document" soapAction="/Service/Events/EventsService.serviceagent/EventsPortDeleteEndpoint1/Delete"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="DeleteIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="DeleteOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EventsPortGetEndpoint1Binding" type="tns:EventsPortGet">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Get">
+      <soap:operation style="document" soapAction="/Service/Events/EventsService.serviceagent/EventsPortGetEndpoint1/Get"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EventsPortCreateEndpoint1Binding" type="tns:EventsPortCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Create">
+      <soap:operation style="document" soapAction="/Service/Events/EventsService.serviceagent/EventsPortCreateEndpoint1/Create"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="CreateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="CreateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EventsPortGetAllEndpoint1Binding" type="tns:EventsPortGetAll">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAll">
+      <soap:operation style="document" soapAction="/Service/Events/EventsService.serviceagent/EventsPortGetAllEndpoint1/GetAll"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetAllIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetAllOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="EventsUpdateInput">
+    <wsdl:part name="UpdateIn" element="ns0:EventsDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsUpdateOutput">
+    <wsdl:part name="UpdateOut" element="ns0:EventsDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsDeleteInput">
+    <wsdl:part name="DeleteIn" element="ns0:EventsDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsDeleteOutput">
+    <wsdl:part name="DeleteOut" element="ns0:EventsDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsGetInput">
+    <wsdl:part name="GetIn" element="ns0:EventsDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsGetOutput">
+    <wsdl:part name="GetOut" element="ns0:EventsDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsCreateInput">
+    <wsdl:part name="CreateIn" element="ns0:EventsDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsCreateOutput">
+    <wsdl:part name="CreateOut" element="ns0:EventsDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsGetAllInput">
+    <wsdl:part name="GetAllIn" element="ns0:EventsDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="EventsGetAllOutput">
+    <wsdl:part name="GetAllOut" element="ns0:EventsDataOutput"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortGetAllEndpoint1</con:endpoint></con:endpoints><con:operation id="712def19-e3eb-4fdf-8d97-80cfac5b550e" isOneWay="false" action="/Service/Events/EventsService.serviceagent/EventsPortGetAllEndpoint1/GetAll" name="GetAll" bindingOperationName="GetAll" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="88d65fc4-c92a-4606-9797-a66aafc3f679" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Events/EventsService.serviceagent/EventsPortGetAllEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:EventsDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:EventsIn EventDate="?" EventName="?" EventType="?" ID_Event="?"/>\r
+      </sch:EventsDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Events/EventsService.serviceagent/EventsPortGetAllEndpoint1/GetAll"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
