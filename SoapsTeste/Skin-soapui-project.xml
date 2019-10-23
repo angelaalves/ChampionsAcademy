@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="dadb00d6-e56a-4d7e-a04f-503e7cd0ce2d" activeEnvironment="Default" name="Skin" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0a88ef87-5fb8-4ab3-a1e8-9803b25fa789" wsaVersion="NONE" name="SkinPortUpdateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571067179630}SkinPortUpdateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/SkinSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortUpdateEndpoint1</con:endpoint></con:endpoints><con:operation id="7d380f63-db11-444a-ac63-be50aea46fab" isOneWay="false" action="/Service/Skin/SkinService.serviceagent/SkinPortUpdateEndpoint1/Update" name="Update" bindingOperationName="Update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e836f6f8-66a5-4286-8d87-0c4928f63e8b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortUpdateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:SkinDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:skinIn ChampiesCost="?" ID_Skin="?" ImagePath="?" MinXP="?" SkinName="?" SkinType="?"/>\r
+      </sch:SkinDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Skin/SkinService.serviceagent/SkinPortUpdateEndpoint1/Update"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="84681fa6-482e-41bb-8ffb-8e53c581cb9c" wsaVersion="NONE" name="SkinPortGetEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571067179630}SkinPortGetEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/SkinSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortGetEndpoint1</con:endpoint></con:endpoints><con:operation id="13e65f24-5b58-40a3-b31d-d1db31031126" isOneWay="false" action="/Service/Skin/SkinService.serviceagent/SkinPortGetEndpoint1/Get" name="Get" bindingOperationName="Get" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="803250ae-b4e5-43c8-9585-e08a37332c1f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortGetEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:SkinDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:skinIn ChampiesCost="?" ID_Skin="?" ImagePath="?" MinXP="?" SkinName="?" SkinType="?"/>\r
+      </sch:SkinDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Skin/SkinService.serviceagent/SkinPortGetEndpoint1/Get"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="34909a7a-1b11-4aae-9c95-d92c6038f6e0" wsaVersion="NONE" name="SkinPortCreateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571067179630}SkinPortCreateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/SkinSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortCreateEndpoint1</con:endpoint></con:endpoints><con:operation id="ad84bf2a-491e-45c8-95a1-1566828eaf0a" isOneWay="false" action="/Service/Skin/SkinService.serviceagent/SkinPortCreateEndpoint1/Create" name="Create" bindingOperationName="Create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c8c377c8-62e9-42f2-845e-5be0103e70f9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortCreateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:SkinDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:skinIn ChampiesCost="?" ID_Skin="?" ImagePath="?" MinXP="?" SkinName="?" SkinType="?"/>\r
+      </sch:SkinDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Skin/SkinService.serviceagent/SkinPortCreateEndpoint1/Create"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="769f528f-abdf-43b7-a164-f50cf26452ef" wsaVersion="NONE" name="SkinPortGetAllEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571067179630}SkinPortGetAllEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/SkinSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortGetAllEndpoint1</con:endpoint></con:endpoints><con:operation id="c89e26fc-00d3-4ee2-bc6f-ebc3a24b5234" isOneWay="false" action="/Service/Skin/SkinService.serviceagent/SkinPortGetAllEndpoint1/GetAll" name="GetAll" bindingOperationName="GetAll" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c2d2d3be-7308-4366-95a7-d4cfe593eea6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortGetAllEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:SkinDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:skinIn ChampiesCost="?" ID_Skin="?" ImagePath="?" MinXP="?" SkinName="?" SkinType="?"/>\r
+      </sch:SkinDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Skin/SkinService.serviceagent/SkinPortGetAllEndpoint1/GetAll"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b52a5ccc-0e54-4aa9-a580-e83f868dce68" wsaVersion="NONE" name="SkinPortDeleteEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571067179630}SkinPortDeleteEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/SkinSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/SkinSoap.wsdl"><con:part><con:url>file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/SkinSoap.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://xmlns.example.com/1571067179630" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1571067179630" xmlns:ns0="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SkinDataInput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:skinIn" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SkinDataOutput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:skinOut" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="skinIn">
+        <xs:complexType>
+          <xs:attribute name="ChampiesCost" type="xs:string"/>
+          <xs:attribute name="ID_Skin" type="xs:string"/>
+          <xs:attribute name="ImagePath" type="xs:string"/>
+          <xs:attribute name="MinXP" type="xs:string"/>
+          <xs:attribute name="SkinName" type="xs:string"/>
+          <xs:attribute name="SkinType" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="skinOut">
+        <xs:complexType>
+          <xs:attribute name="ChampiesCost" type="xs:string"/>
+          <xs:attribute name="ID_Skin" type="xs:string"/>
+          <xs:attribute name="ImagePath" type="xs:string"/>
+          <xs:attribute name="MinXP" type="xs:string"/>
+          <xs:attribute name="SkinName" type="xs:string"/>
+          <xs:attribute name="SkinType" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="SkinService">
+    <wsdl:port name="SkinPortUpdateEndpoint1" binding="tns:SkinPortUpdateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortUpdateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="SkinPortGetEndpoint1" binding="tns:SkinPortGetEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortGetEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="SkinPortCreateEndpoint1" binding="tns:SkinPortCreateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortCreateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="SkinPortGetAllEndpoint1" binding="tns:SkinPortGetAllEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortGetAllEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="SkinPortDeleteEndpoint1" binding="tns:SkinPortDeleteEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortDeleteEndpoint1"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="SkinPortUpdate">
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:skinUpdateInput"/>
+      <wsdl:output message="tns:skinUpdateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SkinPortGet">
+    <wsdl:operation name="Get">
+      <wsdl:input message="tns:skinGetInput"/>
+      <wsdl:output message="tns:skinGetOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SkinPortCreate">
+    <wsdl:operation name="Create">
+      <wsdl:input message="tns:skinCreateInput"/>
+      <wsdl:output message="tns:skinCreateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SkinPortGetAll">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:skinGetAllInput"/>
+      <wsdl:output message="tns:skinGetAllOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SkinPortDelete">
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:skinDeleteInput"/>
+      <wsdl:output message="tns:skinDeleteOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SkinPortUpdateEndpoint1Binding" type="tns:SkinPortUpdate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Update">
+      <soap:operation style="document" soapAction="/Service/Skin/SkinService.serviceagent/SkinPortUpdateEndpoint1/Update"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="UpdateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="UpdateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SkinPortGetEndpoint1Binding" type="tns:SkinPortGet">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Get">
+      <soap:operation style="document" soapAction="/Service/Skin/SkinService.serviceagent/SkinPortGetEndpoint1/Get"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SkinPortCreateEndpoint1Binding" type="tns:SkinPortCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Create">
+      <soap:operation style="document" soapAction="/Service/Skin/SkinService.serviceagent/SkinPortCreateEndpoint1/Create"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="CreateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="CreateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SkinPortGetAllEndpoint1Binding" type="tns:SkinPortGetAll">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAll">
+      <soap:operation style="document" soapAction="/Service/Skin/SkinService.serviceagent/SkinPortGetAllEndpoint1/GetAll"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetAllIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetAllOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SkinPortDeleteEndpoint1Binding" type="tns:SkinPortDelete">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Delete">
+      <soap:operation style="document" soapAction="/Service/Skin/SkinService.serviceagent/SkinPortDeleteEndpoint1/Delete"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="DeleteIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="DeleteOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="skinUpdateInput">
+    <wsdl:part name="UpdateIn" element="ns0:SkinDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="skinUpdateOutput">
+    <wsdl:part name="UpdateOut" element="ns0:SkinDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="skinGetInput">
+    <wsdl:part name="GetIn" element="ns0:SkinDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="skinGetOutput">
+    <wsdl:part name="GetOut" element="ns0:SkinDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="skinCreateInput">
+    <wsdl:part name="CreateIn" element="ns0:SkinDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="skinCreateOutput">
+    <wsdl:part name="CreateOut" element="ns0:SkinDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="skinGetAllInput">
+    <wsdl:part name="GetAllIn" element="ns0:SkinDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="skinGetAllOutput">
+    <wsdl:part name="GetAllOut" element="ns0:SkinDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="skinDeleteInput">
+    <wsdl:part name="DeleteIn" element="ns0:SkinDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="skinDeleteOutput">
+    <wsdl:part name="DeleteOut" element="ns0:SkinDataOutput"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortDeleteEndpoint1</con:endpoint></con:endpoints><con:operation id="a95a3dd5-a23a-43d4-9771-8cdac4e88b03" isOneWay="false" action="/Service/Skin/SkinService.serviceagent/SkinPortDeleteEndpoint1/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b93eb5f8-93ff-40fe-a51e-f23036a6db58" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Skin/SkinService.serviceagent/SkinPortDeleteEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Skin/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:SkinDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:skinIn ChampiesCost="?" ID_Skin="?" ImagePath="?" MinXP="?" SkinName="?" SkinType="?"/>\r
+      </sch:SkinDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Skin/SkinService.serviceagent/SkinPortDeleteEndpoint1/Delete"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

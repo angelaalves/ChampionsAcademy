@@ -3,17 +3,17 @@
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
     <pd:name>Service/Video/VideoGetAll.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx:videoInputGetAll"/>
+    <pd:startType wsMsgRef="pfx:videoGetAllInput"/>
     <pd:startX>223</pd:startX>
     <pd:startY>265</pd:startY>
     <pd:returnBindings>
-        <pfx:videoOutputGetAll>
+        <pfx:videoGetAllOutput>
             <GetAllOut>
-                <xsl:choose>
-                    <xsl:when test="$Video/resultSet/Record">
-                        <ns:DataOutput>
+                <ns:VideoDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="$Video/resultSet/Record">
                             <xsl:for-each select="$Video/resultSet/Record">
-                                <ns:videoOut>
+                                <ns:videoOutput>
                                     <xsl:attribute name="ID_Video">
                                         <xsl:value-of select="ID_Video"/>
                                     </xsl:attribute>
@@ -26,13 +26,11 @@
                                     <xsl:attribute name="Topic">
                                         <xsl:value-of select="topic"/>
                                     </xsl:attribute>
-                                </ns:videoOut>
+                                </ns:videoOutput>
                             </xsl:for-each>
-                        </ns:DataOutput>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <ns:DataOutput>
-                            <ns:videoOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns:videoOutput>
                                 <xsl:attribute name="ID_Video">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
@@ -45,15 +43,15 @@
                                 <xsl:attribute name="Topic">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOut>
-                        </ns:DataOutput>
-                    </xsl:otherwise>
-                </xsl:choose>
+                            </ns:videoOutput>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns:VideoDataOutput>
             </GetAllOut>
-        </pfx:videoOutputGetAll>
+        </pfx:videoGetAllOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx:videoOutputGetAll"/>
+    <pd:endType wsMsgRef="pfx:videoGetAllOutput"/>
     <pd:endX>927</pd:endX>
     <pd:endY>269</pd:endY>
     <pd:errorSchemas/>
