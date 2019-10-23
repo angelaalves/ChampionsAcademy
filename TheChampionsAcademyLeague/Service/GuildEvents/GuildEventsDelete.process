@@ -64,11 +64,15 @@
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>DELETE FROM GuildEvents WHERE ID_Guild_FK=?;</statement>
+            <statement>DELETE FROM GuildEvents WHERE ID_Guild_FK=? and ID_Event_FK=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>ID_Guild_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>ID_Event_FK</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
             </Prepared_Param_DataType>
@@ -85,6 +89,16 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </ID_Guild_FK>
+                <ID_Event_FK>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:GuildEventsDeleteInput/DeleteIn/ns1:GuildEventsDataInput/ns1:GuildEventsIn[1]/@ID_Events_FK)">
+                            <xsl:value-of select="$Start/pfx2:GuildEventsDeleteInput/DeleteIn/ns1:GuildEventsDataInput/ns1:GuildEventsIn[1]/@ID_Events_FK"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Event_FK>
             </jdbcUpdateActivityInput>
         </pd:inputBindings>
     </pd:activity>

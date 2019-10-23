@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:pfx3="http://xmlns.example.com/1571748236987" xmlns:pfx4="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Rewards/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748236987" location="/Service/Rewards/Rewards.wsdl"/>
+    <pd:name>Service/Rewards/RewardsGet.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx3:RewardsGetInput"/>
+    <pd:startX>226</pd:startX>
+    <pd:startY>305</pd:startY>
+    <pd:returnBindings>
+        <pfx3:RewardsGetOutput>
+            <GetOut>
+                <pfx4:RewardsDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="exists($ID_Reward/resultSet/Record)">
+                            <xsl:for-each select="$ID_Reward/resultSet/Record">
+                                <pfx4:RewardsOut>
+                                    <xsl:attribute name="ID_Reward">
+                                        <xsl:value-of select="ID_Reward"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerGiver_FK">
+                                        <xsl:value-of select="ID_PlayerGiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerReceiver_FK">
+                                        <xsl:value-of select="ID_PlayerReceiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ChampiesGiven">
+                                        <xsl:value-of select="ChampiesGiven"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="DateOfReward">
+                                        <xsl:value-of select="DateOfReward"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="Approved">
+                                        <xsl:attribute name="Approved">
+                                            <xsl:value-of select="Approved"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:attribute name="TimeSpent">
+                                        <xsl:value-of select="TimeSpent"/>
+                                    </xsl:attribute>
+                                </pfx4:RewardsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($ID_PlayerGiver_FK/resultSet/Record)">
+                            <xsl:for-each select="$ID_PlayerGiver_FK/resultSet/Record">
+                                <pfx4:RewardsOut>
+                                    <xsl:attribute name="ID_Reward">
+                                        <xsl:value-of select="ID_Reward"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerGiver_FK">
+                                        <xsl:value-of select="ID_PlayerGiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerReceiver_FK">
+                                        <xsl:value-of select="ID_PlayerReceiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ChampiesGiven">
+                                        <xsl:value-of select="ChampiesGiven"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="DateOfReward">
+                                        <xsl:value-of select="DateOfReward"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="Approved">
+                                        <xsl:attribute name="Approved">
+                                            <xsl:value-of select="Approved"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:attribute name="TimeSpent">
+                                        <xsl:value-of select="TimeSpent"/>
+                                    </xsl:attribute>
+                                </pfx4:RewardsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($ID_PlayerReceiver_FK/resultSet/Record)">
+                            <xsl:for-each select="$ID_PlayerReceiver_FK/resultSet/Record">
+                                <pfx4:RewardsOut>
+                                    <xsl:attribute name="ID_Reward">
+                                        <xsl:value-of select="ID_Reward"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerGiver_FK">
+                                        <xsl:value-of select="ID_PlayerGiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerReceiver_FK">
+                                        <xsl:value-of select="ID_PlayerReceiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ChampiesGiven">
+                                        <xsl:value-of select="ChampiesGiven"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="DateOfReward">
+                                        <xsl:value-of select="DateOfReward"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="Approved">
+                                        <xsl:attribute name="Approved">
+                                            <xsl:value-of select="Approved"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:attribute name="TimeSpent">
+                                        <xsl:value-of select="TimeSpent"/>
+                                    </xsl:attribute>
+                                </pfx4:RewardsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($DateOfReward/resultSet/Record)">
+                            <xsl:for-each select="$DateOfReward/resultSet/Record">
+                                <pfx4:RewardsOut>
+                                    <xsl:attribute name="ID_Reward">
+                                        <xsl:value-of select="ID_Reward"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerGiver_FK">
+                                        <xsl:value-of select="ID_PlayerGiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerReceiver_FK">
+                                        <xsl:value-of select="ID_PlayerReceiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ChampiesGiven">
+                                        <xsl:value-of select="ChampiesGiven"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="DateOfReward">
+                                        <xsl:value-of select="DateOfReward"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="Approved">
+                                        <xsl:attribute name="Approved">
+                                            <xsl:value-of select="Approved"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:attribute name="TimeSpent">
+                                        <xsl:value-of select="TimeSpent"/>
+                                    </xsl:attribute>
+                                </pfx4:RewardsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($ChampiesGiven/resultSet/Record)">
+                            <xsl:for-each select="$ChampiesGiven/resultSet/Record">
+                                <pfx4:RewardsOut>
+                                    <xsl:attribute name="ID_Reward">
+                                        <xsl:value-of select="ID_Reward"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerGiver_FK">
+                                        <xsl:value-of select="ID_PlayerGiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerReceiver_FK">
+                                        <xsl:value-of select="ID_PlayerReceiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ChampiesGiven">
+                                        <xsl:value-of select="ChampiesGiven"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="DateOfReward">
+                                        <xsl:value-of select="DateOfReward"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="Approved">
+                                        <xsl:attribute name="Approved">
+                                            <xsl:value-of select="Approved"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:attribute name="TimeSpent">
+                                        <xsl:value-of select="TimeSpent"/>
+                                    </xsl:attribute>
+                                </pfx4:RewardsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($Approved/resultSet/Record)">
+                            <xsl:for-each select="$Approved/resultSet/Record">
+                                <pfx4:RewardsOut>
+                                    <xsl:attribute name="ID_Reward">
+                                        <xsl:value-of select="ID_Reward"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerGiver_FK">
+                                        <xsl:value-of select="ID_PlayerGiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerReceiver_FK">
+                                        <xsl:value-of select="ID_PlayerReceiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ChampiesGiven">
+                                        <xsl:value-of select="ChampiesGiven"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="DateOfReward">
+                                        <xsl:value-of select="DateOfReward"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="Approved">
+                                        <xsl:attribute name="Approved">
+                                            <xsl:value-of select="Approved"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:attribute name="TimeSpent">
+                                        <xsl:value-of select="TimeSpent"/>
+                                    </xsl:attribute>
+                                </pfx4:RewardsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($TimeSpent/resultSet/Record)">
+                            <xsl:for-each select="$TimeSpent/resultSet/Record">
+                                <pfx4:RewardsOut>
+                                    <xsl:attribute name="ID_Reward">
+                                        <xsl:value-of select="ID_Reward"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerGiver_FK">
+                                        <xsl:value-of select="ID_PlayerGiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerReceiver_FK">
+                                        <xsl:value-of select="ID_PlayerReceiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ChampiesGiven">
+                                        <xsl:value-of select="ChampiesGiven"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="DateOfReward">
+                                        <xsl:value-of select="DateOfReward"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="Approved">
+                                        <xsl:attribute name="Approved">
+                                            <xsl:value-of select="Approved"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:attribute name="TimeSpent">
+                                        <xsl:value-of select="TimeSpent"/>
+                                    </xsl:attribute>
+                                </pfx4:RewardsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <pfx4:RewardsOut>
+                                <xsl:attribute name="ID_Reward">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerGiver_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesGiven">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="DateOfReward">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Approved">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                            </pfx4:RewardsOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </pfx4:RewardsDataOutput>
+            </GetOut>
+        </pfx3:RewardsGetOutput>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx3:RewardsGetOutput"/>
+    <pd:endX>980</pd:endX>
+    <pd:endY>292</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571128269566</pd:targetNamespace>
+    <pd:activity name="ID_Reward">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>519</pd:x>
+        <pd:y>103</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <statement>SELECT * FROM Rewards  WHERE ID_Reward=(?);</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Reward</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Reward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerGiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerReceiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesGiven</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>DateOfReward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>93</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <ID_Reward>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_Reward)">
+                            <xsl:value-of select="$Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_Reward"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Reward>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="ID_PlayerReceiver_FK">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>521</pd:x>
+        <pd:y>298</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM Rewards WHERE ID_PlayerReceiver_FK=(?);</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_PlayerReceiver_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Reward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerGiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerReceiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesGiven</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>DateOfReward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>93</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <ID_PlayerReceiver_FK>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_PlayerReceiver_FK)">
+                            <xsl:value-of select="$Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_PlayerReceiver_FK"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_PlayerReceiver_FK>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="DateOfReward">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>524</pd:x>
+        <pd:y>387</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM Rewards WHERE DateOfReward=(?);</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>DateOfReward</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Reward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerGiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerReceiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesGiven</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>DateOfReward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>93</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <DateOfReward>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@DateOfReward)">
+                            <xsl:value-of select="$Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@DateOfReward"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </DateOfReward>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>978</pd:x>
+        <pd:y>164</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="ID_PlayerGiver_FK">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>518</pd:x>
+        <pd:y>207</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM Rewards WHERE ID_PlayerGiver_FK=(?);</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_PlayerGiver_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Reward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerGiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerReceiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesGiven</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>DateOfReward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>93</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <ID_PlayerGiver_FK>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_PlayerGiver_FK)">
+                            <xsl:value-of select="$Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_PlayerGiver_FK"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_PlayerGiver_FK>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Approved">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>523</pd:x>
+        <pd:y>591</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM Rewards WHERE Approved=(?);</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>Approved</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Reward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerGiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerReceiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesGiven</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>DateOfReward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>93</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <Approved>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@Approved)">
+                            <xsl:value-of select="$Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@Approved"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </Approved>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="TimeSpent">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>520</pd:x>
+        <pd:y>707</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM Rewards WHERE TimeSpent=(?);</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>TimeSpent</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Reward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerGiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerReceiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesGiven</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>DateOfReward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>93</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <TimeSpent>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@TimeSpent)">
+                            <xsl:value-of select="$Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@TimeSpent"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </TimeSpent>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="ChampiesGiven">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>525</pd:x>
+        <pd:y>492</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM Rewards WHERE ChampiesGiven=(?);</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ChampiesGiven</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Reward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerGiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerReceiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesGiven</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>DateOfReward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>93</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <ChampiesGiven>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ChampiesGiven)">
+                            <xsl:value-of select="$Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ChampiesGiven"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ChampiesGiven>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>ID_Reward</pd:to>
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_Reward) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ID_Reward</pd:from>
+        <pd:to>End</pd:to>
+        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($ID_Reward/resultSet/Record)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>ID_PlayerReceiver_FK</pd:to>
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_PlayerReceiver_FK) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ID_PlayerReceiver_FK</pd:from>
+        <pd:to>End</pd:to>
+        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($ID_PlayerReceiver_FK/resultSet/Record)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>DateOfReward</pd:to>
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@DateOfReward) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>DateOfReward</pd:from>
+        <pd:to>End</pd:to>
+        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($DateOfReward/resultSet/Record)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>ID_PlayerGiver_FK</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_PlayerGiver_FK) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ID_PlayerGiver_FK</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($ID_PlayerGiver_FK/resultSet/Record)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Approved</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@Approved) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>TimeSpent</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@TimeSpent) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>TimeSpent</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($TimeSpent/resultSet/Record)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Approved</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($Approved/resultSet/Record)</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>ChampiesGiven</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ChampiesGiven) &gt; 0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>ChampiesGiven</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>exists($ChampiesGiven/resultSet/Record)</pd:xpath>
+    </pd:transition>
+</pd:ProcessDefinition>

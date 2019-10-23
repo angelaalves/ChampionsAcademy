@@ -8,48 +8,34 @@
     <pd:startX>315</pd:startX>
     <pd:startY>182</pd:startY>
     <pd:returnBindings>
-        <pfx:videoOutputDelete>
+        <pfx2:WatchedVideosDeleteOutput>
             <DeleteOut>
-                <xsl:choose>
-                    <xsl:when test="not(exists($_error_Delete/ActivityErrors/*))">
-                        <ns:DataOutput>
-                            <ns:videoOut>
-                                <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot;ID deleted&quot;"/>
+                <ns1:WatchedVideosDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists($_error_Delete/ActivityErrors/*))">
+                            <ns1:WatchedVideosOut>
+                                <xsl:attribute name="ID_Video_FK">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot;Video Name deleted&quot;"/>
+                                <xsl:attribute name="ID_Player_FK">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot;Duration deleted&quot;"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot;Removed&quot;"/>
-                                </xsl:attribute>
-                            </ns:videoOut>
-                        </ns:DataOutput>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <ns:DataOutput>
-                            <ns:videoOut>
-                                <xsl:attribute name="ID_Video">
+                            </ns1:WatchedVideosOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns1:WatchedVideosOut>
+                                <xsl:attribute name="ID_Video_FK">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="VideoName">
+                                <xsl:attribute name="ID_Player_FK">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot; &quot;"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot; &quot;"/>
-                                </xsl:attribute>
-                            </ns:videoOut>
-                        </ns:DataOutput>
-                    </xsl:otherwise>
-                </xsl:choose>
+                            </ns1:WatchedVideosOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns1:WatchedVideosDataOutput>
             </DeleteOut>
-        </pfx:videoOutputDelete>
+        </pfx2:WatchedVideosDeleteOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx2:WatchedVideosDeleteOutput"/>
@@ -72,24 +58,28 @@
     <pd:activity name="Delete">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>563</pd:x>
-        <pd:y>185</pd:y>
+        <pd:x>564</pd:x>
+        <pd:y>186</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>DELETE FROM Videos WHERE ID_Video=?;</statement>
+            <statement>DELETE FROM WatchedVideos WHERE ID_Video_FK=? and ID_Player_FK=?;</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
-                    <parameterName>ID_Video</parameterName>
+                    <parameterName>ID_Video_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>ID_Player_FK</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
             </Prepared_Param_DataType>
-            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
         </config>
         <pd:inputBindings>
             <jdbcUpdateActivityInput>
-                <ID_Video>
+                <ID_Video_FK>
                     <xsl:choose>
                         <xsl:when test="exists($Start/pfx2:WatchedVideosDeleteInput/DeleteIn/ns1:WatchedVideosDataInput/ns1:WatchedVideosIn[1]/@ID_Video_FK)">
                             <xsl:value-of select="$Start/pfx2:WatchedVideosDeleteInput/DeleteIn/ns1:WatchedVideosDataInput/ns1:WatchedVideosIn[1]/@ID_Video_FK"/>
@@ -98,7 +88,17 @@
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </ID_Video>
+                </ID_Video_FK>
+                <ID_Player_FK>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:WatchedVideosDeleteInput/DeleteIn/ns1:WatchedVideosDataInput/ns1:WatchedVideosIn[1]/@ID_Player_FK)">
+                            <xsl:value-of select="$Start/pfx2:WatchedVideosDeleteInput/DeleteIn/ns1:WatchedVideosDataInput/ns1:WatchedVideosIn[1]/@ID_Player_FK"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Player_FK>
             </jdbcUpdateActivityInput>
         </pd:inputBindings>
     </pd:activity>
