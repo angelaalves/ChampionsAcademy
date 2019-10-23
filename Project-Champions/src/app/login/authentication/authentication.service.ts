@@ -3,6 +3,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from './user.model';
 import { catchError, tap } from 'rxjs/operators';
 import { Subject, throwError } from 'rxjs';
+import { Player } from 'src/app/shared/player.model';
+import { playerType } from 'src/app/shared/playerType.enum';
 
 interface AuthResponseData{
     kind: string,
@@ -15,20 +17,19 @@ interface AuthResponseData{
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
-  user = new Subject<User>();
+  user = new Subject<Player>();
 
   constructor(private http: HttpClient ) { }
 
   signup(email: string, password:string){
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCvL2aDtNpuhYmP1U9W8JdvuMgCv3Kn0HA',
+    return this.http.post<AuthResponseData>('localhost:8085',
       {
         email: email,
-        password: password,
-        returnSecureTOken:true
+        password: password
       }
     ).pipe(catchError(this.handleError),
     tap(resData => {
-        this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)
+        this.handleAuthentication(resData.email, resData.localId)
     }));
   }
 
@@ -51,9 +52,9 @@ export class AuthenticationService {
     return throwError(errorMessage);
   }
 
-  private handleAuthentication(email:string,userId:string, token:string, expiresIn:number){
-    const expirationDate = new Date(new Date().getTime() + +expiresIn * 1000);
-    const user = new User(email, userId, token, expirationDate);
-    this.user.next(user);
+  private handleAuthentication(email:string,userId:string){
+    const expirationDate = new Date(new Date().getTime());
+    const player = new Player(email, userId, playerType.GuildMaster );
+    this.user.next(player);
   }
 }
