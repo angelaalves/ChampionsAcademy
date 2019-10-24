@@ -22,6 +22,7 @@ import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-l
 import { AddUserComponent } from './ancient-profile/ancient/add-user/add-user.component';
 import { GuildListComponent } from './guild-list-start/guild-list/guild-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
 
 
 const appRoutes: Routes=[
@@ -44,7 +45,7 @@ const appRoutes: Routes=[
         {path:'', component: GuildListComponent},
         {path: ':id', component: GuildComponent, children:[
             {path:'', component: GuildComponent},
-            {path: ':id', component: WarriorComponent}
+            {path: ':id', component: PresenterPageComponent}
         ]},
         {path:'add_guild', component: AddGuildListComponent}
     ]},

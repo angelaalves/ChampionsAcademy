@@ -50,6 +50,7 @@ import { AddUserComponent } from './ancient-profile/ancient/add-user/add-user.co
 import { GuildListComponent } from './guild-list-start/guild-list/guild-list.component';
 import { GuildListElemComponent } from './guild-list-start/guild-list/guild-list-elem/guild-list-elem.component';
 import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-list/add-guild-list.component';
+import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
 
 
 @NgModule({
@@ -102,7 +103,8 @@ import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-l
     AuthenticationComponent,
     AddEventsComponent,
     AncientProfileComponent,
-    GuildListStartComponent
+    GuildListStartComponent,
+    PresenterPageComponent
   ],
   imports: [
     BrowserModule,

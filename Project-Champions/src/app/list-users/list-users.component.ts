@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Player } from '../shared/player.model';
 import { playerType } from '../shared/playerType.enum';
+import { PlayerService } from '../services/player.service';
 
 @Component({
   selector: 'app-list-users',
@@ -8,12 +9,12 @@ import { playerType } from '../shared/playerType.enum';
   styleUrls: ['./list-users.component.css']
 })
 export class ListUsersComponent implements OnInit {
-  //@Input() player: Player;
-  playerType: playerType;
+  @Input() players: Player[];
 
-  constructor() { }
+  constructor(private playerService:PlayerService) { }
 
   ngOnInit() {
+    this.players=this.playerService.getPlayers();
   }
 
 }
