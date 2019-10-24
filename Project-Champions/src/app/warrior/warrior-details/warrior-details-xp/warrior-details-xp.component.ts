@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-warrior-details-xp',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./warrior-details-xp.component.css']
 })
 export class WarriorDetailsXPComponent implements OnInit {
-
+  @Input() XP:number;
   constructor() { }
 
   ngOnInit() {

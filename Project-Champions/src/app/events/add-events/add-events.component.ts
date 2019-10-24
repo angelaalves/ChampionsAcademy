@@ -14,7 +14,7 @@ import { eventType } from '../event-type.enum';
 export class AddEventsComponent implements OnInit {
   addEventForm: FormGroup;
 
-  constructor(private http:HttpClient, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.route.params

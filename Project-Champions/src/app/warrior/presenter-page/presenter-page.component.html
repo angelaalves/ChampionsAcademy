@@ -4,12 +4,9 @@
             <app-image [name]="warrior.name"></app-image>
         </div>
         <div class="col-md-9" style="margin-left: 50px;">
-            <app-warrior-details [XP]="warrior.xp" [coinsGive]="warrior.coinsGive" [coinsReceive]="warrior.coinsReceived"></app-warrior-details>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <app-warrior-definitions></app-warrior-definitions>
+            <app-warrior-details-xp [XP]="warrior.xp"></app-warrior-details-xp>
+            <hr>
+            <app-warrior-details-coins [coinsGive]="warrior.coinsGive" [coinsReceive]="warrior.coinsReceived"></app-warrior-details-coins>
         </div>
     </div>
 </div>

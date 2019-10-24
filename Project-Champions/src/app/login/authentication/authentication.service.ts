@@ -5,6 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Subject, throwError } from 'rxjs';
 import { Player } from 'src/app/shared/player.model';
 import { playerType } from 'src/app/shared/playerType.enum';
+import { gender } from 'src/app/shared/playerGender.enum';
 
 interface AuthResponseData{
     kind: string,
@@ -54,7 +55,7 @@ export class AuthenticationService {
 
   private handleAuthentication(email:string,userId:string){
     const expirationDate = new Date(new Date().getTime());
-    const player = new Player(email, userId, playerType.GuildMaster );
+    const player = new Player('One', '123@123.com', '12345', 'https://art.pixilart.com/68822edadcaa5a3.png', playerType.Warrior, gender.Male);
     this.user.next(player);
   }
 }
