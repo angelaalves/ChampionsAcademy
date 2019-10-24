@@ -51,6 +51,7 @@ import { GuildListComponent } from './guild-list-start/guild-list/guild-list.com
 import { GuildListElemComponent } from './guild-list-start/guild-list/guild-list-elem/guild-list-elem.component';
 import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-list/add-guild-list.component';
 import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
+import { ImageMakerComponent } from './image-maker/image-maker.component';
 
 
 @NgModule({
@@ -104,7 +105,8 @@ import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.
     AddEventsComponent,
     AncientProfileComponent,
     GuildListStartComponent,
-    PresenterPageComponent
+    PresenterPageComponent,
+    ImageMakerComponent
   ],
   imports: [
     BrowserModule,

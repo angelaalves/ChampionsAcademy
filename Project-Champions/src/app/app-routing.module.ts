@@ -23,6 +23,7 @@ import { AddUserComponent } from './ancient-profile/ancient/add-user/add-user.co
 import { GuildListComponent } from './guild-list-start/guild-list/guild-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
+import { ImageMakerComponent } from './image-maker/image-maker.component';
 
 
 const appRoutes: Routes=[
@@ -56,7 +57,8 @@ const appRoutes: Routes=[
     {path: 'notifications', component: NotificationsComponent},
     {path: 'closet', component: ClosetComponent},
     {path: 'videos', component: VideosComponent},
-    {path: 'add_skin', component: AddSkinComponent}
+    {path: 'add_skin', component: AddSkinComponent},
+    {path: 'image', component: ImageMakerComponent}
  ]
 
 
