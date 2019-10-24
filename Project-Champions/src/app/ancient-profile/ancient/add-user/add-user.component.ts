@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, NgForm } from '@angular/forms'
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { User } from 'src/app/login/authentication/user.model';
-import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { eventType } from 'src/app/events/event-type.enum';
+import { PlayerService } from 'src/app/services/player.service';
+import { Player } from 'src/app/shared/player.model';
+import { playerType } from 'src/app/shared/playerType.enum';
+import { gender } from 'src/app/shared/playerGender.enum';
+
 
 @Component({
   selector: 'app-add-user',
@@ -13,19 +15,20 @@ import { eventType } from 'src/app/events/event-type.enum';
 })
 
 export class AddUserComponent{
-  addUserForm: FormGroup = new FormGroup({});
+  AddUserForm: NgForm;
+  constructor(private route: ActivatedRoute,private router: Router, private http:HttpClient, private playerService: PlayerService) { }
 
-  constructor(private route: ActivatedRoute,private router: Router, private fb: FormBuilder, private http:HttpClient) { }
-
-  onSubmit(){
-    if(!this.addUserForm.valid){
+  onSubmit(form:NgForm){
+    /*if(!form.valid){
       return;
-    }
-    const name = this.addUserForm.value.name;
-    const email = this.addUserForm.value.email;
-    const password = this.addUserForm.value.password;
-    console.log(name + email + password);
-    console.log('addUserForm' , this.addUserForm.value);
+    }*/
+    const name = form.value.name;
+    const email = form.value.email;
+    const password = form.value.password;
+    const gender = form.value.gender;
+    const playerType = form.value.playerType;
+    this.playerService.addPLayer(new Player(name, email, password, 'one image', playerType, gender));
+    console.log('addUserForm' , form.value);
     this.router.navigate(['/ancient_profile'], {relativeTo: this.route});
   }
 
@@ -37,10 +40,10 @@ export class AddUserComponent{
     });
   }*/
 
-  addUser(postData: {date: Date, name: string, type: eventType}){
+  /*addUser(postData: {date: Date, name: string, type: eventType}){
     this.http.post('url', postData).subscribe(responseData=>{
       console.log(responseData);
     });
     this.router.navigate(['/ancient_profile'], {relativeTo: this.route});
-  }
+  }*/
 }
