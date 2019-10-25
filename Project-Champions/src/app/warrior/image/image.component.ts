@@ -8,6 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class ImageComponent implements OnInit {
   @Input() name: string;
+  @Input() hairImagePath:string
+  @Input() skinImagePath:string
+  @Input() shirtImagePath:string
+  @Input() pantsImagePath:string
   constructor() { }
 
   ngOnInit() {

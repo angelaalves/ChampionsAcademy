@@ -52,7 +52,7 @@ import { GuildListElemComponent } from './guild-list-start/guild-list/guild-list
 import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-list/add-guild-list.component';
 import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ImageMakerComponent } from './image-maker/image-maker.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +105,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddEventsComponent,
     AncientProfileComponent,
     GuildListStartComponent,
-    PresenterPageComponent
+    PresenterPageComponent,
+    ImageMakerComponent
   ],
   imports: [
     BrowserModule,
