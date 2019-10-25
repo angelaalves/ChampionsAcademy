@@ -54,7 +54,7 @@ export class AuthenticationService {
 
   private handleAuthentication(email:string,userId:string){
     const expirationDate = new Date(new Date().getTime());
-    const player = new Player(name,email, userId, playerType.GuildMaster );
-    this.user.next(player);
+    //const player = new Player(name,email, userId, playerType.GuildMaster );
+    //this.user.next(player);
   }
 }

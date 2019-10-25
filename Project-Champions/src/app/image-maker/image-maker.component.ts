@@ -10,6 +10,7 @@ export class ImageMakerComponent implements OnInit {
  @Input() skinImagePath:string
  @Input() shirtImagePath:string
  @Input() pantsImagePath:string
+ @Input() size:number
   constructor() { }
 
   ngOnInit() {

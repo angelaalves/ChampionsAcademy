@@ -58,7 +58,8 @@ const appRoutes: Routes=[
     {path: 'closet', component: ClosetComponent},
     {path: 'videos', component: VideosComponent},
     {path: 'add_skin', component: AddSkinComponent},
-    {path: 'image', component: ImageMakerComponent}
+    {path: 'image', component: ImageMakerComponent},
+    
  ]
 
 

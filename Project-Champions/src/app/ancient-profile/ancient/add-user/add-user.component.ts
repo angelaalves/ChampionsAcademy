@@ -27,7 +27,7 @@ export class AddUserComponent{
     const password = form.value.password;
     const gender = form.value.gender;
     const playerType = form.value.playerType;
-    this.playerService.addPLayer(new Player(name, email, password, 'one image', playerType, gender));
+    this.playerService.addPLayer(new Player(name, email, password, [], playerType, gender));
     console.log('addUserForm' , form.value);
     this.router.navigate(['/ancient_profile'], {relativeTo: this.route});
   }
