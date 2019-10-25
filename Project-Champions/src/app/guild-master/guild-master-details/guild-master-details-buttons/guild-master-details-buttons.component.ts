@@ -14,10 +14,18 @@ export class GuildMasterDetailsButtonsComponent implements OnInit {
   }
 
   redirectToRewards(){
-    // this.router.navigate(['/rewards'], {relativeTo: this.route});
+    this.router.navigate(['/rewards'], {relativeTo: this.route});
   }
  
   redirectToCloset(){
- 
+    this.router.navigate(['/closet'], {relativeTo: this.route});
+  }
+
+  redirectToVideos(){
+    this.router.navigate(['/videos'], {relativeTo: this.route});
+  }
+
+  redirectToGuilds(){
+    this.router.navigate(['/guild'], {relativeTo: this.route});
   }
 }

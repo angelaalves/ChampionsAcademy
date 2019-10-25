@@ -24,6 +24,7 @@ import { GuildListComponent } from './guild-list-start/guild-list/guild-list.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
 import { ImageMakerComponent } from './image-maker/image-maker.component';
+import { GuildListElemComponent } from './guild-list-start/guild-list/guild-list-elem/guild-list-elem.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -52,7 +53,7 @@ const appRoutes: Routes=[
     ]},
     {path: 'list_users', component: ListUsersComponent},
     {path: 'rewards', component: RewardsComponent},
-    {path: 'rewards_to_aprove', component: RewardsToApproveComponent},
+    {path: 'rewards_to_approve', component: RewardsToApproveComponent},
     {path: 'events', component: EventsComponent},
     {path: 'notifications', component: NotificationsComponent},
     {path: 'closet', component: ClosetComponent},

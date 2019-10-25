@@ -55,7 +55,7 @@ export class AuthenticationService {
 
   private handleAuthentication(email:string,userId:string){
     const expirationDate = new Date(new Date().getTime());
-    const player = new Player('One', '123@123.com', '12345', 'https://art.pixilart.com/68822edadcaa5a3.png', playerType.Warrior, gender.Male);
+    const player = new Player('One', '123@123.com', '12345', ['https://art.pixilart.com/68822edadcaa5a3.png'], playerType.Warrior, gender.Male);
     this.user.next(player);
   }
 }
