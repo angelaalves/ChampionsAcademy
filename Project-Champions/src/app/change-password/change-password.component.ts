@@ -21,11 +21,6 @@ export class ChangePasswordComponent implements OnInit {
     )
   }
 
-  submit(addUserForm: FormGroup){
-    console.log(this.changePasswordForm);
-    this.router.navigate(['/ancient_profile'], {relativeTo: this.route});
-  }
-
   private initForm() {
     let oldPassword='';
     let newPassword='';
@@ -38,6 +33,11 @@ export class ChangePasswordComponent implements OnInit {
     });
   }
 
+  submit(addUserForm: FormGroup){
+    console.log(this.changePasswordForm);
+    this.router.navigate(['/ancient_profile'], {relativeTo: this.route});
+  }
+
   changePassword(changePasswordForm: FormGroup) {
     (<FormArray>this.changePasswordForm.get('newPassword')).push(
       new FormGroup({
@@ -47,5 +47,4 @@ export class ChangePasswordComponent implements OnInit {
       })
     );
   }
-
 }

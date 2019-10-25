@@ -10,7 +10,6 @@ import { playerType } from '../shared/playerType.enum';
   styleUrls: ['./warrior.component.css']
 })
 export class WarriorComponent implements OnInit {
-
   warrior: Player;
   id: number;
   constructor(private router:Router, private route: ActivatedRoute, private playerService: PlayerService) { }

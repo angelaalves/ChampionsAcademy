@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { eventType } from '../event-type.enum';
-
 
 @Component({
   selector: 'app-add-events',
@@ -27,13 +24,19 @@ export class AddEventsComponent implements OnInit {
 
   private initForm() {
     let date='';
+    let isEventRecurrent="";
     let name='';
     let type='';
+    let startHour='';
+    let finishHour='';
 
     this.addEventForm = new FormGroup({
       'date': new FormControl(date, Validators.required),
+      'isEventRecurrent': new FormControl(isEventRecurrent, Validators.required),
       'name': new FormControl(name, Validators.required),
       'type': new FormControl(type, Validators.required),
+      'startHour': new FormControl(startHour, Validators.required),
+      'finishHour': new FormControl(finishHour, Validators.required),
     });
   }
 
@@ -42,8 +45,11 @@ export class AddEventsComponent implements OnInit {
     (<FormArray>this.addEventForm.get('event')).push(
       new FormGroup({
         'date': new FormControl(null, Validators.required),
+        'isEventRecurrent': new FormControl(null, Validators.required),
         'name': new FormControl(null, Validators.required),
-        'type': new FormControl(null, Validators.required)
+        'type': new FormControl(null, Validators.required),
+        'startHour': new FormControl(null, Validators.required),
+        'finishHour': new FormControl(null, Validators.required)
       })
     );
   }

@@ -51,6 +51,7 @@ import { GuildListComponent } from './guild-list-start/guild-list/guild-list.com
 import { GuildListElemComponent } from './guild-list-start/guild-list/guild-list-elem/guild-list-elem.component';
 import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-list/add-guild-list.component';
 import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -111,7 +112,8 @@ import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [PlayerService],
   bootstrap: [AppComponent]

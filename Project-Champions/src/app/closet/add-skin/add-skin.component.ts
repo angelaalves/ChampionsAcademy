@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ReadVarExpr } from '@angular/compiler';
+import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { FormGroup, FormArray, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-skin',

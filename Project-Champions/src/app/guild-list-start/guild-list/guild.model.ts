@@ -1,5 +1,5 @@
 import { Player } from 'src/app/shared/player.model';
-
+import { PlayerService } from 'src/app/services/player.service';
 
 export class Guild{
     public name: string;
@@ -17,7 +17,6 @@ export class Guild{
     getPlayers(){
         return this.members;
     }
-    
     getGuildMaster(){
         return this.guildmaster;
     }

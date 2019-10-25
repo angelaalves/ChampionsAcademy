@@ -11,9 +11,9 @@ header {
   nav {
     float: left;
     width: 30%;
-    /*height: 300px; /* only for demonstration, should be removed */
+    height: 400px; /* only for demonstration, should be removed */
     background: #ccc;
-    padding: 40px;
+    padding: 50px;
   }
   
   /* Style the list inside the menu */
@@ -59,12 +59,4 @@ header {
 
  .split-right{
   display: inline-block;
-}
-
-  #save {
-    display: inline;
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-    font-size: 18px;
   }

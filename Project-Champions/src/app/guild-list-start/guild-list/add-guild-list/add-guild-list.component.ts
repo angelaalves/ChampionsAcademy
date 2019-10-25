@@ -57,9 +57,6 @@ export class AddGuildListComponent implements OnInit {
   } 
 
   submit(){
-  }
-
-  save(){
     this.router.navigate(['/ancient_profile'], {relativeTo: this.route});
   }
 }

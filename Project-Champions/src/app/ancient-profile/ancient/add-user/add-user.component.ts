@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, NgForm, FormArray } from '@angular/forms'
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { eventType } from 'src/app/events/event-type.enum';
 
 @Component({
   selector: 'app-add-user',
@@ -39,7 +37,6 @@ export class AddUserComponent implements OnInit{
       'password': new FormControl(password, [Validators.required, Validators.minLength(6)])
     });
   }
-
   addUser(addUserForm: FormGroup) {
     (<FormArray>this.addUserForm.get('event')).push(
       new FormGroup({

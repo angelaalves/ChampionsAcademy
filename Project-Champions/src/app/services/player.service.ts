@@ -10,14 +10,16 @@ export class PlayerService{
         new Player('Two', '123@123.com', '12345', 'https://art.pixilart.com/68822edadcaa5a3.png', playerType.Warrior, gender.Female)
     ];
     constructor(){}
+
     getPlayers(){
-        return this.players.slice();
+        return this.players;
     }
 
     getPlayer(index: number){
         return this.players[index];
     }
-    addPLayer(player: Player){
+
+    addPlayer(player: Player){
         this.players.push(player);
     }
 

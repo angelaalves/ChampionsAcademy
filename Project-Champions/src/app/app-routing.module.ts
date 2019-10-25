@@ -45,7 +45,7 @@ const appRoutes: Routes=[
         {path:'', component: GuildListComponent},
         {path: ':id', component: GuildComponent, children:[
             {path:'', component: GuildComponent},
-            {path: ':id', component: PresenterPageComponent}
+            {path: ':id', component: WarriorComponent}
         ]},
         {path:'add_guild', component: AddGuildListComponent}
     ]},
