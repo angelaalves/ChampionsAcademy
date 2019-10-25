@@ -1,6 +1,5 @@
 import { Player } from 'src/app/shared/player.model';
 
-
 export class Guild{
     public name: string;
     public flag: string;

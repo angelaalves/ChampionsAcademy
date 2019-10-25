@@ -10,7 +10,6 @@
         </groups>
         <name>GuildEvents</name>
         <serviceChange>Wed Oct 23 13:50:26 BST 2019</serviceChange>
-        <resourceType>service.definition</resourceType>
         <interfaceImpl>
             <tab>
                 <tabName>GuildEventsPortCreate</tabName>
@@ -39,7 +38,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -107,7 +106,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -175,7 +174,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -243,7 +242,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -285,5 +284,6 @@
                 </config>
             </tab>
         </interfaceImpl>
+        <resourceType>service.definition</resourceType>
     </config>
 </serviceResource>

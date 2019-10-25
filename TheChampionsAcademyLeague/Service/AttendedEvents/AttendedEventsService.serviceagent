@@ -9,8 +9,7 @@
             <row isDefault="true" groupName="Default"/>
         </groups>
         <name>AttendedEventsService</name>
-        <serviceChange>Wed Oct 23 14:46:13 BST 2019</serviceChange>
-        <resourceType>service.definition</resourceType>
+        <serviceChange>Wed Oct 23 13:37:05 BST 2019</serviceChange>
         <interfaceImpl>
             <tab>
                 <tabName>attendedEventsCreate</tabName>
@@ -39,7 +38,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -107,7 +106,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -175,7 +174,7 @@
                                                     <tabName>soap.service.transport.ui.transport.tab.label</tabName>
                                                     <tabType>transport</tabType>
                                                     <config>
-                                                        <sharedChannel>/Receção de Dados/HTTP Connection.sharedhttp</sharedChannel>
+                                                        <sharedChannel>/Service/HTTP Connection.sharedhttp</sharedChannel>
                                                         <transport>
                                                             <config>
                                                                 <useBasicAuthentication>false</useBasicAuthentication>
@@ -217,5 +216,6 @@
                 </config>
             </tab>
         </interfaceImpl>
+        <resourceType>service.definition</resourceType>
     </config>
 </serviceResource>

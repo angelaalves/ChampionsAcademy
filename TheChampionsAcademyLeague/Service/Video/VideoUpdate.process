@@ -3,32 +3,34 @@
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
     <pd:name>Service/Video/VideoUpdate.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx:videoUpdateInput"/>
+    <pd:startType wsMsgRef="pfx:videoInputUpdate"/>
     <pd:startX>331</pd:startX>
     <pd:startY>244</pd:startY>
     <pd:returnBindings>
-        <pfx:videoUpdateOutput>
+        <pfx:videoOutputUpdate>
             <UpdateOut>
-                <ns:VideoDataOutput>
-                    <xsl:choose>
-                        <xsl:when test="not(exists($_error_JDBC-Update/ActivityErrors/*  ))">
-                            <ns:videoOutput>
+                <xsl:choose>
+                    <xsl:when test="not(exists($_error_JDBC-Update/ActivityErrors/*  ))">
+                        <ns:DataOutput>
+                            <ns:videoOut>
                                 <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;updated&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;updated&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;updated&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                    <xsl:value-of select="&quot;updated&quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOutput>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <ns:videoOutput>
+                            </ns:videoOut>
+                        </ns:DataOutput>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <ns:DataOutput>
+                            <ns:videoOut>
                                 <xsl:attribute name="ID_Video">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
@@ -41,15 +43,15 @@
                                 <xsl:attribute name="Topic">
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOutput>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </ns:VideoDataOutput>
+                            </ns:videoOut>
+                        </ns:DataOutput>
+                    </xsl:otherwise>
+                </xsl:choose>
             </UpdateOut>
-        </pfx:videoUpdateOutput>
+        </pfx:videoOutputUpdate>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx:videoUpdateOutput"/>
+    <pd:endType wsMsgRef="pfx:videoOutputUpdate"/>
     <pd:endX>1004</pd:endX>
     <pd:endY>247</pd:endY>
     <pd:errorSchemas/>
@@ -89,8 +91,8 @@
             <jdbcUpdateActivityInput>
                 <VideoName>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoUpdateInput/UpdateIn/ns:VideoDataInput/ns:videoInput[1]/@VideoName)">
-                            <xsl:value-of select="$Start/pfx:videoUpdateInput/UpdateIn/ns:VideoDataInput/ns:videoInput[1]/@VideoName"/>
+                        <xsl:when test="exists($Start/pfx:videoInputUpdate/UpdateIn/ns:DataInput/ns:videoIn[1]/@VideoName)">
+                            <xsl:value-of select="$Start/pfx:videoInputUpdate/UpdateIn/ns:DataInput/ns:videoIn[1]/@VideoName"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -99,8 +101,8 @@
                 </VideoName>
                 <Duration>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoUpdateInput/UpdateIn/ns:VideoDataInput/ns:videoInput[1]/@Duration)">
-                            <xsl:value-of select="$Start/pfx:videoUpdateInput/UpdateIn/ns:VideoDataInput/ns:videoInput[1]/@Duration"/>
+                        <xsl:when test="exists($Start/pfx:videoInputUpdate/UpdateIn/ns:DataInput/ns:videoIn[1]/@Duration)">
+                            <xsl:value-of select="$Start/pfx:videoInputUpdate/UpdateIn/ns:DataInput/ns:videoIn[1]/@Duration"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -109,8 +111,8 @@
                 </Duration>
                 <Topic>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoUpdateInput/UpdateIn/ns:VideoDataInput/ns:videoInput[1]/@Topic)">
-                            <xsl:value-of select="$Start/pfx:videoUpdateInput/UpdateIn/ns:VideoDataInput/ns:videoInput[1]/@Topic"/>
+                        <xsl:when test="exists($Start/pfx:videoInputUpdate/UpdateIn/ns:DataInput/ns:videoIn[1]/@Topic)">
+                            <xsl:value-of select="$Start/pfx:videoInputUpdate/UpdateIn/ns:DataInput/ns:videoIn[1]/@Topic"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -119,8 +121,8 @@
                 </Topic>
                 <ID_Video>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoUpdateInput/UpdateIn/ns:VideoDataInput/ns:videoInput[1]/@ID_Video)">
-                            <xsl:value-of select="$Start/pfx:videoUpdateInput/UpdateIn/ns:VideoDataInput/ns:videoInput[1]/@ID_Video"/>
+                        <xsl:when test="exists($Start/pfx:videoInputUpdate/UpdateIn/ns:DataInput/ns:videoIn[1]/@ID_Video)">
+                            <xsl:value-of select="$Start/pfx:videoInputUpdate/UpdateIn/ns:DataInput/ns:videoIn[1]/@ID_Video"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>

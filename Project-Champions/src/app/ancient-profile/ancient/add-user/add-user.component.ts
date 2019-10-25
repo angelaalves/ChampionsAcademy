@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder, NgForm } from '@angular/forms'
+import { FormGroup, FormControl, Validators, FormBuilder, NgForm, FormArray } from '@angular/forms'
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { PlayerService } from 'src/app/services/player.service';
 import { Player } from 'src/app/shared/player.model';
-import { playerType } from 'src/app/shared/playerType.enum';
-import { gender } from 'src/app/shared/playerGender.enum';
-
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-add-user',
@@ -14,9 +10,19 @@ import { gender } from 'src/app/shared/playerGender.enum';
   styleUrls: ['./add-user.component.css']
 })
 
-export class AddUserComponent{
-  AddUserForm: NgForm;
-  constructor(private route: ActivatedRoute,private router: Router, private http:HttpClient, private playerService: PlayerService) { }
+export class AddUserComponent implements OnInit{
+  addUserForm: FormGroup;
+
+  constructor(private router: Router, private route: ActivatedRoute, private playerService: PlayerService) { }
+
+  ngOnInit() {
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.initForm();
+      }
+    )
+  }
+
 
   onSubmit(form:NgForm){
     /*if(!form.valid){
@@ -27,23 +33,29 @@ export class AddUserComponent{
     const password = form.value.password;
     const gender = form.value.gender;
     const playerType = form.value.playerType;
-    this.playerService.addPLayer(new Player(name, email, password, [], playerType, gender));
+    this.playerService.addPlayer(new Player(name, email, password, [], playerType, gender));
     console.log('addUserForm' , form.value);
     this.router.navigate(['/ancient_profile'], {relativeTo: this.route});
   }
 
-  /*createForm() {
-    this.addUserForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required, Validators.minLength(6)]
-    });
-  }*/
+  private initForm() {
+    let name='';
+    let email='';
+    let password='';
 
-  /*addUser(postData: {date: Date, name: string, type: eventType}){
-    this.http.post('url', postData).subscribe(responseData=>{
-      console.log(responseData);
+    this.addUserForm = new FormGroup({
+      'name': new FormControl(name, Validators.required),
+      'email': new FormControl(email, [Validators.required, Validators.minLength(10)]),
+      'password': new FormControl(password, [Validators.required, Validators.minLength(6)])
     });
-    this.router.navigate(['/ancient_profile'], {relativeTo: this.route});
-  }*/
+  }
+  addUser(addUserForm: FormGroup) {
+    (<FormArray>this.addUserForm.get('event')).push(
+      new FormGroup({
+        'name': new FormControl(null, [Validators.required]),
+        'email': new FormControl(null,[Validators.required, Validators.minLength(10)]),
+        'password': new FormControl(null, [Validators.required, Validators.minLength(6)])
+      })
+    );
+  }
 }

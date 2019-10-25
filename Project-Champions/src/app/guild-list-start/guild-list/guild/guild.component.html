@@ -11,20 +11,20 @@
 </div>
 <div class="row">
     <div class="col-xs-3 col-xs-offset-4" style="transform: translate(15%,0%);">
-    <app-guild-member [player]="guildmaster" [index]=0></app-guild-member>
+        <app-guild-member [player]="guildmaster"></app-guild-member>
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-3" *ngFor="let playerEl of players; let i=index">
-        <app-guild-member  [player]="playerEl" [index]="i"></app-guild-member>
+    <div class="col-xs-3"*ngFor="let playerEl of players; let i=index" (click)="showInfo()">
+        <app-guild-member [player]="playerEl" [index]="i"></app-guild-member>
     </div>
 </div>
-<div class="row">
+<div class="row" id="upcomingEvents">
     <div class="col-xs-12">
         <h3>Upcoming Events</h3>
     </div>
 </div>
-<div class="row">
+<div class="row" id="profile">
     <div class="col-xs-12">
         <router-outlet>
         </router-outlet>

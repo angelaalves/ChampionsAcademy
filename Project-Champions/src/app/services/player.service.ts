@@ -15,6 +15,7 @@ export class PlayerService{
         new Player('Two', '123@123.com', '12345', this.imagePath, playerType.Warrior, gender.Female)
     ];
     constructor(){}
+
     getPlayers(){
         return this.players;
     }
@@ -50,11 +51,11 @@ export class PlayerService{
         return this.players[index];
     }
 
-    addPLayer(player: Player){
+    addPlayer(player: Player){
         this.players.push(player);
     }
 
-    getPlayerType(index:number){
+    getPlayerType(index: number){
         return this.players[index].playerType;
     }
 }

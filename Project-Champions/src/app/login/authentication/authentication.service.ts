@@ -5,6 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Subject, throwError } from 'rxjs';
 import { Player } from 'src/app/shared/player.model';
 import { playerType } from 'src/app/shared/playerType.enum';
+import { gender } from 'src/app/shared/playerGender.enum';
 
 interface AuthResponseData{
     kind: string,

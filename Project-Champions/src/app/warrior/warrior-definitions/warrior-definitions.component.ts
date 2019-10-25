@@ -14,7 +14,7 @@ export class WarriorDefinitionsComponent implements OnInit {
   }
 
   onChangePassword(){
-    this.router.navigate(['../change_password'], {relativeTo: this.route})
+    this.router.navigate(['/change_password'], {relativeTo: this.route})
   }
 
 }

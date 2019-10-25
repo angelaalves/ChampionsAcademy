@@ -2,34 +2,34 @@
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:tns="http://xmlns.example.com/1571063877400" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1571063877400" name="TheChampionsLeague">
     <import namespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" location="Video.xsd"/>
     <message name="videoUpdateInput">
-        <part name="UpdateIn" element="ns:VideoDataInput"/>
+        <part name="UpdateIn" element="ns:DataInput"/>
     </message>
     <message name="videoUpdateOutput">
-        <part name="UpdateOut" element="ns:VideoDataOutput"/>
+        <part name="UpdateOut" element="ns:DataOutput"/>
     </message>
     <message name="videoGetInput">
-        <part name="GetIn" element="ns:VideoDataInput"/>
+        <part name="GetIn" element="ns:DataInput"/>
     </message>
     <message name="videoGetOutput">
-        <part name="GetOut" element="ns:VideoDataOutput"/>
+        <part name="GetOut" element="ns:DataOutput"/>
     </message>
     <message name="videoGetAllInput">
-        <part name="GetAllIn" element="ns:VideoDataInput"/>
+        <part name="GetAllIn" element="ns:DataInput"/>
     </message>
     <message name="videoGetAllOutput">
-        <part name="GetAllOut" element="ns:VideoDataOutput"/>
+        <part name="GetAllOut" element="ns:DataOutput"/>
     </message>
     <message name="videoDeleteInput">
-        <part name="DeleteIn" element="ns:VideoDataInput"/>
+        <part name="DeleteIn" element="ns:DataInput"/>
     </message>
     <message name="videoDeleteOutput">
-        <part name="DeleteOut" element="ns:VideoDataOutput"/>
+        <part name="DeleteOut" element="ns:DataOutput"/>
     </message>
     <message name="videoCreateInput">
-        <part name="CreateIn" element="ns:VideoDataInput"/>
+        <part name="CreateIn" element="ns:DataInput"/>
     </message>
     <message name="videoCreateOutput">
-        <part name="CreateOut" element="ns:VideoDataOutput"/>
+        <part name="CreateOut" element="ns:DataOutput"/>
     </message>
     <portType name="VideoPortUpdate">
         <operation name="Update">

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Player } from '../shared/player.model';
-
 import { PlayerService } from './player.service';
 import { Guild } from '../guild-list-start/guild-list/guild.model';
 import { playerType } from '../shared/playerType.enum';
