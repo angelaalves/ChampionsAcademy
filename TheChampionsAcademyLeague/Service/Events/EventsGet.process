@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571662597687" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571662587180" xmlns:pfx3="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Player/Schema.xsd" xmlns:pfx4="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571662597687" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571662587180" xmlns:pfx3="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Player/Schema.xsd" xmlns:pfx4="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Events/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <wsdl:import namespace="http://xmlns.example.com/1571662597687" location="/Service/Player/Player.wsdl"/>
     <wsdl:import namespace="http://xmlns.example.com/1571662587180" location="/Service/Events/Events.wsdl"/>
     <pd:name>Service/Events/EventsGet.process</pd:name>
@@ -12,23 +12,91 @@
             <GetOut>
                 <pfx4:EventsDataOutput>
                     <xsl:choose>
-                        <xsl:when test="exists(  $ID_Event/resultSet/Record)"/>
-                        <xsl:when test="exists($EventName/resultSet/Record)"/>
-                        <xsl:when test="exists($EventDate/resultSet/Record)"/>
-                        <xsl:when test="exists($EventType/resultSet/Record)"/>
+                        <xsl:when test="exists($ID_Event/resultSet/Record)">
+                            <xsl:for-each select="$ID_Event/resultSet/Record">
+                                <pfx4:EventsOut>
+                                    <xsl:attribute name="ID_Event">
+                                        <xsl:value-of select="ID_Event"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventName">
+                                        <xsl:value-of select="EventName"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventDate">
+                                        <xsl:value-of select="EventDate"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventType">
+                                        <xsl:value-of select="EventType"/>
+                                    </xsl:attribute>
+                                </pfx4:EventsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($EventType/resultSet/Record)">
+                            <xsl:for-each select="$EventType/resultSet/Record">
+                                <pfx4:EventsOut>
+                                    <xsl:attribute name="ID_Event">
+                                        <xsl:value-of select="ID_Event"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventName">
+                                        <xsl:value-of select="EventName"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventDate">
+                                        <xsl:value-of select="EventDate"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventType">
+                                        <xsl:value-of select="EventType"/>
+                                    </xsl:attribute>
+                                </pfx4:EventsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($EventName/resultSet/Record)">
+                            <xsl:for-each select="$EventName/resultSet/Record">
+                                <pfx4:EventsOut>
+                                    <xsl:attribute name="ID_Event">
+                                        <xsl:value-of select="ID_Event"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventName">
+                                        <xsl:value-of select="EventName"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventDate">
+                                        <xsl:value-of select="EventDate"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventType">
+                                        <xsl:value-of select="EventType"/>
+                                    </xsl:attribute>
+                                </pfx4:EventsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="exists($EventDate/resultSet/Record)">
+                            <xsl:for-each select="$EventDate/resultSet/Record">
+                                <pfx4:EventsOut>
+                                    <xsl:attribute name="ID_Event">
+                                        <xsl:value-of select="ID_Event"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventName">
+                                        <xsl:value-of select="EventName"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventDate">
+                                        <xsl:value-of select="EventDate"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="EventType">
+                                        <xsl:value-of select="EventType"/>
+                                    </xsl:attribute>
+                                </pfx4:EventsOut>
+                            </xsl:for-each>
+                        </xsl:when>
                         <xsl:otherwise>
                             <pfx4:EventsOut>
                                 <xsl:attribute name="ID_Event">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventDate">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventType">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not found&quot;"/>
                                 </xsl:attribute>
                             </pfx4:EventsOut>
                         </xsl:otherwise>
@@ -39,16 +107,16 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx2:EventsGetOutput"/>
-    <pd:endX>890</pd:endX>
-    <pd:endY>341</pd:endY>
+    <pd:endX>840</pd:endX>
+    <pd:endY>229</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571655819387</pd:targetNamespace>
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>880</pd:x>
-        <pd:y>206</pd:y>
+        <pd:x>948</pd:x>
+        <pd:y>205</pd:y>
         <pd:handler>true</pd:handler>
         <config>
             <catchAll>true</catchAll>
@@ -65,7 +133,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Events WHERE ID_Event=?;</statement>
+            <statement>SELECT * FROM events WHERE ID_Event=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -93,7 +161,18 @@
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <ID_Event>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@ID_Event)">
+                            <xsl:value-of select="$Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@ID_Event"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Event>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="EventName">
@@ -106,7 +185,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Events WHERE EventName=?;</statement>
+            <statement>SELECT * FROM events WHERE EventName=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -134,20 +213,31 @@
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <EventName>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventName)">
+                            <xsl:value-of select="$Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </EventName>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="EventDate">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
         <pd:x>562</pd:x>
-        <pd:y>305</pd:y>
+        <pd:y>306</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Events WHERE EventDate=?;</statement>
+            <statement>SELECT * FROM events WHERE EventDate=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -175,7 +265,18 @@
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <EventDate>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventDate)">
+                            <xsl:value-of select="$Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventDate"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </EventDate>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="EventType">
@@ -188,7 +289,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Events WHERE EventType=?;</statement>
+            <statement>SELECT * FROM events WHERE EventType=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -216,7 +317,18 @@
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <EventType>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventType)">
+                            <xsl:value-of select="$Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventType"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </EventType>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:transition>
@@ -225,7 +337,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn/@ID_Event)</pd:xpath>
+        <pd:xpath>string-length($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@ID_Event) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -233,7 +345,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn/@EventName)</pd:xpath>
+        <pd:xpath>string-length($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventName) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -241,7 +353,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn/@EventDate)</pd:xpath>
+        <pd:xpath>string-length($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventDate) &gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -249,7 +361,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn/@EventType)</pd:xpath>
+        <pd:xpath>string-length($Start/pfx2:EventsGetInput/GetIn/pfx4:EventsDataInput/pfx4:EventsIn[1]/@EventType) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>EventType</pd:from>

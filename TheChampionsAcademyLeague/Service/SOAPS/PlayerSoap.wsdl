@@ -22,7 +22,6 @@
                     <xs:attribute name="ChampiesToGive" type="xs:string"/>
                     <xs:attribute name="Email" type="xs:string"/>
                     <xs:attribute name="Gender" type="xs:string"/>
-                    <xs:attribute name="ID_Closet_FK" type="xs:string"/>
                     <xs:attribute name="ID_Guild_FK" type="xs:string"/>
                     <xs:attribute name="ID_Player" type="xs:string"/>
                     <xs:attribute name="MyChampies" type="xs:string"/>
@@ -38,7 +37,6 @@
                     <xs:attribute name="ChampiesToGive" type="xs:string"/>
                     <xs:attribute name="Email" type="xs:string"/>
                     <xs:attribute name="Gender" type="xs:string"/>
-                    <xs:attribute name="ID_Closet_FK" type="xs:string"/>
                     <xs:attribute name="ID_Guild_FK" type="xs:string"/>
                     <xs:attribute name="ID_Player" type="xs:string"/>
                     <xs:attribute name="MyChampies" type="xs:string"/>

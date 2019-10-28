@@ -19,14 +19,16 @@
             </xs:element>
             <xs:element name="ClosetIn">
                 <xs:complexType>
-                    <xs:attribute name="ID_Closet" type="xs:string"/>
                     <xs:attribute name="ID_Skin_FK" type="xs:string"/>
+                    <xs:attribute name="id_player_fk" type="xs:string"/>
+                    <xs:attribute name="status" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="ClosetOut">
                 <xs:complexType>
-                    <xs:attribute name="ID_Closet" type="xs:string"/>
                     <xs:attribute name="ID_Skin_FK" type="xs:string"/>
+                    <xs:attribute name="id_player_fk" type="xs:string"/>
+                    <xs:attribute name="status" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
         </xs:schema>

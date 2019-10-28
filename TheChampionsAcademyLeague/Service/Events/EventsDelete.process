@@ -32,16 +32,16 @@
                         <ns:EventsDataOutput>
                             <ns:EventsOut>
                                 <xsl:attribute name="ID_Event">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventDate">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventType">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                             </ns:EventsOut>
                         </ns:EventsDataOutput>
@@ -52,7 +52,7 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx:EventsDeleteOutput"/>
-    <pd:endX>541</pd:endX>
+    <pd:endX>542</pd:endX>
     <pd:endY>203</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>

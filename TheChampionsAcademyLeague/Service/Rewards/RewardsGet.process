@@ -218,25 +218,25 @@
                         <xsl:otherwise>
                             <pfx4:RewardsOut>
                                 <xsl:attribute name="ID_Reward">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_PlayerGiver_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_PlayerReceiver_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ChampiesGiven">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="DateOfReward">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Approved">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="TimeSpent">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                             </pfx4:RewardsOut>
                         </xsl:otherwise>
@@ -263,7 +263,7 @@
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM Rewards  WHERE ID_Reward=(?);</statement>
+            <statement>SELECT * FROM rewards  WHERE ID_Reward=(?);</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>ID_Reward</parameterName>
@@ -293,9 +293,9 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -326,7 +326,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Rewards WHERE ID_PlayerReceiver_FK=(?);</statement>
+            <statement>SELECT * FROM rewards WHERE ID_PlayerReceiver_FK=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -357,9 +357,9 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -390,7 +390,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Rewards WHERE DateOfReward=(?);</statement>
+            <statement>SELECT * FROM rewards WHERE DateOfReward=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -421,9 +421,9 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -465,7 +465,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Rewards WHERE ID_PlayerGiver_FK=(?);</statement>
+            <statement>SELECT * FROM rewards WHERE ID_PlayerGiver_FK=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -496,9 +496,9 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -529,7 +529,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Rewards WHERE Approved=(?);</statement>
+            <statement>SELECT * FROM rewards WHERE Approved=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -560,9 +560,9 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -593,7 +593,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Rewards WHERE TimeSpent=(?);</statement>
+            <statement>SELECT * FROM rewards WHERE TimeSpent=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -624,9 +624,9 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -657,7 +657,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Rewards WHERE ChampiesGiven=(?);</statement>
+            <statement>SELECT * FROM rewards WHERE ChampiesGiven=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -688,9 +688,9 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -718,16 +718,15 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_Reward) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_Reward) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID_Reward</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($ID_Reward/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -736,16 +735,15 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_PlayerReceiver_FK) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_PlayerReceiver_FK) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID_PlayerReceiver_FK</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($ID_PlayerReceiver_FK/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -754,16 +752,15 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@DateOfReward) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@DateOfReward) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>DateOfReward</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($DateOfReward/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Catch</pd:from>
@@ -778,15 +775,14 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_PlayerGiver_FK) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_PlayerGiver_FK) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID_PlayerGiver_FK</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($ID_PlayerGiver_FK/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -794,7 +790,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@Approved) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@Approved) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -802,23 +798,21 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@TimeSpent) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@TimeSpent) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>TimeSpent</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($TimeSpent/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Approved</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($Approved/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -826,14 +820,13 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ChampiesGiven) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ChampiesGiven) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ChampiesGiven</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($ChampiesGiven/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
 </pd:ProcessDefinition>

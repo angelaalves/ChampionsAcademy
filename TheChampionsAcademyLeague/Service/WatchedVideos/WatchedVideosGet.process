@@ -39,10 +39,10 @@
                         <xsl:otherwise>
                             <pfx4:WatchedVideosOut>
                                 <xsl:attribute name="ID_Video_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_Player_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                             </pfx4:WatchedVideosOut>
                         </xsl:otherwise>
@@ -61,15 +61,21 @@
     <pd:activity name="ID_Video_FK">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>495</pd:x>
-        <pd:y>157</pd:y>
+        <pd:x>496</pd:x>
+        <pd:y>159</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM WatchedVideos WHERE ID_Video_FK=(?);</statement>
+            <statement>SELECT * FROM watchedvideos WHERE ID_Video_FK=(?);</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Video_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Video_FK</QueryOutputCachedSchemaColumns>
@@ -80,25 +86,19 @@
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>ID_Video_FK</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcQueryActivityInput>
-                <ID_Video>
+                <ID_Video_FK>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video)">
-                            <xsl:value-of select="$Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video"/>
+                        <xsl:when test="exists($Start/pfx3:WatchedVideosGetInput/GetIn/pfx4:WatchedVideosDataInput/pfx4:WatchedVideosIn[1]/@ID_Video_FK)">
+                            <xsl:value-of select="$Start/pfx3:WatchedVideosGetInput/GetIn/pfx4:WatchedVideosDataInput/pfx4:WatchedVideosIn[1]/@ID_Video_FK"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </ID_Video>
+                </ID_Video_FK>
             </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
@@ -124,7 +124,13 @@
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM WatchedVideos WHERE ID_Player_FK=(?);</statement>
+            <statement>SELECT * FROM watchedvideos WHERE ID_Player_FK=(?);</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Player_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Video_FK</QueryOutputCachedSchemaColumns>
@@ -135,25 +141,19 @@
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>ID_Player_FK</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcQueryActivityInput>
-                <ID_Video>
+                <ID_Player_FK>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video)">
-                            <xsl:value-of select="$Start/pfx:videoInputGet/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video"/>
+                        <xsl:when test="exists($Start/pfx3:WatchedVideosGetInput/GetIn/pfx4:WatchedVideosDataInput/pfx4:WatchedVideosIn[1]/@ID_Player_FK)">
+                            <xsl:value-of select="$Start/pfx3:WatchedVideosGetInput/GetIn/pfx4:WatchedVideosDataInput/pfx4:WatchedVideosIn[1]/@ID_Player_FK"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
                         </xsl:otherwise>
                     </xsl:choose>
-                </ID_Video>
+                </ID_Player_FK>
             </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
@@ -164,16 +164,15 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:WatchedVideosGetInput/GetIn/pfx4:WatchedVideosDataInput/pfx4:WatchedVideosIn/@ID_Video_FK) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:WatchedVideosGetInput/GetIn/pfx4:WatchedVideosDataInput/pfx4:WatchedVideosIn[1]/@ID_Video_FK) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID_Video_FK</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($ID_Video_FK/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Catch</pd:from>
@@ -188,14 +187,13 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:WatchedVideosGetInput/GetIn/pfx4:WatchedVideosDataInput/pfx4:WatchedVideosIn/@ID_Player_FK) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:WatchedVideosGetInput/GetIn/pfx4:WatchedVideosDataInput/pfx4:WatchedVideosIn[1]/@ID_Player_FK) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID_Player_FK</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($ID_Player_FK/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
 </pd:ProcessDefinition>

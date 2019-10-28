@@ -227,7 +227,7 @@
                             <tabType>impl</tabType>
                             <config>
                                 <operations>
-                                    <row opName="GetAll" opImpl="/Service/GuildEvents/GuildEventsGetAll.process"/>
+                                    <row opName="GetAll" opImpl=""/>
                                 </operations>
                             </config>
                         </tab>

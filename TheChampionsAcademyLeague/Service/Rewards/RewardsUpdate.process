@@ -8,48 +8,64 @@
     <pd:startX>331</pd:startX>
     <pd:startY>244</pd:startY>
     <pd:returnBindings>
-        <pfx:videoOutputUpdate>
+        <pfx2:RewardsUpdateOutput>
             <UpdateOut>
-                <xsl:choose>
-                    <xsl:when test="not(exists($_error_JDBC-Update/ActivityErrors/*  ))">
-                        <ns:DataOutput>
-                            <ns:videoOut>
-                                <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot;updated&quot;"/>
+                <ns1:RewardsDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists($_error_Update/ActivityErrors/*))">
+                            <ns1:RewardsOut>
+                                <xsl:attribute name="ID_Reward">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot;updated&quot;"/>
+                                <xsl:attribute name="ID_PlayerGiver_FK">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot;updated&quot;"/>
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot;updated&quot;"/>
+                                <xsl:attribute name="ChampiesGiven">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOut>
-                        </ns:DataOutput>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <ns:DataOutput>
-                            <ns:videoOut>
-                                <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                <xsl:attribute name="DateOfReward">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                <xsl:attribute name="Approved">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                            </ns1:RewardsOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns1:RewardsOut>
+                                <xsl:attribute name="ID_Reward">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOut>
-                        </ns:DataOutput>
-                    </xsl:otherwise>
-                </xsl:choose>
+                                <xsl:attribute name="ID_PlayerGiver_FK">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesGiven">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="DateOfReward">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Approved">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
+                                </xsl:attribute>
+                            </ns1:RewardsOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns1:RewardsDataOutput>
             </UpdateOut>
-        </pfx:videoOutputUpdate>
+        </pfx2:RewardsUpdateOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx2:RewardsUpdateOutput"/>

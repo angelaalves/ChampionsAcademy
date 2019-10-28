@@ -30,16 +30,16 @@
                         <xsl:otherwise>
                             <ns:EventsOut>
                                 <xsl:attribute name="ID_Event">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventDate">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EventType">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                             </ns:EventsOut>
                         </xsl:otherwise>
@@ -69,13 +69,13 @@
     <pd:activity name="Update">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>552</pd:x>
-        <pd:y>205</pd:y>
+        <pd:x>554</pd:x>
+        <pd:y>207</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>UPDATE Event SET EventName=?,EventDate=?,EventType=?  Where ID_Event=?</statement>
+            <statement>UPDATE events SET EventName=?,EventDate=?,EventType=?  Where ID_Event=?</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>EventName</parameterName>

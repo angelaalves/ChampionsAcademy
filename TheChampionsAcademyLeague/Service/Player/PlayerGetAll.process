@@ -4,8 +4,8 @@
     <pd:name>Service/Player/PlayerGetAll.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="pfx:PlayerGetAllInput"/>
-    <pd:startX>148</pd:startX>
-    <pd:startY>247</pd:startY>
+    <pd:startX>247</pd:startX>
+    <pd:startY>250</pd:startY>
     <pd:returnBindings>
         <pfx:PlayerGetAllOutput>
             <GetAllOut>
@@ -19,9 +19,6 @@
                                     </xsl:attribute>
                                     <xsl:attribute name="ID_Guild_FK">
                                         <xsl:value-of select="ID_Guild_FK"/>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="ID_Closet_FK">
-                                        <xsl:value-of select="ID_Closet_FK"/>
                                     </xsl:attribute>
                                     <xsl:attribute name="UserName">
                                         <xsl:value-of select="UserName"/>
@@ -64,40 +61,37 @@
                         <ns:PlayerDataOutput>
                             <ns:PlayerOut>
                                 <xsl:attribute name="ID_Player">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_Guild_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="ID_Closet_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="UserName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="status">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Email">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="password">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Gender">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="UserType">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="XP">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ChampiesToGive">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="MyChampies">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                             </ns:PlayerOut>
                         </ns:PlayerDataOutput>
@@ -108,16 +102,16 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx:PlayerGetAllOutput"/>
-    <pd:endX>751</pd:endX>
-    <pd:endY>252</pd:endY>
+    <pd:endX>686</pd:endX>
+    <pd:endY>253</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571655905985</pd:targetNamespace>
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>754</pd:x>
-        <pd:y>77</pd:y>
+        <pd:x>745</pd:x>
+        <pd:y>148</pd:y>
         <pd:handler>true</pd:handler>
         <config>
             <catchAll>true</catchAll>
@@ -127,14 +121,14 @@
     <pd:activity name="GetAll">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>457</pd:x>
+        <pd:x>450</pd:x>
         <pd:y>250</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Player;</statement>
+            <statement>SELECT * FROM player;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <oraObjects/>
             <oraTables/>
@@ -143,10 +137,6 @@
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Closet_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>

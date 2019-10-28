@@ -32,16 +32,16 @@
                         <xsl:otherwise>
                             <ns:videoOutput>
                                 <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                             </ns:videoOutput>
                         </xsl:otherwise>

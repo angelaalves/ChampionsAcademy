@@ -4,8 +4,8 @@
     <pd:name>Service/Player/PlayerGet.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="pfx:PlayerGetInput"/>
-    <pd:startX>77</pd:startX>
-    <pd:startY>468</pd:startY>
+    <pd:startX>84</pd:startX>
+    <pd:startY>352</pd:startY>
     <pd:returnBindings>
         <pfx:PlayerGetOutput>
             <GetOut>
@@ -19,9 +19,6 @@
                                     </xsl:attribute>
                                     <xsl:attribute name="ID_Guild_FK">
                                         <xsl:value-of select="ID_Guild_FK"/>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="ID_Closet_FK">
-                                        <xsl:value-of select="ID_Closet_FK"/>
                                     </xsl:attribute>
                                     <xsl:attribute name="UserName">
                                         <xsl:value-of select="UserName"/>
@@ -70,9 +67,6 @@
                                     <xsl:attribute name="ID_Guild_FK">
                                         <xsl:value-of select="ID_Guild_FK"/>
                                     </xsl:attribute>
-                                    <xsl:attribute name="ID_Closet_FK">
-                                        <xsl:value-of select="ID_Closet_FK"/>
-                                    </xsl:attribute>
                                     <xsl:attribute name="UserName">
                                         <xsl:value-of select="UserName"/>
                                     </xsl:attribute>
@@ -119,9 +113,6 @@
                                     </xsl:attribute>
                                     <xsl:attribute name="ID_Guild_FK">
                                         <xsl:value-of select="ID_Guild_FK"/>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="ID_Closet_FK">
-                                        <xsl:value-of select="ID_Closet_FK"/>
                                     </xsl:attribute>
                                     <xsl:attribute name="UserName">
                                         <xsl:value-of select="UserName"/>
@@ -170,9 +161,6 @@
                                     <xsl:attribute name="ID_Guild_FK">
                                         <xsl:value-of select="ID_Guild_FK"/>
                                     </xsl:attribute>
-                                    <xsl:attribute name="ID_Closet_FK">
-                                        <xsl:value-of select="ID_Closet_FK"/>
-                                    </xsl:attribute>
                                     <xsl:attribute name="UserName">
                                         <xsl:value-of select="UserName"/>
                                     </xsl:attribute>
@@ -219,9 +207,6 @@
                                     </xsl:attribute>
                                     <xsl:attribute name="ID_Guild_FK">
                                         <xsl:value-of select="ID_Guild_FK"/>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="ID_Closet_FK">
-                                        <xsl:value-of select="ID_Closet_FK"/>
                                     </xsl:attribute>
                                     <xsl:attribute name="UserName">
                                         <xsl:value-of select="UserName"/>
@@ -270,9 +255,6 @@
                                     <xsl:attribute name="ID_Guild_FK">
                                         <xsl:value-of select="ID_Guild_FK"/>
                                     </xsl:attribute>
-                                    <xsl:attribute name="ID_Closet_FK">
-                                        <xsl:value-of select="ID_Closet_FK"/>
-                                    </xsl:attribute>
                                     <xsl:attribute name="UserName">
                                         <xsl:value-of select="UserName"/>
                                     </xsl:attribute>
@@ -310,7 +292,7 @@
                             </xsl:for-each>
                         </pfx2:PlayerDataOutput>
                     </xsl:when>
-                    <xsl:when test="$Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn/@status='Inactive' and exists( $Status/resultSet/Record)">
+                    <xsl:when test="exists($Status/resultSet/Record)">
                         <pfx2:PlayerDataOutput>
                             <xsl:for-each select="$Status/resultSet/Record">
                                 <pfx2:PlayerOut>
@@ -319,9 +301,6 @@
                                     </xsl:attribute>
                                     <xsl:attribute name="ID_Guild_FK">
                                         <xsl:value-of select="ID_Guild_FK"/>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="ID_Closet_FK">
-                                        <xsl:value-of select="ID_Closet_FK"/>
                                     </xsl:attribute>
                                     <xsl:attribute name="UserName">
                                         <xsl:value-of select="UserName"/>
@@ -364,40 +343,37 @@
                         <pfx2:PlayerDataOutput>
                             <pfx2:PlayerOut>
                                 <xsl:attribute name="ID_Player">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_Guild_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="ID_Closet_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="UserName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="status">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Email">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="password">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Gender">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="UserType">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="XP">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ChampiesToGive">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="MyChampies">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                             </pfx2:PlayerOut>
                         </pfx2:PlayerDataOutput>
@@ -408,105 +384,21 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx:PlayerGetOutput"/>
-    <pd:endX>1057</pd:endX>
-    <pd:endY>344</pd:endY>
+    <pd:endX>1056</pd:endX>
+    <pd:endY>364</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571655905204</pd:targetNamespace>
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>1057</pd:x>
-        <pd:y>194</pd:y>
+        <pd:x>1053</pd:x>
+        <pd:y>229</pd:y>
         <pd:handler>true</pd:handler>
         <config>
             <catchAll>true</catchAll>
         </config>
         <pd:inputBindings/>
-    </pd:activity>
-    <pd:activity name="Status">
-        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
-        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>245</pd:x>
-        <pd:y>465</pd:y>
-        <config>
-            <timeout>10</timeout>
-            <commit>false</commit>
-            <maxRows>100</maxRows>
-            <emptyStrAsNil>false</emptyStrAsNil>
-            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>Select * From Player WHERE status=?;</statement>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>status</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
-            <oraObjects/>
-            <oraTables/>
-            <QueryOutputCachedSchemaColumns>ID_Player</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Closet_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>UserName</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>12</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>VARCHAR</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>Email</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>12</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>VARCHAR</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>password</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>12</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>VARCHAR</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>Gender</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>UserType</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>XP</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ChampiesToGive</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>MyChampies</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>status</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-        </config>
-        <pd:inputBindings>
-            <jdbcQueryActivityInput>
-                <status>
-                    <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[&lt;&lt; Filter >>]/@status)">
-                            <xsl:value-of select="$Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[&lt;&lt; Filter >>]/@status"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </status>
-            </jdbcQueryActivityInput>
-        </pd:inputBindings>
     </pd:activity>
     <pd:activity name="ID_Player">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
@@ -519,7 +411,7 @@
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM Player WHERE ID_Player=?;</statement>
+            <statement>SELECT * FROM player WHERE ID_Player=?;</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>ID_Player</parameterName>
@@ -533,10 +425,6 @@
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Closet_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
@@ -595,15 +483,21 @@
     <pd:activity name="ID_Guild">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>565</pd:x>
-        <pd:y>137</pd:y>
+        <pd:x>559</pd:x>
+        <pd:y>149</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM Player WHERE ID_Guild_FK=?;</statement>
+            <statement>SELECT * FROM player WHERE ID_Guild_FK=?;</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Guild_FK</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Player</QueryOutputCachedSchemaColumns>
@@ -611,10 +505,6 @@
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Closet_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
@@ -654,12 +544,6 @@
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>ID_Guild_FK</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcQueryActivityInput>
@@ -679,15 +563,21 @@
     <pd:activity name="UserName">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>566</pd:x>
-        <pd:y>229</pd:y>
+        <pd:x>559</pd:x>
+        <pd:y>247</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM Player WHERE UserName=?;</statement>
+            <statement>SELECT * FROM player WHERE UserName=?;</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>UserName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Player</QueryOutputCachedSchemaColumns>
@@ -695,10 +585,6 @@
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Closet_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
@@ -738,12 +624,6 @@
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>UserName</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcQueryActivityInput>
@@ -763,15 +643,21 @@
     <pd:activity name="Email">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>566</pd:x>
-        <pd:y>327</pd:y>
+        <pd:x>557</pd:x>
+        <pd:y>334</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM Player WHERE email=?;</statement>
+            <statement>SELECT * FROM player WHERE email=?;</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>email</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Player</QueryOutputCachedSchemaColumns>
@@ -779,10 +665,6 @@
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Closet_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
@@ -822,12 +704,6 @@
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>email</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcQueryActivityInput>
@@ -847,15 +723,15 @@
     <pd:activity name="Gender">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>566</pd:x>
-        <pd:y>414</pd:y>
+        <pd:x>560</pd:x>
+        <pd:y>423</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM Player WHERE Gender=?;</statement>
+            <statement>SELECT * FROM player WHERE Gender=?;</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>Gender</parameterName>
@@ -869,10 +745,6 @@
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Closet_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
@@ -917,8 +789,8 @@
             <jdbcQueryActivityInput>
                 <Gender>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[&lt;&lt; Filter >>]/@Gender)">
-                            <xsl:value-of select="$Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[&lt;&lt; Filter >>]/@Gender"/>
+                        <xsl:when test="exists($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@Gender)">
+                            <xsl:value-of select="$Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@Gender"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>
@@ -931,15 +803,15 @@
     <pd:activity name="UserType">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>566</pd:x>
-        <pd:y>505</pd:y>
+        <pd:x>559</pd:x>
+        <pd:y>506</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM Player WHERE UserType=?;</statement>
+            <statement>SELECT * FROM player WHERE UserType=?;</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>UserType</parameterName>
@@ -953,10 +825,6 @@
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
-            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
-            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
-            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Closet_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
@@ -1012,107 +880,92 @@
             </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
-    <pd:activity name="Null">
-        <pd:type>com.tibco.plugin.timer.NullActivity</pd:type>
-        <pd:resourceType>ae.activities.null</pd:resourceType>
-        <pd:x>373</pd:x>
-        <pd:y>369</pd:y>
-        <config/>
-        <pd:inputBindings/>
+    <pd:activity name="Status">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>556</pd:x>
+        <pd:y>606</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <statement>SELECT * FROM player WHERE status=?;</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>status</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Player</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>UserName</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>12</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>VARCHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Email</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>12</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>VARCHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>password</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>12</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>VARCHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Gender</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>UserType</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>XP</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesToGive</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>MyChampies</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>status</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput>
+                <status>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@status)">
+                            <xsl:value-of select="$Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@status"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </status>
+            </jdbcQueryActivityInput>
+        </pd:inputBindings>
     </pd:activity>
-    <pd:activity name="Null-1">
-        <pd:type>com.tibco.plugin.timer.NullActivity</pd:type>
-        <pd:resourceType>ae.activities.null</pd:resourceType>
-        <pd:x>563</pd:x>
-        <pd:y>692</pd:y>
-        <config/>
-        <pd:inputBindings/>
-    </pd:activity>
-    <pd:activity name="Null-2">
-        <pd:type>com.tibco.plugin.timer.NullActivity</pd:type>
-        <pd:resourceType>ae.activities.null</pd:resourceType>
-        <pd:x>564</pd:x>
-        <pd:y>596</pd:y>
-        <config/>
-        <pd:inputBindings/>
-    </pd:activity>
-    <pd:transition>
-        <pd:from>Start</pd:from>
-        <pd:to>Status</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>always</pd:conditionType>
-    </pd:transition>
     <pd:transition>
         <pd:from>Catch</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>always</pd:conditionType>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Status</pd:from>
-        <pd:to>Null</pd:to>
-        <pd:xpathDescription>Active</pd:xpathDescription>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>otherwise</pd:conditionType>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Status</pd:from>
-        <pd:to>Null-1</pd:to>
-        <pd:xpathDescription>Inactive</pd:xpathDescription>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>$Status/resultSet/Record/status='Inactive'</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null-1</pd:from>
-        <pd:to>End</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>always</pd:conditionType>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>UserType</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn/@UserType)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>Gender</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn/@Gender)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>Email</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn/@Email)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>UserName</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn/@UserName)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>ID_Guild</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn/@ID_Guild_FK)&gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID_Guild</pd:from>
@@ -1150,14 +1003,6 @@
         <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>ID_Player</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn/@ID_Player)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
         <pd:from>ID_Player</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
@@ -1165,14 +1010,63 @@
         <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>Null-2</pd:to>
+        <pd:from>Start</pd:from>
+        <pd:to>ID_Player</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>otherwise</pd:conditionType>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@ID_Player)&gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
-        <pd:from>Null-2</pd:from>
+        <pd:from>Start</pd:from>
+        <pd:to>ID_Guild</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@ID_Guild_FK)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>UserName</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@UserName)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Email</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@Email)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Gender</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@Gender)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>UserType</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@UserType)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Status</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx:PlayerGetInput/GetIn/pfx2:PlayerDataInput/pfx2:PlayerIn[1]/@status)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Status</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>

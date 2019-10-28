@@ -158,22 +158,22 @@
                         <xsl:otherwise>
                             <pfx4:skinOut>
                                 <xsl:attribute name="ID_Skin">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="SkinName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ImagePath">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="MinXP">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ChampiesCost">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="SkinType">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                             </pfx4:skinOut>
                         </xsl:otherwise>
@@ -184,7 +184,7 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx3:skinGetOutput"/>
-    <pd:endX>844</pd:endX>
+    <pd:endX>843</pd:endX>
     <pd:endY>275</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
@@ -210,7 +210,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>Select * from Skin Where ID_Skin=?;</statement>
+            <statement>Select * from skin Where ID_Skin=?;</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>ID_Skin</parameterName>
@@ -246,7 +246,18 @@
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <ID_Skin>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ID_Skin)">
+                            <xsl:value-of select="$Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ID_Skin"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Skin>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="SkinName">
@@ -259,8 +270,14 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>Select * from Skin Where SkinName=?;</statement>
+            <statement>Select * from skin Where SkinName=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>SkinName</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Skin</QueryOutputCachedSchemaColumns>
@@ -287,15 +304,20 @@
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>SkinName</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <SkinName>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@SkinName)">
+                            <xsl:value-of select="$Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@SkinName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </SkinName>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="ImagePath">
@@ -308,7 +330,7 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>Select * from Skin Where ImagePath=?;</statement>
+            <statement>Select * from skin Where ImagePath=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -344,7 +366,18 @@
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <ImagePath>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ImagePath)">
+                            <xsl:value-of select="$Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ImagePath"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ImagePath>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="MinXP">
@@ -357,8 +390,14 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>Select * from Skin Where MinXP=?;</statement>
+            <statement>Select * from skin Where MinXP=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>MinXP</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Skin</QueryOutputCachedSchemaColumns>
@@ -385,15 +424,20 @@
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>MinXP</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <MinXP>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@MinXP)">
+                            <xsl:value-of select="$Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@MinXP"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </MinXP>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="ChampiesCost">
@@ -406,8 +450,14 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>Select * from Skin Where ChampiesCost=?;</statement>
+            <statement>Select * from skin Where ChampiesCost=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ChampiesCost</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Skin</QueryOutputCachedSchemaColumns>
@@ -434,15 +484,20 @@
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>ChampiesCost</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <ChampiesCost>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ChampiesCost)">
+                            <xsl:value-of select="$Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ChampiesCost"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ChampiesCost>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="SkinType">
@@ -455,8 +510,14 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>Select * from Skin Where SkinType=?;</statement>
+            <statement>Select * from skin Where SkinType=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>SkinType</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Skin</QueryOutputCachedSchemaColumns>
@@ -483,15 +544,20 @@
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>SkinType</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <SkinType>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@SkinType)">
+                            <xsl:value-of select="$Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@SkinType"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </SkinType>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:transition>
@@ -507,7 +573,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn/@ID_Skin)&gt;0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ID_Skin)&gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -515,7 +581,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn/@SkinName)&gt;0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@SkinName)&gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -523,7 +589,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn/@ImagePath)&gt;0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ImagePath)&gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -531,7 +597,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn/@MinXP)&gt;0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@MinXP)&gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -539,7 +605,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn/@ChampiesCost)&gt;0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@ChampiesCost)&gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ChampiesCost</pd:from>
@@ -582,7 +648,7 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn/@SkinType)&gt;0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:skinGetInput/GetIn/pfx4:SkinDataInput/pfx4:skinIn[1]/@SkinType)&gt;0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>SkinType</pd:from>

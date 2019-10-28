@@ -26,10 +26,10 @@
                         <ns:attendedEventsDataOutput>
                             <ns:attendedEventsOut>
                                 <xsl:attribute name="ID_Event_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_Player_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                             </ns:attendedEventsOut>
                         </ns:attendedEventsDataOutput>
@@ -59,13 +59,13 @@
     <pd:activity name="Delete">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>472</pd:x>
+        <pd:x>474</pd:x>
         <pd:y>211</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>DELETE FROM attendedevents WHERE ID_Event_FK=? , ID_Player_FK=?;</statement>
+            <statement>DELETE FROM attendedevents WHERE ID_Event_FK=? and ID_Player_FK=?;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
