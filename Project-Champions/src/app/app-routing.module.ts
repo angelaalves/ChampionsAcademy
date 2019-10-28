@@ -24,7 +24,6 @@ import { GuildListComponent } from './guild-list-start/guild-list/guild-list.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
 import { ImageMakerComponent } from './image-maker/image-maker.component';
-import { GuildListElemComponent } from './guild-list-start/guild-list/guild-list-elem/guild-list-elem.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
