@@ -23,6 +23,9 @@
             </tr>
         </thead>
         <tbody>
+            <tr *ngFor="let playerEl of players">
+                <td>{{playerEl.value}}</td>
+            </tr>
             <tr>
                 <th scope="row">1</th>
                 <td>Username</td>

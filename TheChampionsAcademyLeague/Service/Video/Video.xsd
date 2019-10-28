@@ -5,7 +5,7 @@
 	 targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd"
 	 elementFormDefault="qualified"
 	 attributeFormDefault="unqualified">
-	<xs:element name="videoInput">
+	<xs:element name="videoIn">
 		<xs:complexType>
 			<xs:attribute name="ID_Video" type="xs:string"/>
 			<xs:attribute name="VideoName" type="xs:string"/>
@@ -13,7 +13,7 @@
 			<xs:attribute name="Topic" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="videoOutput">
+	<xs:element name="videoOut">
 		<xs:complexType>
 			<xs:attribute name="ID_Video" type="xs:string"/>
 			<xs:attribute name="VideoName" type="xs:string"/>
@@ -21,17 +21,17 @@
 			<xs:attribute name="Topic" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="VideoDataInput">
+	<xs:element name="DataInput">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="videoInput" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="videoIn" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="VideoDataOutput">
+	<xs:element name="DataOutput">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="videoOutput" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="videoOut" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

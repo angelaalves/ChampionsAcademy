@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-guild-master-definitions',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuildMasterDefinitionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
+  redirectChangePassword(){
+    this.router.navigate(['/change_password'], {relativeTo: this.route});
+  }
 }

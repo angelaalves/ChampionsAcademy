@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ancient-image',
@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ancient-image.component.css']
 })
 export class AncientImageComponent implements OnInit {
-
+  @Input() name:string
+  @Input() hairImagePath:string
+  @Input() skinImagePath:string
+  @Input() shirtImagePath:string
+  @Input() pantsImagePath:string
   constructor() { }
 
   ngOnInit() {

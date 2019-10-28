@@ -9,10 +9,10 @@
     <pd:returnBindings>
         <pfx:videoDeleteOutput>
             <DeleteOut>
-                <ns:VideoDataOutput>
+                <ns:DataOutput>
                     <xsl:choose>
                         <xsl:when test="not(exists($_error_Delete/ActivityErrors/*))">
-                            <ns:videoOutput>
+                            <ns:videoOut>
                                 <xsl:attribute name="ID_Video">
                                     <xsl:value-of select="&quot;Deleted&quot;"/>
                                 </xsl:attribute>
@@ -25,10 +25,10 @@
                                 <xsl:attribute name="Topic">
                                     <xsl:value-of select="&quot;Deleted&quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOutput>
+                            </ns:videoOut>
                         </xsl:when>
                         <xsl:otherwise>
-                            <ns:videoOutput>
+                            <ns:videoOut>
                                 <xsl:attribute name="ID_Video">
                                     <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
@@ -41,10 +41,10 @@
                                 <xsl:attribute name="Topic">
                                     <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
-                            </ns:videoOutput>
+                            </ns:videoOut>
                         </xsl:otherwise>
                     </xsl:choose>
-                </ns:VideoDataOutput>
+                </ns:DataOutput>
             </DeleteOut>
         </pfx:videoDeleteOutput>
     </pd:returnBindings>
@@ -88,8 +88,8 @@
             <jdbcUpdateActivityInput>
                 <ID_Video>
                     <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:videoDeleteInput/DeleteIn/ns:VideoDataInput/ns:videoInput[1]/@ID_Video)">
-                            <xsl:value-of select="$Start/pfx:videoDeleteInput/DeleteIn/ns:VideoDataInput/ns:videoInput[1]/@ID_Video"/>
+                        <xsl:when test="exists($Start/pfx:videoDeleteInput/DeleteIn/ns:DataInput/ns:videoIn[1]/@ID_Video)">
+                            <xsl:value-of select="$Start/pfx:videoDeleteInput/DeleteIn/ns:DataInput/ns:videoIn[1]/@ID_Video"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="xsi:nil">true</xsl:attribute>

@@ -22,7 +22,9 @@ import { AddGuildListComponent } from './guild-list-start/guild-list/add-guild-l
 import { AddUserComponent } from './ancient-profile/ancient/add-user/add-user.component';
 import { GuildListComponent } from './guild-list-start/guild-list/guild-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { PresenterPageComponent } from './warrior/presenter-page/presenter-page.component';
+import { ImageMakerComponent } from './image-maker/image-maker.component';
+import { GuildListElemComponent } from './guild-list-start/guild-list/guild-list-elem/guild-list-elem.component';
 
 const appRoutes: Routes=[
     {path: '', redirectTo: '/login', pathMatch:'full'},
@@ -43,16 +45,22 @@ const appRoutes: Routes=[
     {path: 'ancient_profile', component: AncientComponent},
     {path: 'guilds_list', component: GuildListStartComponent, children:[
         {path:'', component: GuildListComponent},
+        {path: ':id', component: GuildComponent, children:[
+            {path:'', component: GuildComponent},
+            {path: ':id', component: WarriorComponent}
+        ]},
         {path:'add_guild', component: AddGuildListComponent}
     ]},
     {path: 'list_users', component: ListUsersComponent},
     {path: 'rewards', component: RewardsComponent},
-    {path: 'rewards_to_aprove', component: RewardsToApproveComponent},
+    {path: 'rewards_to_approve', component: RewardsToApproveComponent},
     {path: 'events', component: EventsComponent},
     {path: 'notifications', component: NotificationsComponent},
     {path: 'closet', component: ClosetComponent},
     {path: 'videos', component: VideosComponent},
-    {path: 'add_skin', component: AddSkinComponent}
+    {path: 'add_skin', component: AddSkinComponent},
+    {path: 'image', component: ImageMakerComponent},
+    
  ]
 
 

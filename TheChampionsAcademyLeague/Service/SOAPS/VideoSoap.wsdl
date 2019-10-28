@@ -3,21 +3,21 @@
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1571063854585" xmlns:ns0="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/" name="Untitled" targetNamespace="http://xmlns.example.com/1571063854585">
     <wsdl:types>
         <xs:schema xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
-            <xs:element name="VideoDataInput">
+            <xs:element name="DataInput">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element ref="ns0:videoInput" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="ns0:videoIn" minOccurs="0" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="VideoDataOutput">
+            <xs:element name="DataOutput">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element ref="ns0:videoOutput" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="ns0:videoOut" minOccurs="0" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="videoInput">
+            <xs:element name="videoIn">
                 <xs:complexType>
                     <xs:attribute name="Duration" type="xs:string"/>
                     <xs:attribute name="ID_Video" type="xs:string"/>
@@ -25,7 +25,7 @@
                     <xs:attribute name="VideoName" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="videoOutput">
+            <xs:element name="videoOut">
                 <xs:complexType>
                     <xs:attribute name="Duration" type="xs:string"/>
                     <xs:attribute name="ID_Video" type="xs:string"/>
@@ -54,32 +54,32 @@
     </wsdl:service>
     <wsdl:portType name="VideoPortUpdate">
         <wsdl:operation name="Update">
-            <wsdl:input message="tns:videoUpdateInput"/>
-            <wsdl:output message="tns:videoUpdateOutput"/>
+            <wsdl:input message="tns:videoInputUpdate"/>
+            <wsdl:output message="tns:videoOutputUpdate"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:portType name="VideoPortGetAll">
         <wsdl:operation name="GetAll">
-            <wsdl:input message="tns:videoGetAllInput"/>
-            <wsdl:output message="tns:videoGetAllOutput"/>
+            <wsdl:input message="tns:videoInputGetAll"/>
+            <wsdl:output message="tns:videoOutputGetAll"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:portType name="VideoPortCreate">
         <wsdl:operation name="Create">
-            <wsdl:input message="tns:videoCreateInput"/>
-            <wsdl:output message="tns:videoCreateOutput"/>
+            <wsdl:input message="tns:videoInputCreate"/>
+            <wsdl:output message="tns:videoOutputCreate"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:portType name="VideoPortGet">
         <wsdl:operation name="Get">
-            <wsdl:input message="tns:videoGetInput"/>
-            <wsdl:output message="tns:videoGetOutput"/>
+            <wsdl:input message="tns:videoInputGet"/>
+            <wsdl:output message="tns:videoOutputGet"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:portType name="VideoPortDelete">
         <wsdl:operation name="Delete">
-            <wsdl:input message="tns:videoDeleteInput"/>
-            <wsdl:output message="tns:videoDeleteOutput"/>
+            <wsdl:input message="tns:videoInputDelete"/>
+            <wsdl:output message="tns:videoOutputDelete"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="VideoPortUpdateEndpoint1Binding" type="tns:VideoPortUpdate">
@@ -142,34 +142,34 @@
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
-    <wsdl:message name="videoUpdateInput">
-        <wsdl:part name="UpdateIn" element="ns0:VideoDataInput"/>
+    <wsdl:message name="videoInputUpdate">
+        <wsdl:part name="UpdateIn" element="ns0:DataInput"/>
     </wsdl:message>
-    <wsdl:message name="videoUpdateOutput">
-        <wsdl:part name="UpdateOut" element="ns0:VideoDataOutput"/>
+    <wsdl:message name="videoOutputUpdate">
+        <wsdl:part name="UpdateOut" element="ns0:DataOutput"/>
     </wsdl:message>
-    <wsdl:message name="videoGetAllInput">
-        <wsdl:part name="GetAllIn" element="ns0:VideoDataInput"/>
+    <wsdl:message name="videoInputGetAll">
+        <wsdl:part name="GetAllIn" element="ns0:DataInput"/>
     </wsdl:message>
-    <wsdl:message name="videoGetAllOutput">
-        <wsdl:part name="GetAllOut" element="ns0:VideoDataOutput"/>
+    <wsdl:message name="videoOutputGetAll">
+        <wsdl:part name="GetAllOut" element="ns0:DataOutput"/>
     </wsdl:message>
-    <wsdl:message name="videoCreateInput">
-        <wsdl:part name="CreateIn" element="ns0:VideoDataInput"/>
+    <wsdl:message name="videoInputCreate">
+        <wsdl:part name="CreateIn" element="ns0:DataInput"/>
     </wsdl:message>
-    <wsdl:message name="videoCreateOutput">
-        <wsdl:part name="CreateOut" element="ns0:VideoDataOutput"/>
+    <wsdl:message name="videoOutputCreate">
+        <wsdl:part name="CreateOut" element="ns0:DataOutput"/>
     </wsdl:message>
-    <wsdl:message name="videoGetInput">
-        <wsdl:part name="GetIn" element="ns0:VideoDataInput"/>
+    <wsdl:message name="videoInputGet">
+        <wsdl:part name="GetIn" element="ns0:DataInput"/>
     </wsdl:message>
-    <wsdl:message name="videoGetOutput">
-        <wsdl:part name="GetOut" element="ns0:VideoDataOutput"/>
+    <wsdl:message name="videoOutputGet">
+        <wsdl:part name="GetOut" element="ns0:DataOutput"/>
     </wsdl:message>
-    <wsdl:message name="videoDeleteInput">
-        <wsdl:part name="DeleteIn" element="ns0:VideoDataInput"/>
+    <wsdl:message name="videoInputDelete">
+        <wsdl:part name="DeleteIn" element="ns0:DataInput"/>
     </wsdl:message>
-    <wsdl:message name="videoDeleteOutput">
-        <wsdl:part name="DeleteOut" element="ns0:VideoDataOutput"/>
+    <wsdl:message name="videoOutputDelete">
+        <wsdl:part name="DeleteOut" element="ns0:DataOutput"/>
     </wsdl:message>
 </wsdl:definitions>
