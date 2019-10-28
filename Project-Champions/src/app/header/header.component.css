@@ -1,5 +1,8 @@
-    background-color: transparent;
-  nav{
     border: 10px solid transparent;
+  nav{
+    background-color: transparent;
+nav{
+    background-color: transparent;
+    border: 10px solid transparent; 
     padding: 5px;
   }
