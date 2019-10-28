@@ -45,8 +45,13 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx2:ClosetUpdateOutput"/>
+<<<<<<< Updated upstream
     <pd:endX>860</pd:endX>
     <pd:endY>247</pd:endY>
+=======
+    <pd:endX>1004</pd:endX>
+    <pd:endY>248</pd:endY>
+>>>>>>> Stashed changes
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571128270884</pd:targetNamespace>

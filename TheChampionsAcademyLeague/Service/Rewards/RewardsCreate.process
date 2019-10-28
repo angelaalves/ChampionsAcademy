@@ -40,6 +40,7 @@
                         <xsl:otherwise>
                             <ns1:RewardsOut>
                                 <xsl:attribute name="ID_Reward">
+<<<<<<< Updated upstream
                                     <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_PlayerGiver_FK">
@@ -59,6 +60,27 @@
                                 </xsl:attribute>
                                 <xsl:attribute name="TimeSpent">
                                     <xsl:value-of select="&quot;Unable to create&quot;"/>
+=======
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerGiver_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesGiven">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="DateOfReward">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Approved">
+                                    <xsl:value-of select="&quot; &quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot; &quot;"/>
+>>>>>>> Stashed changes
                                 </xsl:attribute>
                             </ns1:RewardsOut>
                         </xsl:otherwise>
@@ -70,21 +92,34 @@
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx2:RewardsCreateOutput"/>
     <pd:endX>732</pd:endX>
+<<<<<<< Updated upstream
     <pd:endY>176</pd:endY>
+=======
+    <pd:endY>175</pd:endY>
+>>>>>>> Stashed changes
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571147055482</pd:targetNamespace>
     <pd:activity name="Create">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+<<<<<<< Updated upstream
         <pd:x>444</pd:x>
         <pd:y>177</pd:y>
+=======
+        <pd:x>443</pd:x>
+        <pd:y>176</pd:y>
+>>>>>>> Stashed changes
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+<<<<<<< Updated upstream
             <statement>INSERT INTO Rewards(ID_PlayerGiver_FK, ID_PlayerReceiver_FK,ChampiesGiven, DateOfReward, Approved, TimeSpent) VALUES (?,?,?,?,'No',?);</statement>
+=======
+            <statement>INSERT INTO Rewards(ID_PlayerGiver_FK, ID_PlayerReceiver_FK,ChampiesGiven, DateOfReward, Approved, TimeSpent) VALUES (?,?,?,?,?,?);</statement>
+>>>>>>> Stashed changes
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>ID_PlayerGiver_FK</parameterName>
@@ -103,6 +138,13 @@
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
+<<<<<<< Updated upstream
+=======
+                    <parameterName>Approved</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+>>>>>>> Stashed changes
                     <parameterName>TimeSpent</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>

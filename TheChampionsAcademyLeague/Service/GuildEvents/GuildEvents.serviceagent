@@ -226,7 +226,11 @@
                             <tabType>impl</tabType>
                             <config>
                                 <operations>
+<<<<<<< Updated upstream
                                     <row opName="GetAll" opImpl=""/>
+=======
+                                    <row opName="GetAll" opImpl="/Service/GuildEvents/GuildEventsGetAll.process"/>
+>>>>>>> Stashed changes
                                 </operations>
                             </config>
                         </tab>
