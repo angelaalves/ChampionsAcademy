@@ -23,3 +23,12 @@ label, input{
     right:    0;
     bottom:   0;
 }
+
+@font-face{
+    src: url(../../../fonts/ka1.ttf);
+    font-family: karmatic-arcade;
+  }
+
+*{
+    font-family: karmatic-arcade;
+}

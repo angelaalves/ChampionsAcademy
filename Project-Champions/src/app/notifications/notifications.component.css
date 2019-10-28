@@ -62,7 +62,13 @@ header {
       padding-bottom: 2%;
   }
 
+   @font-face{
+    src: url(../../fonts/ka1.ttf);
+    font-family: karmatic-arcade;
+  }
+
   *{
     background-color: transparent;
     color:white;
+    font-family: karmatic-arcade;
   }
