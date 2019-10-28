@@ -52,6 +52,6 @@ header {
   }
 
   *{
-    background-color: black;
-    color:white;
+    background-color: transparent;
+    color: black;
   }

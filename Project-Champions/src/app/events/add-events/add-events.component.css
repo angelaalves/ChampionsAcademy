@@ -1,6 +1,6 @@
 /* Style the header */
-header {
-    background-color: #666;
+  header {
+    background-color: transparent;
     padding: 30px;
     text-align: center;
     font-size: 35px;
@@ -12,7 +12,7 @@ header {
     float: left;
     width: 30%;
     height: 400px; /* only for demonstration, should be removed */
-    background: #ccc;
+    background: transparent;
     padding: 50px;
   }
   
@@ -26,7 +26,7 @@ header {
     float: left;
     padding: 20px;
     width: 70%;
-    background-color: #f1f1f1;
+    background-color: transparent;
     font-size: 16px;
   }
   
@@ -39,7 +39,7 @@ header {
   
   /* Style the footer */
   footer {
-    background-color: #777;
+    background-color: transparent;
     padding: 10px;
     text-align: center;
     color: white;
@@ -60,3 +60,7 @@ header {
  .split-right{
   display: inline-block;
   }
+
+  /**{
+    background-color: transparent;
+  }*/
