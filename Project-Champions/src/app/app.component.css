@@ -17,8 +17,8 @@
     background: black;
   }
   ::-webkit-scrollbar-thumb{
-    background: darkorange;
+    background: grey;
   }
   ::-webkit-scrollbar-thumb:hover{
-    background: red;
+    background: white;
   }
