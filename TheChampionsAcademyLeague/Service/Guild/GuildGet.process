@@ -5,14 +5,14 @@
     <pd:name>Service/Guild/GuildGet.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="pfx3:GuildGetInput"/>
-    <pd:startX>61</pd:startX>
-    <pd:startY>468</pd:startY>
+    <pd:startX>92</pd:startX>
+    <pd:startY>339</pd:startY>
     <pd:returnBindings>
         <pfx3:GuildGetOutput>
             <GetOut>
                 <ns:GuildDataOutput>
                     <xsl:choose>
-                        <xsl:when test="exists( $ID_Guild/resultSet/Record)">
+                        <xsl:when test="exists($ID_Guild/resultSet/Record)">
                             <xsl:for-each select="$ID_Guild/resultSet/Record">
                                 <ns:GuildOut>
                                     <xsl:attribute name="ID_Guild">
@@ -132,7 +132,7 @@
                                 </ns:GuildOut>
                             </xsl:for-each>
                         </xsl:when>
-                        <xsl:when test="exists($status/resultSet/Record) and   $status/resultSet/Record/status= 'Inactive'">
+                        <xsl:when test="exists($status/resultSet/Record)">
                             <xsl:for-each select="$status/resultSet/Record">
                                 <ns:GuildOut>
                                     <xsl:attribute name="ID_Guild">
@@ -164,15 +164,15 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx3:GuildGetOutput"/>
-    <pd:endX>950</pd:endX>
-    <pd:endY>379</pd:endY>
+    <pd:endX>1033</pd:endX>
+    <pd:endY>317</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571128269566</pd:targetNamespace>
     <pd:activity name="ID_Guild">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>495</pd:x>
+        <pd:x>514</pd:x>
         <pd:y>157</pd:y>
         <config>
             <timeout>10</timeout>
@@ -232,14 +232,14 @@
     <pd:activity name="GuildName">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>502</pd:x>
-        <pd:y>248</pd:y>
+        <pd:x>512</pd:x>
+        <pd:y>247</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Guild WHERE GuildName=(?);</statement>
+            <statement>SELECT * FROM guild WHERE GuildName=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -292,8 +292,8 @@
     <pd:activity name="StartDate">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>508</pd:x>
-        <pd:y>332</pd:y>
+        <pd:x>515</pd:x>
+        <pd:y>331</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
@@ -352,8 +352,8 @@
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>952</pd:x>
-        <pd:y>209</pd:y>
+        <pd:x>1029</pd:x>
+        <pd:y>204</pd:y>
         <pd:handler>true</pd:handler>
         <config>
             <catchAll>true</catchAll>
@@ -363,8 +363,8 @@
     <pd:activity name="EndDate">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>513</pd:x>
-        <pd:y>416</pd:y>
+        <pd:x>507</pd:x>
+        <pd:y>418</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
@@ -423,8 +423,8 @@
     <pd:activity name="GuildFlag">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>520</pd:x>
-        <pd:y>507</pd:y>
+        <pd:x>509</pd:x>
+        <pd:y>520</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
@@ -432,6 +432,12 @@
             <emptyStrAsNil>false</emptyStrAsNil>
             <statement>SELECT * FROM Guild WHERE GuildFlag=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>GuildFlag</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>ID_Guild</QueryOutputCachedSchemaColumns>
@@ -458,12 +464,6 @@
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <Prepared_Param_DataType>
-                <parameter>
-                    <parameterName>GuildFlag</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-            </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcQueryActivityInput>
@@ -483,14 +483,14 @@
     <pd:activity name="status">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>188</pd:x>
-        <pd:y>469</pd:y>
+        <pd:x>509</pd:x>
+        <pd:y>622</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM Guild WHERE status=(?);</statement>
+            <statement>SELECT * FROM guild WHERE status=(?);</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -540,48 +540,29 @@
             </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
-    <pd:activity name="Null">
-        <pd:type>com.tibco.plugin.timer.NullActivity</pd:type>
-        <pd:resourceType>ae.activities.null</pd:resourceType>
-        <pd:x>339</pd:x>
-        <pd:y>332</pd:y>
-        <config/>
-        <pd:inputBindings/>
-    </pd:activity>
-    <pd:activity name="Null-1">
-        <pd:type>com.tibco.plugin.timer.NullActivity</pd:type>
-        <pd:resourceType>ae.activities.null</pd:resourceType>
-        <pd:x>512</pd:x>
-        <pd:y>637</pd:y>
-        <config/>
-        <pd:inputBindings/>
-    </pd:activity>
     <pd:transition>
         <pd:from>ID_Guild</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($ID_Guild/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>GuildName</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($GuildName/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>StartDate</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($StartDate/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Catch</pd:from>
@@ -591,91 +572,74 @@
         <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
-        <pd:from>Start</pd:from>
-        <pd:to>status</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>always</pd:conditionType>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>status</pd:from>
-        <pd:to>Null</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>$status/resultSet/Record/status ='Active'</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>ID_Guild</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx3:GuildGetInput/GetIn/ns:GuildDataInput/ns:GuildIn/@ID_Guild)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>GuildName</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($status/resultSet/Record/GuildName)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>StartDate</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($status/resultSet/Record/StartDate)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>EndDate</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($status/resultSet/Record/EndDate)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null</pd:from>
-        <pd:to>GuildFlag</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($status/resultSet/Record/GuildFlag)&gt;0</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>status</pd:from>
-        <pd:to>Null-1</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>$status/resultSet/Record/status='Inactive'</pd:xpath>
-    </pd:transition>
-    <pd:transition>
-        <pd:from>Null-1</pd:from>
-        <pd:to>End</pd:to>
-        <pd:lineType>Default</pd:lineType>
-        <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>always</pd:conditionType>
-    </pd:transition>
-    <pd:transition>
         <pd:from>EndDate</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($EndDate/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>GuildFlag</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>status</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>ID_Guild</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($GuildFlag/resultSet/Record)</pd:xpath>
+        <pd:xpath>string-length($Start/pfx3:GuildGetInput/GetIn/ns:GuildDataInput/ns:GuildIn[1]/@ID_Guild)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>GuildName</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:GuildGetInput/GetIn/ns:GuildDataInput/ns:GuildIn[1]/@GuildName)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>StartDate</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:GuildGetInput/GetIn/ns:GuildDataInput/ns:GuildIn[1]/@StartDate)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>EndDate</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:GuildGetInput/GetIn/ns:GuildDataInput/ns:GuildIn[1]/@EndDate)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>GuildFlag</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:GuildGetInput/GetIn/ns:GuildDataInput/ns:GuildIn[1]/@GuildFlag)&gt;0</pd:xpath>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>status</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>xpath</pd:conditionType>
+        <pd:xpath>string-length($Start/pfx3:GuildGetInput/GetIn/ns:GuildDataInput/ns:GuildIn[1]/@status)&gt;0</pd:xpath>
     </pd:transition>
 </pd:ProcessDefinition>

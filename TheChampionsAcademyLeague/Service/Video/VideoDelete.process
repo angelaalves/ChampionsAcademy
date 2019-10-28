@@ -30,16 +30,16 @@
                         <xsl:otherwise>
                             <ns:videoOut>
                                 <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                             </ns:videoOut>
                         </xsl:otherwise>

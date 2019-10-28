@@ -59,16 +59,16 @@
                         <xsl:otherwise>
                             <pfx2:videoOut>
                                 <xsl:attribute name="ID_Video">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="VideoName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Duration">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Topic">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
                             </pfx2:videoOut>
                         </xsl:otherwise>
@@ -258,16 +258,15 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@ID_Video) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:VideoDataInput/pfx2:videoInput[1]/@ID_Video) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>ID</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($ID/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -276,16 +275,15 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@VideoName) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:VideoDataInput/pfx2:videoInput[1]/@VideoName) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>VideoName</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
-        <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>exists($VideoName/resultSet/Record)</pd:xpath>
+        <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -294,12 +292,12 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
-        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:DataInput/pfx2:videoIn[1]/@Topic) &gt; 0</pd:xpath>
+        <pd:xpath>string-length($Start/pfx:videoGetInput/GetIn/pfx2:VideoDataInput/pfx2:videoInput[1]/@Topic) &gt; 0</pd:xpath>
     </pd:transition>
     <pd:transition>
         <pd:from>Topic</pd:from>
         <pd:to>End</pd:to>
-        <pd:xpathDescription>Exists</pd:xpathDescription>
+        <pd:xpathDescription/>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>always</pd:conditionType>

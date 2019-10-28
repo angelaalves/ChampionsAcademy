@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748236987" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:ns2="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Rewards/Schema.xsd">
+    <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748236987" location="/Service/Rewards/Rewards.wsdl"/>
+    <pd:name>Service/Rewards/RewardsGetAll.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx2:RewardsGetAllInput"/>
+    <pd:startX>223</pd:startX>
+    <pd:startY>265</pd:startY>
+    <pd:returnBindings>
+        <pfx2:RewardsGetAllOutput>
+            <GetAllOut>
+                <ns2:RewardsDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="exists($Rewards/resultSet/Record)">
+                            <xsl:for-each select="$Rewards/resultSet/Record">
+                                <ns2:RewardsOut>
+                                    <xsl:attribute name="ID_Reward">
+                                        <xsl:value-of select="ID_Reward"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerGiver_FK">
+                                        <xsl:value-of select="ID_PlayerGiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ID_PlayerReceiver_FK">
+                                        <xsl:value-of select="ID_PlayerReceiver_FK"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="ChampiesGiven">
+                                        <xsl:value-of select="ChampiesGiven"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="DateOfReward">
+                                        <xsl:value-of select="DateOfReward"/>
+                                    </xsl:attribute>
+                                    <xsl:if test="Approved">
+                                        <xsl:attribute name="Approved">
+                                            <xsl:value-of select="Approved"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:attribute name="TimeSpent">
+                                        <xsl:value-of select="TimeSpent"/>
+                                    </xsl:attribute>
+                                </ns2:RewardsOut>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns2:RewardsOut>
+                                <xsl:attribute name="ID_Reward">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerGiver_FK">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesGiven">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="DateOfReward">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Approved">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                            </ns2:RewardsOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns2:RewardsDataOutput>
+            </GetAllOut>
+        </pfx2:RewardsGetAllOutput>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx2:RewardsGetAllOutput"/>
+    <pd:endX>927</pd:endX>
+    <pd:endY>269</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571147019965</pd:targetNamespace>
+    <pd:activity name="Rewards">
+        <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
+        <pd:x>544</pd:x>
+        <pd:y>270</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <maxRows>100</maxRows>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>SELECT * FROM rewards;</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <oraObjects/>
+            <oraTables/>
+            <QueryOutputCachedSchemaColumns>ID_Reward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerGiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ID_PlayerReceiver_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>ChampiesGiven</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>DateOfReward</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>93</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+            <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+        </config>
+        <pd:inputBindings>
+            <jdbcQueryActivityInput/>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>926</pd:x>
+        <pd:y>125</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Rewards</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Rewards</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

@@ -218,6 +218,27 @@
                         <xsl:otherwise>
                             <pfx4:RewardsOut>
                                 <xsl:attribute name="ID_Reward">
+<<<<<<< Updated upstream
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerGiver_FK">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesGiven">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="DateOfReward">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Approved">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
+=======
                                     <xsl:value-of select="&quot; &quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_PlayerGiver_FK">
@@ -237,6 +258,7 @@
                                 </xsl:attribute>
                                 <xsl:attribute name="TimeSpent">
                                     <xsl:value-of select="&quot; &quot;"/>
+>>>>>>> Stashed changes
                                 </xsl:attribute>
                             </pfx4:RewardsOut>
                         </xsl:otherwise>
@@ -263,7 +285,11 @@
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+<<<<<<< Updated upstream
+            <statement>SELECT * FROM rewards  WHERE ID_Reward=(?);</statement>
+=======
             <statement>SELECT * FROM Rewards  WHERE ID_Reward=(?);</statement>
+>>>>>>> Stashed changes
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>ID_Reward</parameterName>
@@ -293,9 +319,15 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+<<<<<<< Updated upstream
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+=======
             <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+>>>>>>> Stashed changes
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -326,7 +358,11 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
+<<<<<<< Updated upstream
+            <statement>SELECT * FROM rewards WHERE ID_PlayerReceiver_FK=(?);</statement>
+=======
             <statement>SELECT * FROM Rewards WHERE ID_PlayerReceiver_FK=(?);</statement>
+>>>>>>> Stashed changes
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -357,9 +393,15 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+<<<<<<< Updated upstream
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+=======
             <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+>>>>>>> Stashed changes
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -390,7 +432,11 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
+<<<<<<< Updated upstream
+            <statement>SELECT * FROM rewards WHERE DateOfReward=(?);</statement>
+=======
             <statement>SELECT * FROM Rewards WHERE DateOfReward=(?);</statement>
+>>>>>>> Stashed changes
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -421,9 +467,15 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+<<<<<<< Updated upstream
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+=======
             <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+>>>>>>> Stashed changes
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -465,7 +517,11 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
+<<<<<<< Updated upstream
+            <statement>SELECT * FROM rewards WHERE ID_PlayerGiver_FK=(?);</statement>
+=======
             <statement>SELECT * FROM Rewards WHERE ID_PlayerGiver_FK=(?);</statement>
+>>>>>>> Stashed changes
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -496,9 +552,15 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+<<<<<<< Updated upstream
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+=======
             <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+>>>>>>> Stashed changes
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -529,7 +591,11 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
+<<<<<<< Updated upstream
+            <statement>SELECT * FROM rewards WHERE Approved=(?);</statement>
+=======
             <statement>SELECT * FROM Rewards WHERE Approved=(?);</statement>
+>>>>>>> Stashed changes
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -560,9 +626,15 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+<<<<<<< Updated upstream
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+=======
             <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+>>>>>>> Stashed changes
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -593,7 +665,11 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
+<<<<<<< Updated upstream
+            <statement>SELECT * FROM rewards WHERE TimeSpent=(?);</statement>
+=======
             <statement>SELECT * FROM Rewards WHERE TimeSpent=(?);</statement>
+>>>>>>> Stashed changes
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -624,9 +700,15 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+<<<<<<< Updated upstream
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+=======
             <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+>>>>>>> Stashed changes
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -657,7 +739,11 @@
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
+<<<<<<< Updated upstream
+            <statement>SELECT * FROM rewards WHERE ChampiesGiven=(?);</statement>
+=======
             <statement>SELECT * FROM Rewards WHERE ChampiesGiven=(?);</statement>
+>>>>>>> Stashed changes
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <Prepared_Param_DataType>
                 <parameter>
@@ -688,9 +774,15 @@
             <QueryOutputCachedSchemaDataTypesName>DATE</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
             <QueryOutputCachedSchemaColumns>Approved</QueryOutputCachedSchemaColumns>
+<<<<<<< Updated upstream
+            <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
+            <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
+            <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
+=======
             <QueryOutputCachedSchemaDataTypes>-7</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>TINYINT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
+>>>>>>> Stashed changes
             <QueryOutputCachedSchemaColumns>TimeSpent</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>1</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>CHAR</QueryOutputCachedSchemaDataTypesName>
@@ -718,16 +810,27 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
+<<<<<<< Updated upstream
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_Reward) &gt; 0</pd:xpath>
+=======
         <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_Reward) &gt; 0</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>ID_Reward</pd:from>
         <pd:to>End</pd:to>
+<<<<<<< Updated upstream
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+=======
         <pd:xpathDescription>Exists</pd:xpathDescription>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
         <pd:xpath>exists($ID_Reward/resultSet/Record)</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -736,16 +839,27 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
+<<<<<<< Updated upstream
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_PlayerReceiver_FK) &gt; 0</pd:xpath>
+=======
         <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_PlayerReceiver_FK) &gt; 0</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>ID_PlayerReceiver_FK</pd:from>
         <pd:to>End</pd:to>
+<<<<<<< Updated upstream
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+=======
         <pd:xpathDescription>Exists</pd:xpathDescription>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
         <pd:xpath>exists($ID_PlayerReceiver_FK/resultSet/Record)</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -754,16 +868,27 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
+<<<<<<< Updated upstream
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@DateOfReward) &gt; 0</pd:xpath>
+=======
         <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@DateOfReward) &gt; 0</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>DateOfReward</pd:from>
         <pd:to>End</pd:to>
+<<<<<<< Updated upstream
+        <pd:xpathDescription/>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+=======
         <pd:xpathDescription>Exists</pd:xpathDescription>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
         <pd:xpath>exists($DateOfReward/resultSet/Record)</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>Catch</pd:from>
@@ -778,15 +903,23 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
+<<<<<<< Updated upstream
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ID_PlayerGiver_FK) &gt; 0</pd:xpath>
+=======
         <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ID_PlayerGiver_FK) &gt; 0</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>ID_PlayerGiver_FK</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
+<<<<<<< Updated upstream
+        <pd:conditionType>always</pd:conditionType>
+=======
         <pd:conditionType>xpath</pd:conditionType>
         <pd:xpath>exists($ID_PlayerGiver_FK/resultSet/Record)</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -794,7 +927,11 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
+<<<<<<< Updated upstream
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@Approved) &gt; 0</pd:xpath>
+=======
         <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@Approved) &gt; 0</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -802,23 +939,35 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
+<<<<<<< Updated upstream
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@TimeSpent) &gt; 0</pd:xpath>
+=======
         <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@TimeSpent) &gt; 0</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>TimeSpent</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
+<<<<<<< Updated upstream
+        <pd:conditionType>always</pd:conditionType>
+=======
         <pd:conditionType>xpath</pd:conditionType>
         <pd:xpath>exists($TimeSpent/resultSet/Record)</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>Approved</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
+<<<<<<< Updated upstream
+        <pd:conditionType>always</pd:conditionType>
+=======
         <pd:conditionType>xpath</pd:conditionType>
         <pd:xpath>exists($Approved/resultSet/Record)</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>Start</pd:from>
@@ -826,14 +975,22 @@
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>xpath</pd:conditionType>
+<<<<<<< Updated upstream
+        <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn[1]/@ChampiesGiven) &gt; 0</pd:xpath>
+=======
         <pd:xpath>string-length($Start/pfx3:RewardsGetInput/GetIn/pfx4:RewardsDataInput/pfx4:RewardsIn/@ChampiesGiven) &gt; 0</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
     <pd:transition>
         <pd:from>ChampiesGiven</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
+<<<<<<< Updated upstream
+        <pd:conditionType>always</pd:conditionType>
+=======
         <pd:conditionType>xpath</pd:conditionType>
         <pd:xpath>exists($ChampiesGiven/resultSet/Record)</pd:xpath>
+>>>>>>> Stashed changes
     </pd:transition>
 </pd:ProcessDefinition>

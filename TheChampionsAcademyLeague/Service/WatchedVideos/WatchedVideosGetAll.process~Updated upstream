@@ -1,67 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571749508135" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:ns2="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/GuildEvents/Schema.xsd">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748232229" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:ns2="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/WatchedVideos/Schema.xsd">
     <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
-    <wsdl:import namespace="http://xmlns.example.com/1571749508135" location="/Service/GuildEvents/GuildEvents.wsdl"/>
-    <pd:name>Service/GuildEvents/GuildEventsGetAll.process</pd:name>
+    <wsdl:import namespace="http://xmlns.example.com/1571748232229" location="/Service/WatchedVideos/WatchedVideos.wsdl"/>
+    <pd:name>Service/WatchedVideos/WatchedVideosGetAll.process</pd:name>
     <pd:startName>Start</pd:startName>
-    <pd:startType wsMsgRef="pfx2:GuildEventsGetAllInput"/>
+    <pd:startType wsMsgRef="pfx2:WatchedVideosGetAllInput"/>
     <pd:startX>223</pd:startX>
     <pd:startY>265</pd:startY>
     <pd:returnBindings>
-        <pfx2:GuildEventsGetAllOutput>
+        <pfx2:WatchedVideosGetAllOutput>
             <GetAllOut>
-                <ns2:GuildEventsDataOutput>
+                <ns2:WatchedVideosDataOutput>
                     <xsl:choose>
-                        <xsl:when test="exists($GuildEvents/resultSet/Record)">
-                            <xsl:for-each select="$GuildEvents/resultSet/Record">
-                                <ns2:GuildEventsOut>
-                                    <xsl:attribute name="ID_Guild_FK">
-                                        <xsl:value-of select="ID_Guild_FK"/>
+                        <xsl:when test="exists($WatchedVideos/resultSet/Record)">
+                            <xsl:for-each select="$WatchedVideos/resultSet/Record">
+                                <ns2:WatchedVideosOut>
+                                    <xsl:attribute name="ID_Video_FK">
+                                        <xsl:value-of select="ID_Video_FK"/>
                                     </xsl:attribute>
-                                </ns2:GuildEventsOut>
+                                    <xsl:attribute name="ID_Player_FK">
+                                        <xsl:value-of select="ID_Player_FK"/>
+                                    </xsl:attribute>
+                                </ns2:WatchedVideosOut>
                             </xsl:for-each>
                         </xsl:when>
                         <xsl:otherwise>
-                            <ns2:GuildEventsOut>
-                                <xsl:attribute name="ID_Guild_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                            <ns2:WatchedVideosOut>
+                                <xsl:attribute name="ID_Video_FK">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="ID_Events_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                <xsl:attribute name="ID_Player_FK">
+                                    <xsl:value-of select="&quot;Not Found&quot;"/>
                                 </xsl:attribute>
-                            </ns2:GuildEventsOut>
+                            </ns2:WatchedVideosOut>
                         </xsl:otherwise>
                     </xsl:choose>
-                </ns2:GuildEventsDataOutput>
+                </ns2:WatchedVideosDataOutput>
             </GetAllOut>
-        </pfx2:GuildEventsGetAllOutput>
+        </pfx2:WatchedVideosGetAllOutput>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="pfx2:GuildEventsGetAllOutput"/>
-    <pd:endX>928</pd:endX>
-    <pd:endY>270</pd:endY>
+    <pd:endType wsMsgRef="pfx2:WatchedVideosGetAllOutput"/>
+    <pd:endX>927</pd:endX>
+    <pd:endY>269</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571147019965</pd:targetNamespace>
-    <pd:activity name="GuildEvents">
+    <pd:activity name="WatchedVideos">
         <pd:type>com.tibco.plugin.jdbc.JDBCQueryActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCQueryActivity</pd:resourceType>
-        <pd:x>546</pd:x>
+        <pd:x>544</pd:x>
         <pd:y>270</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
-            <statement>SELECT * FROM GuildEvents;</statement>
+            <statement>SELECT * FROM WatchedVideos;</statement>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
             <oraObjects/>
             <oraTables/>
-            <QueryOutputCachedSchemaColumns>ID_Guild_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaColumns>ID_Video_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
-            <QueryOutputCachedSchemaColumns>ID_Event_FK</QueryOutputCachedSchemaColumns>
+            <QueryOutputCachedSchemaColumns>ID_Player_FK</QueryOutputCachedSchemaColumns>
             <QueryOutputCachedSchemaDataTypes>4</QueryOutputCachedSchemaDataTypes>
             <QueryOutputCachedSchemaDataTypesName>INT</QueryOutputCachedSchemaDataTypesName>
             <QueryOutputCachedSchemaStatus>RequiredElement</QueryOutputCachedSchemaStatus>
@@ -83,13 +86,13 @@
     </pd:activity>
     <pd:transition>
         <pd:from>Start</pd:from>
-        <pd:to>GuildEvents</pd:to>
+        <pd:to>WatchedVideos</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
-        <pd:from>GuildEvents</pd:from>
+        <pd:from>WatchedVideos</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>

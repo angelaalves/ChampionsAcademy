@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b1962aca-322b-4148-ad4f-83d6a3587086" activeEnvironment="Default" name="Video" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="de9eb1d3-13b4-4364-8af1-c5a475a9a79b" wsaVersion="NONE" name="VideoPortUpdateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571063854585}VideoPortUpdateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/VideoSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortUpdateEndpoint1</con:endpoint></con:endpoints><con:operation id="dc62fc82-d15b-4262-9d43-772be803fe71" isOneWay="false" action="/Service/Video/VideoService.serviceagent/VideoPortUpdateEndpoint1/Update" name="Update" bindingOperationName="Update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="19d255c2-ba70-4975-bf2c-de0e47792ea1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortUpdateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:VideoDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:videoInput Duration="22" ID_Video="9" Topic="Angular" VideoName="FrontEnd2"/>\r
+      </sch:VideoDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Video/VideoService.serviceagent/VideoPortUpdateEndpoint1/Update"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="7d8582db-a357-4df3-830f-46ef8612b634" wsaVersion="NONE" name="VideoPortGetAllEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571063854585}VideoPortGetAllEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/VideoSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortGetAllEndpoint1</con:endpoint></con:endpoints><con:operation id="2b947a71-4443-449f-a5e6-79a89f23778c" isOneWay="false" action="/Service/Video/VideoService.serviceagent/VideoPortGetAllEndpoint1/GetAll" name="GetAll" bindingOperationName="GetAll" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="946a5fb9-233d-4d3a-bb3a-770dbf14c863" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortGetAllEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:VideoDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:videoInput Duration="?" ID_Video="?" Topic="?" VideoName="?"/>\r
+      </sch:VideoDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Video/VideoService.serviceagent/VideoPortGetAllEndpoint1/GetAll"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="167b8c4e-468c-4912-bfb5-8d633a665c09" wsaVersion="NONE" name="VideoPortCreateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571063854585}VideoPortCreateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/VideoSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortCreateEndpoint1</con:endpoint></con:endpoints><con:operation id="e346cfc5-48ff-4265-98fb-331f06a528da" isOneWay="false" action="/Service/Video/VideoService.serviceagent/VideoPortCreateEndpoint1/Create" name="Create" bindingOperationName="Create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ddf7f7f9-e7d1-4385-8d91-c7a2c9e3b0f3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortCreateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:VideoDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:videoInput Duration="20" ID_Video="?" Topic="Angular" VideoName="FrontEnd"/>\r
+      </sch:VideoDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Video/VideoService.serviceagent/VideoPortCreateEndpoint1/Create"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b25eaaa0-5d0f-446c-8203-39d08b326487" wsaVersion="NONE" name="VideoPortGetEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571063854585}VideoPortGetEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/VideoSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortGetEndpoint1</con:endpoint></con:endpoints><con:operation id="45f7613d-7877-4580-afc7-4e194a436127" isOneWay="false" action="/Service/Video/VideoService.serviceagent/VideoPortGetEndpoint1/Get" name="Get" bindingOperationName="Get" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1b2cce31-7e5b-47a0-ba86-6e2ca988c478" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortGetEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:VideoDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:videoInput Duration="?" ID_Video="" Topic="" VideoName="Mudei isto"/>\r
+      </sch:VideoDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Video/VideoService.serviceagent/VideoPortGetEndpoint1/Get"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="f2a09152-ccb7-4a44-af6e-c698fcf16c31" wsaVersion="NONE" name="VideoPortDeleteEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571063854585}VideoPortDeleteEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/VideoSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/VideoSoap.wsdl"><con:part><con:url>file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/VideoSoap.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://xmlns.example.com/1571063854585" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1571063854585" xmlns:ns0="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="VideoDataInput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:videoInput" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VideoDataOutput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:videoOutput" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="videoInput">
+        <xs:complexType>
+          <xs:attribute name="Duration" type="xs:string"/>
+          <xs:attribute name="ID_Video" type="xs:string"/>
+          <xs:attribute name="Topic" type="xs:string"/>
+          <xs:attribute name="VideoName" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="videoOutput">
+        <xs:complexType>
+          <xs:attribute name="Duration" type="xs:string"/>
+          <xs:attribute name="ID_Video" type="xs:string"/>
+          <xs:attribute name="Topic" type="xs:string"/>
+          <xs:attribute name="VideoName" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="VideoService">
+    <wsdl:port name="VideoPortUpdateEndpoint1" binding="tns:VideoPortUpdateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortUpdateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="VideoPortGetAllEndpoint1" binding="tns:VideoPortGetAllEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortGetAllEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="VideoPortCreateEndpoint1" binding="tns:VideoPortCreateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortCreateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="VideoPortGetEndpoint1" binding="tns:VideoPortGetEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortGetEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="VideoPortDeleteEndpoint1" binding="tns:VideoPortDeleteEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortDeleteEndpoint1"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="VideoPortUpdate">
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:videoUpdateInput"/>
+      <wsdl:output message="tns:videoUpdateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VideoPortGetAll">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:videoGetAllInput"/>
+      <wsdl:output message="tns:videoGetAllOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VideoPortCreate">
+    <wsdl:operation name="Create">
+      <wsdl:input message="tns:videoCreateInput"/>
+      <wsdl:output message="tns:videoCreateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VideoPortGet">
+    <wsdl:operation name="Get">
+      <wsdl:input message="tns:videoGetInput"/>
+      <wsdl:output message="tns:videoGetOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VideoPortDelete">
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:videoDeleteInput"/>
+      <wsdl:output message="tns:videoDeleteOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VideoPortUpdateEndpoint1Binding" type="tns:VideoPortUpdate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Update">
+      <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortUpdateEndpoint1/Update"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="UpdateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="UpdateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VideoPortGetAllEndpoint1Binding" type="tns:VideoPortGetAll">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAll">
+      <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortGetAllEndpoint1/GetAll"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetAllIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetAllOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VideoPortCreateEndpoint1Binding" type="tns:VideoPortCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Create">
+      <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortCreateEndpoint1/Create"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="CreateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="CreateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VideoPortGetEndpoint1Binding" type="tns:VideoPortGet">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Get">
+      <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortGetEndpoint1/Get"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VideoPortDeleteEndpoint1Binding" type="tns:VideoPortDelete">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Delete">
+      <soap:operation style="document" soapAction="/Service/Video/VideoService.serviceagent/VideoPortDeleteEndpoint1/Delete"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="DeleteIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="DeleteOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="videoUpdateInput">
+    <wsdl:part name="UpdateIn" element="ns0:VideoDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="videoUpdateOutput">
+    <wsdl:part name="UpdateOut" element="ns0:VideoDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="videoGetAllInput">
+    <wsdl:part name="GetAllIn" element="ns0:VideoDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="videoGetAllOutput">
+    <wsdl:part name="GetAllOut" element="ns0:VideoDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="videoCreateInput">
+    <wsdl:part name="CreateIn" element="ns0:VideoDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="videoCreateOutput">
+    <wsdl:part name="CreateOut" element="ns0:VideoDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="videoGetInput">
+    <wsdl:part name="GetIn" element="ns0:VideoDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="videoGetOutput">
+    <wsdl:part name="GetOut" element="ns0:VideoDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="videoDeleteInput">
+    <wsdl:part name="DeleteIn" element="ns0:VideoDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="videoDeleteOutput">
+    <wsdl:part name="DeleteOut" element="ns0:VideoDataOutput"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortDeleteEndpoint1</con:endpoint></con:endpoints><con:operation id="50156c6a-a380-49a5-a3d8-560a133b5f08" isOneWay="false" action="/Service/Video/VideoService.serviceagent/VideoPortDeleteEndpoint1/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cc5c5abb-fd13-48ae-8e48-dc17f03f5be0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Video/VideoService.serviceagent/VideoPortDeleteEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:VideoDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:videoInput Duration="?" ID_Video="4" Topic="?" VideoName="?"/>\r
+      </sch:VideoDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Video/VideoService.serviceagent/VideoPortDeleteEndpoint1/Delete"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

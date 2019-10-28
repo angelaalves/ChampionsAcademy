@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="db8aa211-6e55-4a94-8d2d-34d63c53f943" activeEnvironment="Default" name="Guild" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="40e9e30d-2c8f-45eb-8e9a-47a77f9eb048" wsaVersion="NONE" name="GuildPortGetEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571748252062}GuildPortGetEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/GuildSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortGetEndpoint1</con:endpoint></con:endpoints><con:operation id="bd11aa65-8ef6-4a2c-9fb7-84a96c3f2c09" isOneWay="false" action="/Service/Guild/Guild.serviceagent/GuildPortGetEndpoint1/Get" name="Get" bindingOperationName="Get" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd0a1521-d2ef-4ed3-a6ce-95626badacb7" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortGetEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:GuildDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:GuildIn EndDate="2019-11-21" GuildFlag="" GuildName="" ID_Guild="" StartDate="" status=""/>\r
+      </sch:GuildDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Guild/Guild.serviceagent/GuildPortGetEndpoint1/Get"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="49cf9428-47d4-4807-9d2c-6ae5e581b82a" wsaVersion="NONE" name="GuildPortDeleteEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571748252062}GuildPortDeleteEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/GuildSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortDeleteEndpoint1</con:endpoint></con:endpoints><con:operation id="517d787f-ada4-43c2-a7c0-fdc51957bbb6" isOneWay="false" action="/Service/Guild/Guild.serviceagent/GuildPortDeleteEndpoint1/Delete" name="Delete" bindingOperationName="Delete" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="009f6ee4-ccb5-415c-8c99-a7d0b3beaa95" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortDeleteEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:GuildDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:GuildIn EndDate="?" GuildFlag="?" GuildName="?" ID_Guild="3" StartDate="?" status="?"/>\r
+      </sch:GuildDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Guild/Guild.serviceagent/GuildPortDeleteEndpoint1/Delete"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="5cbd6721-63fd-49aa-9884-1636a8cdd7fa" wsaVersion="NONE" name="GuildPortCreateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571748252062}GuildPortCreateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/GuildSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortCreateEndpoint1</con:endpoint></con:endpoints><con:operation id="2f1a2284-2484-4b2a-8d11-06d140634f14" isOneWay="false" action="/Service/Guild/Guild.serviceagent/GuildPortCreateEndpoint1/Create" name="Create" bindingOperationName="Create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0bbd9373-2238-4348-acd7-ace308f7ec3b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortCreateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:GuildDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:GuildIn EndDate="2020-01-30" GuildFlag="Image" GuildName="Test3" ID_Guild="?" StartDate="2019-10-24" status="Active"/>\r
+      </sch:GuildDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Guild/Guild.serviceagent/GuildPortCreateEndpoint1/Create"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="307e28af-4de0-44ab-9c11-7f7fc19de825" wsaVersion="NONE" name="GuildPortUpdateEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571748252062}GuildPortUpdateEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/GuildSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortUpdateEndpoint1</con:endpoint></con:endpoints><con:operation id="da8c8ff8-e4cb-487d-b441-ec081024efc7" isOneWay="false" action="/Service/Guild/Guild.serviceagent/GuildPortUpdateEndpoint1/Update" name="Update" bindingOperationName="Update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="693984e8-170d-4d0a-9c6e-8f3e43b378e3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortUpdateEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:GuildDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:GuildIn EndDate="2019-11-30" GuildFlag="Three" GuildName="test3" ID_Guild="4" StartDate="2019-11-20" status="Active"/>\r
+      </sch:GuildDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Guild/Guild.serviceagent/GuildPortUpdateEndpoint1/Update"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="eba5f1e1-2521-4dfa-91d0-63334417facc" wsaVersion="NONE" name="GuildPortGetAllEndpoint1Binding" type="wsdl" bindingName="{http://xmlns.example.com/1571748252062}GuildPortGetAllEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/GuildSoap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/GuildSoap.wsdl"><con:part><con:url>file:/C:/Users/angela.alves/OneDrive%20-%20P8G%20Group,%20Lda/GitHub/ChampionsAcademy/TheChampionsAcademyLeague/Service/SOAPS/GuildSoap.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://xmlns.example.com/1571748252062" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.example.com/1571748252062" xmlns:ns0="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GuildDataInput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:GuildIn" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GuildDataOutput">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:GuildOut" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GuildIn">
+        <xs:complexType>
+          <xs:attribute name="EndDate" type="xs:string"/>
+          <xs:attribute name="GuildFlag" type="xs:string"/>
+          <xs:attribute name="GuildName" type="xs:string"/>
+          <xs:attribute name="ID_Guild" type="xs:string"/>
+          <xs:attribute name="StartDate" type="xs:string"/>
+          <xs:attribute name="status" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GuildOut">
+        <xs:complexType>
+          <xs:attribute name="EndDate" type="xs:string"/>
+          <xs:attribute name="GuildFlag" type="xs:string"/>
+          <xs:attribute name="GuildName" type="xs:string"/>
+          <xs:attribute name="ID_Guild" type="xs:string"/>
+          <xs:attribute name="StartDate" type="xs:string"/>
+          <xs:attribute name="status" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="Guild">
+    <wsdl:port name="GuildPortGetEndpoint1" binding="tns:GuildPortGetEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortGetEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="GuildPortDeleteEndpoint1" binding="tns:GuildPortDeleteEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortDeleteEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="GuildPortCreateEndpoint1" binding="tns:GuildPortCreateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortCreateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="GuildPortUpdateEndpoint1" binding="tns:GuildPortUpdateEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortUpdateEndpoint1"/>
+    </wsdl:port>
+    <wsdl:port name="GuildPortGetAllEndpoint1" binding="tns:GuildPortGetAllEndpoint1Binding">
+      <soap:address location="http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortGetAllEndpoint1"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="GuildPortGet">
+    <wsdl:operation name="Get">
+      <wsdl:input message="tns:GuildGetInput"/>
+      <wsdl:output message="tns:GuildGetOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GuildPortDelete">
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:GuildDeleteInput"/>
+      <wsdl:output message="tns:GuildDeleteOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GuildPortCreate">
+    <wsdl:operation name="Create">
+      <wsdl:input message="tns:GuildCreateInput"/>
+      <wsdl:output message="tns:GuildCreateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GuildPortUpdate">
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:GuildUpdateInput"/>
+      <wsdl:output message="tns:GuildUpdateOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GuildPortGetAll">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:GuildGetAllInput"/>
+      <wsdl:output message="tns:GuildGetAllOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GuildPortGetEndpoint1Binding" type="tns:GuildPortGet">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Get">
+      <soap:operation style="document" soapAction="/Service/Guild/Guild.serviceagent/GuildPortGetEndpoint1/Get"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GuildPortDeleteEndpoint1Binding" type="tns:GuildPortDelete">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Delete">
+      <soap:operation style="document" soapAction="/Service/Guild/Guild.serviceagent/GuildPortDeleteEndpoint1/Delete"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="DeleteIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="DeleteOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GuildPortCreateEndpoint1Binding" type="tns:GuildPortCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Create">
+      <soap:operation style="document" soapAction="/Service/Guild/Guild.serviceagent/GuildPortCreateEndpoint1/Create"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="CreateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="CreateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GuildPortUpdateEndpoint1Binding" type="tns:GuildPortUpdate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Update">
+      <soap:operation style="document" soapAction="/Service/Guild/Guild.serviceagent/GuildPortUpdateEndpoint1/Update"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="UpdateIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="UpdateOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GuildPortGetAllEndpoint1Binding" type="tns:GuildPortGetAll">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAll">
+      <soap:operation style="document" soapAction="/Service/Guild/Guild.serviceagent/GuildPortGetAllEndpoint1/GetAll"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="GetAllIn"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="GetAllOut"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="GuildGetInput">
+    <wsdl:part name="GetIn" element="ns0:GuildDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildGetOutput">
+    <wsdl:part name="GetOut" element="ns0:GuildDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildDeleteInput">
+    <wsdl:part name="DeleteIn" element="ns0:GuildDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildDeleteOutput">
+    <wsdl:part name="DeleteOut" element="ns0:GuildDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildCreateInput">
+    <wsdl:part name="CreateIn" element="ns0:GuildDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildCreateOutput">
+    <wsdl:part name="CreateOut" element="ns0:GuildDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildUpdateInput">
+    <wsdl:part name="UpdateIn" element="ns0:GuildDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildUpdateOutput">
+    <wsdl:part name="UpdateOut" element="ns0:GuildDataOutput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildGetAllInput">
+    <wsdl:part name="GetAllIn" element="ns0:GuildDataInput"/>
+  </wsdl:message>
+  <wsdl:message name="GuildGetAllOutput">
+    <wsdl:part name="GetAllOut" element="ns0:GuildDataOutput"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortGetAllEndpoint1</con:endpoint></con:endpoints><con:operation id="db10b5b9-6276-4315-afca-501b633dcfff" isOneWay="false" action="/Service/Guild/Guild.serviceagent/GuildPortGetAllEndpoint1/GetAll" name="GetAll" bindingOperationName="GetAll" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="feeb4bdc-e6f5-46fb-a7a1-f0e6ba3e1baa" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8882/Service/Guild/Guild.serviceagent/GuildPortGetAllEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Guild/Schema.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sch:GuildDataInput>\r
+         <!--Zero or more repetitions:-->\r
+         <sch:GuildIn EndDate="?" GuildFlag="?" GuildName="?" ID_Guild="?" StartDate="?" status="?"/>\r
+      </sch:GuildDataInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Service/Guild/Guild.serviceagent/GuildPortGetAllEndpoint1/GetAll"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

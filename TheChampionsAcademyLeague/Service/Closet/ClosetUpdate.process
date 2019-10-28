@@ -5,8 +5,8 @@
     <pd:name>Service/Closet/ClosetUpdate.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="pfx2:ClosetUpdateInput"/>
-    <pd:startX>330</pd:startX>
-    <pd:startY>245</pd:startY>
+    <pd:startX>340</pd:startX>
+    <pd:startY>251</pd:startY>
     <pd:returnBindings>
         <pfx2:ClosetUpdateOutput>
             <UpdateOut>
@@ -14,21 +14,27 @@
                     <xsl:choose>
                         <xsl:when test="not(exists($_error_JDBC-Update/ActivityErrors/*))">
                             <ns1:ClosetOut>
-                                <xsl:attribute name="ID_Closet">
+                                <xsl:attribute name="ID_Skin_FK">
                                     <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="ID_Skin_FK">
+                                <xsl:attribute name="id_player_fk">
+                                    <xsl:value-of select="&quot;Updated&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="status">
                                     <xsl:value-of select="&quot;Updated&quot;"/>
                                 </xsl:attribute>
                             </ns1:ClosetOut>
                         </xsl:when>
                         <xsl:otherwise>
                             <ns1:ClosetOut>
-                                <xsl:attribute name="ID_Closet">
-                                    <xsl:value-of select="&quot; &quot;"/>
-                                </xsl:attribute>
                                 <xsl:attribute name="ID_Skin_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="id_player_fk">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="status">
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                             </ns1:ClosetOut>
                         </xsl:otherwise>
@@ -39,35 +45,64 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx2:ClosetUpdateOutput"/>
+<<<<<<< Updated upstream
+    <pd:endX>860</pd:endX>
+    <pd:endY>247</pd:endY>
+=======
     <pd:endX>1004</pd:endX>
     <pd:endY>248</pd:endY>
+>>>>>>> Stashed changes
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571128270884</pd:targetNamespace>
     <pd:activity name="JDBC Update">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>659</pd:x>
-        <pd:y>249</pd:y>
+        <pd:x>588</pd:x>
+        <pd:y>250</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>UPDATE Closet SET  ID_Skin_FK=? Where ID_Closet=?</statement>
+            <statement>UPDATE closet SET status=?  WHERE id_player_fk=? and ID_Skin_FK=?;</statement>
             <Prepared_Param_DataType>
                 <parameter>
-                    <parameterName>ID_Skin_FK</parameterName>
+                    <parameterName>status</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
-                    <parameterName>ID_Closet</parameterName>
+                    <parameterName>id_player_fk</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+                <parameter>
+                    <parameterName>ID_Skin_FK</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
             </Prepared_Param_DataType>
         </config>
         <pd:inputBindings>
             <jdbcUpdateActivityInput>
+                <status>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:ClosetUpdateInput/UpdateIn/ns1:ClosetDataInput/ns1:ClosetIn[1]/@status)">
+                            <xsl:value-of select="$Start/pfx2:ClosetUpdateInput/UpdateIn/ns1:ClosetDataInput/ns1:ClosetIn[1]/@status"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </status>
+                <id_player_fk>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:ClosetUpdateInput/UpdateIn/ns1:ClosetDataInput/ns1:ClosetIn[1]/@id_player_fk)">
+                            <xsl:value-of select="$Start/pfx2:ClosetUpdateInput/UpdateIn/ns1:ClosetDataInput/ns1:ClosetIn[1]/@id_player_fk"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </id_player_fk>
                 <ID_Skin_FK>
                     <xsl:choose>
                         <xsl:when test="exists($Start/pfx2:ClosetUpdateInput/UpdateIn/ns1:ClosetDataInput/ns1:ClosetIn[1]/@ID_Skin_FK)">
@@ -78,24 +113,14 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </ID_Skin_FK>
-                <ID_Closet>
-                    <xsl:choose>
-                        <xsl:when test="exists($Start/pfx2:ClosetUpdateInput/UpdateIn/ns1:ClosetDataInput/ns1:ClosetIn[1]/@ID_Closet)">
-                            <xsl:value-of select="$Start/pfx2:ClosetUpdateInput/UpdateIn/ns1:ClosetDataInput/ns1:ClosetIn[1]/@ID_Closet"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </ID_Closet>
             </jdbcUpdateActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:activity name="Catch">
         <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
         <pd:resourceType>ae.activities.catch</pd:resourceType>
-        <pd:x>1000</pd:x>
-        <pd:y>117</pd:y>
+        <pd:x>857</pd:x>
+        <pd:y>143</pd:y>
         <pd:handler>true</pd:handler>
         <config>
             <catchAll>true</catchAll>

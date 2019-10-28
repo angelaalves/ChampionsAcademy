@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pfx="http://xmlns.example.com/1571063877400" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.example.com/1571748236987" xmlns:ns="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Schemas/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.tibco.com/schemas/TheChampionsAcademyLeague/Service/Rewards/Schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <wsdl:import namespace="http://xmlns.example.com/1571063877400" location="/Service/Video/Video.wsdl"/>
+    <wsdl:import namespace="http://xmlns.example.com/1571748236987" location="/Service/Rewards/Rewards.wsdl"/>
+    <pd:name>Service/Rewards/RewardsDelete.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx2:RewardsDeleteInput"/>
+    <pd:startX>315</pd:startX>
+    <pd:startY>182</pd:startY>
+    <pd:returnBindings>
+        <pfx2:RewardsDeleteOutput>
+            <DeleteOut>
+                <ns1:RewardsDataOutput>
+                    <xsl:choose>
+                        <xsl:when test="not(exists($_error_Delete/ActivityErrors/*))">
+                            <ns1:RewardsOut>
+                                <xsl:attribute name="ID_Reward">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerGiver_FK">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesGiven">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="DateOfReward">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Approved">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot;Deleted&quot;"/>
+                                </xsl:attribute>
+                            </ns1:RewardsOut>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <ns1:RewardsOut>
+                                <xsl:attribute name="ID_Reward">
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerGiver_FK">
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ID_PlayerReceiver_FK">
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="ChampiesGiven">
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="DateOfReward">
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="Approved">
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="TimeSpent">
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
+                                </xsl:attribute>
+                            </ns1:RewardsOut>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ns1:RewardsDataOutput>
+            </DeleteOut>
+        </pfx2:RewardsDeleteOutput>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx2:RewardsDeleteOutput"/>
+    <pd:endX>854</pd:endX>
+    <pd:endY>181</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1571147021415</pd:targetNamespace>
+    <pd:activity name="Catch">
+        <pd:type>com.tibco.pe.core.CatchActivity</pd:type>
+        <pd:resourceType>ae.activities.catch</pd:resourceType>
+        <pd:x>851</pd:x>
+        <pd:y>63</pd:y>
+        <pd:handler>true</pd:handler>
+        <config>
+            <catchAll>true</catchAll>
+        </config>
+        <pd:inputBindings/>
+    </pd:activity>
+    <pd:activity name="Delete">
+        <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
+        <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
+        <pd:x>563</pd:x>
+        <pd:y>185</pd:y>
+        <config>
+            <timeout>10</timeout>
+            <commit>false</commit>
+            <emptyStrAsNil>false</emptyStrAsNil>
+            <statement>DELETE FROM Rewards WHERE ID_Reward=?;</statement>
+            <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>ID_Reward</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
+        </config>
+        <pd:inputBindings>
+            <jdbcUpdateActivityInput>
+                <ID_Reward>
+                    <xsl:choose>
+                        <xsl:when test="exists($Start/pfx2:RewardsDeleteInput/DeleteIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@ID_Reward)">
+                            <xsl:value-of select="$Start/pfx2:RewardsDeleteInput/DeleteIn/ns1:RewardsDataInput/ns1:RewardsIn[1]/@ID_Reward"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </ID_Reward>
+            </jdbcUpdateActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Delete</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Delete</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Catch</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

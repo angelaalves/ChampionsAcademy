@@ -40,22 +40,22 @@
                         <ns:SkinDataOutput>
                             <ns:skinOut>
                                 <xsl:attribute name="ID_Skin">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="SkinName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ImagePath">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="MinXP">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ChampiesCost">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="SkinType">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to delete&quot;"/>
                                 </xsl:attribute>
                             </ns:skinOut>
                         </ns:SkinDataOutput>

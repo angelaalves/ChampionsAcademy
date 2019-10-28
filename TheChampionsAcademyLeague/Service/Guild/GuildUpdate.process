@@ -37,22 +37,22 @@
                         <xsl:otherwise>
                             <ns1:GuildOut>
                                 <xsl:attribute name="ID_Guild">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="GuildName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="StartDate">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="EndDate">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="GuildFlag">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="status">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to update&quot;"/>
                                 </xsl:attribute>
                             </ns1:GuildOut>
                         </xsl:otherwise>

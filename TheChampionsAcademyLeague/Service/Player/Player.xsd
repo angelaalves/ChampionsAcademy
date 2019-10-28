@@ -23,7 +23,6 @@
 		<xs:complexType>
 			<xs:attribute name="ID_Player" type="xs:string"/>
 			<xs:attribute name="ID_Guild_FK" type="xs:string"/>
-			<xs:attribute name="ID_Closet_FK" type="xs:string"/>
 			<xs:attribute name="UserName" type="xs:string"/>
 			<xs:attribute name="status" type="xs:string"/>
 			<xs:attribute name="Email" type="xs:string"/>
@@ -39,7 +38,6 @@
 		<xs:complexType>
 			<xs:attribute name="ID_Player" type="xs:string"/>
 			<xs:attribute name="ID_Guild_FK" type="xs:string"/>
-			<xs:attribute name="ID_Closet_FK" type="xs:string"/>
 			<xs:attribute name="UserName" type="xs:string"/>
 			<xs:attribute name="status" type="xs:string"/>
 			<xs:attribute name="Email" type="xs:string"/>

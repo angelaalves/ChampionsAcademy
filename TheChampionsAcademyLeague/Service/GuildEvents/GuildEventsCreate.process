@@ -25,10 +25,10 @@
                         <xsl:otherwise>
                             <ns1:GuildEventsOut>
                                 <xsl:attribute name="ID_Guild_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_Events_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                             </ns1:GuildEventsOut>
                         </xsl:otherwise>

@@ -10,6 +10,6 @@
         <UseSharedJndiConfig>false</UseSharedJndiConfig>
         <location>jdbc:mysql://localhost:3306/championsacademy?useTimezone=true&amp;serverTimezone=GMT</location>
         <user>root</user>
-        <password>#!xSLY8xSww/tQtUJBhNlRnzrTUk1fQcvB5W4b3hqjp62QWkYZfgh6UQ==</password>
+        <password>%%PasswordBD%%</password>
     </config>
 </BWSharedResource>

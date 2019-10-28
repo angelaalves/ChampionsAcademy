@@ -4,8 +4,8 @@
     <pd:name>Service/Player/PlayerCreate.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="pfx:PlayerCreateInput"/>
-    <pd:startX>189</pd:startX>
-    <pd:startY>240</pd:startY>
+    <pd:startX>190</pd:startX>
+    <pd:startY>242</pd:startY>
     <pd:returnBindings>
         <pfx:PlayerCreateOutput>
             <CreateOut>
@@ -17,9 +17,6 @@
                                     <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_Guild_FK">
-                                    <xsl:value-of select="&quot;Created&quot;"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="ID_Closet_FK">
                                     <xsl:value-of select="&quot;Created&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="UserName">
@@ -56,40 +53,37 @@
                         <ns:PlayerDataOutput>
                             <ns:PlayerOut>
                                 <xsl:attribute name="ID_Player">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ID_Guild_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="ID_Closet_FK">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="UserName">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="status">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Email">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="password">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="Gender">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="UserType">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="XP">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="ChampiesToGive">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                                 <xsl:attribute name="MyChampies">
-                                    <xsl:value-of select="&quot; &quot;"/>
+                                    <xsl:value-of select="&quot;Unable to create&quot;"/>
                                 </xsl:attribute>
                             </ns:PlayerOut>
                         </ns:PlayerDataOutput>
@@ -100,8 +94,8 @@
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
     <pd:endType wsMsgRef="pfx:PlayerCreateOutput"/>
-    <pd:endX>728</pd:endX>
-    <pd:endY>242</pd:endY>
+    <pd:endX>730</pd:endX>
+    <pd:endY>244</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1571655908682</pd:targetNamespace>
@@ -119,21 +113,17 @@
     <pd:activity name="Create">
         <pd:type>com.tibco.plugin.jdbc.JDBCUpdateActivity</pd:type>
         <pd:resourceType>ae.activities.JDBCUpdateActivity</pd:resourceType>
-        <pd:x>434</pd:x>
-        <pd:y>240</pd:y>
+        <pd:x>430</pd:x>
+        <pd:y>241</pd:y>
         <config>
             <timeout>10</timeout>
             <commit>false</commit>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/Receção de Dados/JDBC Connection.sharedjdbc</jdbcSharedConfig>
-            <statement>INSERT INTO Player (ID_Guild_FK, ID_Closet_FK,UserName, Email, password,Gender,UserType,XP, ChampiesToGive, MyChampies,status) VALUES (?,?,?,?,?,?,?,?,?,?,?);</statement>
+            <statement>INSERT INTO player (ID_Guild_FK, UserName, Email, password,Gender,UserType,XP, ChampiesToGive, MyChampies,status) VALUES (?,?,?,?,?,?,?,?,?,?);</statement>
             <Prepared_Param_DataType>
                 <parameter>
                     <parameterName>ID_Guild_FK</parameterName>
-                    <dataType>VARCHAR</dataType>
-                </parameter>
-                <parameter>
-                    <parameterName>ID_Closet_FK</parameterName>
                     <dataType>VARCHAR</dataType>
                 </parameter>
                 <parameter>
@@ -186,16 +176,6 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </ID_Guild_FK>
-                <ID_Closet_FK>
-                    <xsl:choose>
-                        <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@ID_Closet_FK)">
-                            <xsl:value-of select="$Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@ID_Closet_FK"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="xsi:nil">true</xsl:attribute>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </ID_Closet_FK>
                 <UserName>
                     <xsl:choose>
                         <xsl:when test="exists($Start/pfx:PlayerCreateInput/CreateIn/ns:PlayerDataInput/ns:PlayerIn[1]/@UserName)">

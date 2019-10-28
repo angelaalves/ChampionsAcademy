@@ -1,7 +1,6 @@
-nav{
-    background: black;
-    color: white;
-    border: 10px solid transparent;
-    padding: 5px;
-    border-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8og5cXfVScRr9OS9iLJT02FfSsWHAyVazDYSLfqirpebfFYBjrg) 10% round;
+  nav{
+      background-color: transparent;
+      border: 10px solid transparent;
+      padding: 5px;
+
 }
